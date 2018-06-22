@@ -3,7 +3,8 @@ const favours = require('../controllers/favours');
 const auth = require('../controllers/auth');
 
 router.route('/favours')
-  .get(favours.index);
+  .get(favours.index)
+  .post(favours.create);
 
 router.route('/favours/:id')
   .get(favours.show)
