@@ -12,7 +12,16 @@ function showRoute(req, res, next){
     .catch(next);
 }
 
+function updateRoute(req, res, next){
+  Favour.findById(req.params.id)
+    .then(favour => favour.set(req.body))
+    .then(favour => favour.save())
+    .then(favour => res.json(favour))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
-  show: showRoute
+  show: showRoute,
+  update: updateRoute
 };
