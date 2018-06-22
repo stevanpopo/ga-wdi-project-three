@@ -6,7 +6,7 @@ router.route('/favours')
 
 router.route('/favours/:id')
   .get(favours.show);
-  // 
+  //
   // .put(favours.update);
 
 module.exports = router;
