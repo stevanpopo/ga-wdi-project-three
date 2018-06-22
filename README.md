@@ -1,6 +1,8 @@
 # Project 3
 ## A MEAN Stack App
 
-- Martin Allgood
 - Stevan Popovic
+- Martin Allgood
+- Another line
+- A different line
 - words
