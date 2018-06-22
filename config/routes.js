@@ -8,7 +8,8 @@ router.route('/favours')
 
 router.route('/favours/:id')
   .get(favours.show)
-  .put(favours.update);
+  .put(favours.update)
+  .delete(favours.delete);
 
 router.post('/register', auth.register);
 
