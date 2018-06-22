@@ -10,10 +10,7 @@ const routes = require('./config/routes');
 
 mongoose.connect(dbURI);
 
-<<<<<<< HEAD
 app.use(bodyParser.json());
-=======
 app.use('/api', routes);
->>>>>>> 262a5ebb604ac8d17de483eb2d4466e0ec7066b9
 
 app.listen(port, ()=> console.log(`Listening for action on port:${port}`));
