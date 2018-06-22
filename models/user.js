@@ -7,6 +7,14 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true }
 });
 
+userSchema.set('toJSON', {
+  virtuals: true,
+  transform(doc, json) {
+    delete json.password;
+    return json;
+  }
+});
+
 userSchema.virtual('passwordConfirmation')
   .set(function setPasswordConfirmation(passwordConfirmation) {
     this._passwordConfirmation = passwordConfirmation;
