@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-// const Favour = require('../models/favour');
+const Favour = require('../models/favour');
 const User = require('../models/user');
 const { dbURI } = require('../config/environment');
 
@@ -18,7 +18,15 @@ mongoose.connect(dbURI, (err, db) => {
     password: 's',
     passwordConfirmation: 's'
   }])
-    .then(users => console.log(`${users.length} users created.`))
+    .then(users => {
+      console.log(`${users.length} users created.`);
+      return Favour.create([{
+        title: 'Lawnmower rental',
+        category: 'DIY',
+        owner: users[0]
+      }]);
+    })
+    .then(favours => console.log(`${favours.length} favours created`))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());
 });
