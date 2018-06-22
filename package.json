@@ -15,6 +15,7 @@
     "bcrypt": "^2.0.1",
     "bluebird": "^3.5.1",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.1.6"
   },
   "devDependencies": {
