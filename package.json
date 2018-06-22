@@ -5,12 +5,14 @@
   "scripts": {
     "start:client": "webpack-dev-server",
     "start:server": "nodemon",
+    "seed": "node db/seeds",
     "test": "nyc mocha \"test/**/*_spec.js\" --require \"test/spec_helper\" --recursive --exit"
   },
   "author": "Students",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.0",
+    "bcrypt": "^2.0.1",
     "bluebird": "^3.5.1",
     "express": "^4.16.3",
     "mongoose": "^5.1.6"
