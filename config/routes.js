@@ -5,6 +5,10 @@ const auth = require('../controllers/auth');
 router.route('/favours')
   .get(favours.index);
 
+router.route('/favours/:id')
+  .get(favours.show);
+
+
 router.post('/register', auth.register);
 
 module.exports = router;
