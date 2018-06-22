@@ -16,7 +16,7 @@ function updateRoute(req, res, next){
   Favour.findById(req.params.id)
     .then(favour => favour.set(req.body))
     .then(favour => favour.save())
-    .then(favour => res.json(favour))
+    .then(favour => res.status(201).json(favour))
     .catch(next);
 }
 
@@ -26,9 +26,17 @@ function createRoute(req, res, next){
     .catch(next);
 }
 
+function deleteRoute(req, res, next){
+  Favour.findById(req.params.id)
+    .then(favour => favour.remove())
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   update: updateRoute,
-  create: createRoute
+  create: createRoute,
+  delete: deleteRoute
 };
