@@ -2,3 +2,4 @@
 ## A MEAN Stack App
 
 - Martin Allgood
+- Stevan Popovic
