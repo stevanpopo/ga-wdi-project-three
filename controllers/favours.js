@@ -14,12 +14,10 @@ function showRoute(req, res, next){
 
 function updateRoute(req, res, next){
   Favour.findById(req.params.id)
-    .then(favour => console.log(favour))
-    .then(() => console.log(req.body));
-    // .then(favour => favour.set(req.body))
-    // .then(favour => favour.save())
-    // .then(favour => res.json(favour))
-    // .catch(next);
+    .then(favour => favour.set(req.body))
+    .then(favour => favour.save())
+    .then(favour => res.json(favour))
+    .catch(next);
 }
 
 module.exports = {
