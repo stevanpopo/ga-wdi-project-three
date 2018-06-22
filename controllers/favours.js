@@ -6,6 +6,13 @@ function indexRoute(req, res, next){
     .catch(next);
 }
 
+function showRoute(req, res, next){
+  Favour.findById(req.params.id)
+    .then(favour => res.json(favour))
+    .catch(next);
+}
+
 module.exports = {
-  index: indexRoute
+  index: indexRoute,
+  show: showRoute
 };
