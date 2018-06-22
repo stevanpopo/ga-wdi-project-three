@@ -20,8 +20,15 @@ function updateRoute(req, res, next){
     .catch(next);
 }
 
+function createRoute(req, res, next){
+  Favour.create(req.body)
+    .then(favour => res.json(favour))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
-  update: updateRoute
+  update: updateRoute,
+  create: createRoute
 };
