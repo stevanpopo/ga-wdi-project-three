@@ -10,7 +10,8 @@ function Router($stateProvider, $urlRouterProvider) {
     })
     .state('register', {
       url: '/register',
-      templateUrl: './views/auth/register.html'
+      templateUrl: './views/auth/register.html',
+      controller: 'AuthRegisterCtrl'
     })
     .state('favourIndex', {
       url: '/favours',
