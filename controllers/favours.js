@@ -22,6 +22,7 @@ function updateRoute(req, res, next){
 }
 
 function createRoute(req, res, next){
+  req.body.owner = req.currentUser;
   Favour.create(req.body)
     .then(favour => res.json(favour))
     .catch(next);
