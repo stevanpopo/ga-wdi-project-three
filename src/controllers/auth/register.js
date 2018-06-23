@@ -3,8 +3,8 @@ function AuthRegisterCtrl($scope, $auth, $state) {
 
   $scope.handleSubmit = function() {
     console.log('In the submit');
-    // $auth.signup($scope.data)
-    //   .then(() => $state.go('home'));
+    $auth.signup($scope.data)
+      .then(() => $state.go('home'));
   };
 }
 
