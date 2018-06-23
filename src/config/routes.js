@@ -9,6 +9,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: './views/favours/index.html',
       controller: 'favourIndexController'
     })
+    .state('userIndex', {
+      url: '/users',
+      templateUrl: './views/users/index.html',
+      controller: 'usersIndexCtrl'
+    })
     .state('userShow', {
       url: '/users/:id',
       templateUrl: './views/users/show.html',
