@@ -1,0 +1,17 @@
+<div class="columns is-centered">
+  <div class="column is-6">
+    <h1 class="title is-1">New Favour</h1>
+    <form ng-submit="createFavour()">
+      <div class="field">
+        <label class="label" for="title">Title</label>
+        <input class="input" name="title" id="title" ng-model="data.title" />
+      </div>
+
+      <div class="field">
+        <label class="label" for="category">Category</label>
+        <input class="input" name="category" id="category" ng-model="data.category" />
+      </div>
+      <button class="button">Submit</button>
+    </form>
+  </div>
+</div>
