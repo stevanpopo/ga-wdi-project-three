@@ -16,5 +16,6 @@ router.route('/favours/:id')
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 router.post('/users/:id', users.show);
+router.post('/users/', users.index);
 
 module.exports = router;
