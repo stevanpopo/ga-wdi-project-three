@@ -8,6 +8,10 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/about',
       templateUrl: './views/about.html'
     })
+    .state('register', {
+      url: '/register',
+      templateUrl: './views/auth/register.html'
+    })
     .state('favourIndex', {
       url: '/favours',
       templateUrl: './views/favours/index.html',
