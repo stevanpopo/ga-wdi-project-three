@@ -1,4 +1,29 @@
-<section ng-controller="favourIndexController">
-
-</section>
 <h1>Favours index</h1>
+<div class="columns is-centered is-multiline">
+  <div class="column is-3" ng-repeat="favour in favours">
+    <a ui-sref="favourShow({ id: favour._id })">
+    <div class="card">
+      <div class="card-header-title">
+          POINTS GO HERE
+      </div>
+      <div class="card-content">
+        {{ favour.title}}
+      </div>
+      <footer class="card-footer">
+        <ul>
+          <li>
+            <div class="card-footer-item">
+              {{ favour.category }}
+            </div>
+          </li>
+          <li>
+            <div class="card-footer-item">
+              {{ favour.owner }}
+            </div>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </a>
+  </div>
+</div>
