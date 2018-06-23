@@ -8,6 +8,11 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/favours',
       templateUrl: './views/favours/index.html',
       controller: 'favourIndexController'
+    })
+    .state('userShow', {
+      url: '/users/:id',
+      templateUrl: './views/users/show.html',
+      controller: 'usersShowCtrl'
     });
 
   $urlRouterProvider.otherwise('/');
