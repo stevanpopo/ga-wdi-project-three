@@ -1,9 +1,10 @@
 function UsersIndexCtrl($scope, $http){
   $http({
     method: 'GET',
-    templateUrl: '/api/users/'
+    url: '/api/users'
   })
-    .then(res => $scope.users = res.data);
+    .then(res => $scope.users = res.data)
+    .then(console.log($scope.users));
 }
 
 export default UsersIndexCtrl;

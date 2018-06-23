@@ -9,15 +9,15 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: './views/favours/index.html',
       controller: 'favourIndexController'
     })
-    .state('userIndex', {
+    .state('usersIndex', {
       url: '/users',
       templateUrl: './views/users/index.html',
-      controller: 'usersIndexCtrl'
+      controller: 'UsersIndexCtrl'
     })
-    .state('userShow', {
+    .state('usersShow', {
       url: '/users/:id',
       templateUrl: './views/users/show.html',
-      controller: 'usersShowCtrl'
+      controller: 'UsersShowCtrl'
     });
 
   $urlRouterProvider.otherwise('/');
