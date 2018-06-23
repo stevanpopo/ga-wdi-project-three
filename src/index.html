@@ -6,11 +6,27 @@
 </head>
 <body ng-controller="MainCtrl">
 
-  <h1 class="title is-1">S+M!</h1>
- {{ 1 + 1 }}
- {{ test }}
- <a ui-sref="home">Go home</a>
+<div class="container">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" ui-sref="home">Home</a>
 
- <ui-view></ui-view>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" ui-sref="usersIndex">Users</a>
+        <a class="navbar-item" ui-sref="about">About</a>
+    </div>
+  </div>
+  </nav>
+  <h1 class="title is-1">KarmaCommunity</h1>
+  <ui-view></ui-view>
+</div>
+
 </body>
 </html>
