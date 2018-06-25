@@ -39,4 +39,19 @@ describe('GET /favours', () => {
       });
   });
 
+  it('should return an array of favours', done => {
+    api.get('/api/favours')
+      .end((err, res) => {
+        expect(res.body).to.be.an('array');
+        res.body.forEach(favour => {
+          expect(favour).to.include.keys([
+            '_id',
+            'title',
+            'category',
+            'owner'
+          ]);
+        });
+        done();
+      });
+  });
 });
