@@ -11,9 +11,8 @@ function UsersEditCtrl($scope, $http, $state){
 
   $http({
     method: 'GET',
-    url: `/api/users/${$state.params.id}/edit`
+    url: `/api/users/${$state.params.id}`
   })
-    .then(res => console.log(res.data))
     .then(res => $scope.data = res.data);
 }
 

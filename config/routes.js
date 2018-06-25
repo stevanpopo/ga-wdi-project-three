@@ -15,7 +15,10 @@ router.route('/favours/:id')
 
 router.post('/register', auth.register);
 router.post('/login', auth.login);
-router.get('/users/:id', users.show);
+
+router.route('/users/:id')
+  .get(users.show)
+  .put(users.update);
 
 router.get('/users/', users.index);
 
