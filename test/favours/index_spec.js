@@ -39,6 +39,14 @@ describe('GET /favours', () => {
       });
   });
 
+  it('should return an array of objects', done => {
+    api.get('/api/favours')
+      .end((err, res) => {
+        res.body.forEach(favour => expect(favour).to.be.an('object'));
+        done();
+      });
+  });
+
   it('should return an array of favours', done => {
     api.get('/api/favours')
       .end((err, res) => {
@@ -54,4 +62,5 @@ describe('GET /favours', () => {
         done();
       });
   });
+
 });
