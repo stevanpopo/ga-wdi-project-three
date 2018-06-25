@@ -10,6 +10,7 @@ import MainCtrl from './controllers/main';
 import FavoursIndexCtrl from './controllers/favours/index';
 import FavoursShowCtrl from './controllers/favours/show';
 import FavoursNewCtrl from './controllers/favours/new';
+import FavoursEditCtrl from './controllers/favours/edit';
 import AuthRegisterCtrl from './controllers/auth/register';
 import AuthLoginCtrl from './controllers/auth/login';
 import UsersIndexCtrl from './controllers/users/index';
@@ -22,6 +23,7 @@ angular.module('favourAPI', ['ui.router', 'satellizer'])
   .controller('FavoursIndexCtrl', FavoursIndexCtrl)
   .controller('FavoursShowCtrl', FavoursShowCtrl)
   .controller('FavoursNewCtrl', FavoursNewCtrl)
+  .controller('FavoursEditCtrl', FavoursEditCtrl)
   .controller('AuthRegisterCtrl', AuthRegisterCtrl)
   .controller('UsersIndexCtrl', UsersIndexCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
