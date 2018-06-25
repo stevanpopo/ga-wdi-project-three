@@ -2,6 +2,7 @@ import angular from 'angular';
 import '@uirouter/angularjs';
 import 'satellizer';
 import 'bulma';
+import './scss/main.scss';
 
 import Router from './config/routes';
 import Auth from './config/satellizer';
