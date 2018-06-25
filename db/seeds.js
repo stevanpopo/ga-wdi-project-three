@@ -28,8 +28,7 @@ mongoose.connect(dbURI, (err, db) => {
       },{
         title: 'Steward at Church fair',
         category: 'Events',
-        owner: users[1],
-        volunteer: users[0]
+        owner: users[1]
       }]);
     })
     .then(favours => console.log(`${favours.length} favours created`))

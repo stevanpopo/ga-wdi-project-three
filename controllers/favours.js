@@ -35,10 +35,34 @@ function deleteRoute(req, res, next){
     .catch(next);
 }
 
+function addVolunteerRoute(req, res, next) {
+  const volunteer = req.currentUser;
+  Favour.findById(req.params.id)
+    .then(favour => {
+      favour.volunteer.push(volunteer);
+      return favour.save();
+    })
+    .then(favour => res.json(favour))
+    .catch(next);
+}
+
+// function commentCreateRoute(req, res, next) {
+//   req.body.author = req.currentUser;
+//   Boat.findById(req.params.id)
+//     .populate('comments.author')
+//     .then(boat => {
+//       boat.comments.push(req.body);
+//       return boat.save();
+//     })
+//     .then(boat => res.json(boat))
+//     .catch(next);
+// }
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   update: updateRoute,
   create: createRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  addVolunteer: addVolunteerRoute
 };
