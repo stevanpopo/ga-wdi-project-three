@@ -18,7 +18,8 @@ router.post('/login', auth.login);
 
 router.route('/users/:id')
   .get(users.show)
-  .put(users.update);
+  .put(users.update)
+  .delete(users.delete);
 
 router.get('/users/:id', users.show);
 router.get('/users/', users.index);
