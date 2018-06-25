@@ -8,13 +8,9 @@ function indexRoute(req, res, next){
 }
 
 function showRoute(req, res, next){
-  const user = req.currentUser;
   Favour.findById(req.params.id)
     .populate('volunteer')
-    .then(favour => res.json({
-      favour,
-      user
-    }))
+    .then(favour => res.json(favour))
     .catch(next);
 }
 
@@ -42,12 +38,14 @@ function deleteRoute(req, res, next){
 
 function addVolunteerRoute(req, res, next) {
   Favour.findById(req.params.id)
+    .populate('volunteer')
     .then(favour => {
       favour.volunteer.push(req.currentUser);
       return favour.save();
     })
-    .populate('volunteer')
-    .then(favour => res.json(favour))
+    .then(favour => {
+      res.json(favour);
+    })
     .catch(next);
 }
 

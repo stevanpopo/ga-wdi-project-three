@@ -1,5 +1,5 @@
 Current Volunteers:
-<h1 class="is-1 title" ng-repeat="volunteer in res.favour.volunteer">
+<h1 class="is-1 title" ng-repeat="volunteer in favour.volunteer">
   {{ volunteer.username }}
 </h1>
 <div class="columns">
@@ -10,11 +10,11 @@ Current Volunteers:
   </div>
   <div class="column">
     <div class="favour-info">
-      <h2 class="title is-2">{{res.favour.title}}</h2>
+      <h2 class="title is-2">{{ favour.title }}</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <div class="field is-grouped">
         <p class="control">
-          <a ui-sref="favoursEdit({ id: res.favour._id })" class="button is-small">Edit</a>
+          <a ui-sref="favoursEdit({ id: favour._id })" class="button is-small">Edit</a>
         </p>
         <p class="control">
           <button class="button is-small" ng-click="deleteFavour()">Delete</button>
