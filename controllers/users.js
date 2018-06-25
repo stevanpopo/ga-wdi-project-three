@@ -12,7 +12,16 @@ function showRoute(req, res, next){
     .catch(next);
 }
 
+function updateRoute(req, res, next){
+  User.findById(req.params.id)
+    .then(user => user.set(req.body))
+    .then(user => user.save())
+    .then(user => res.status(201).json(user))
+    .catch(next);
+}
+
 module.exports = {
   show: showRoute,
-  index: indexRoute
+  index: indexRoute,
+  update: updateRoute
 };
