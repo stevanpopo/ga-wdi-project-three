@@ -28,7 +28,10 @@ function FavoursShowCtrl($scope, $http, $state) {
       method: 'POST',
       url: `/api/favours/${$state.params.id}/volunteers`
     })
-      .then(res => $scope.favour = res.data);
+      .then(res => {
+        $scope.favour = res.data;
+        console.log($scope.favour);
+      });
     $scope.isVolunteer = true;
   };
 }
