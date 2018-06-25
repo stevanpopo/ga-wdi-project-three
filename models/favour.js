@@ -7,8 +7,4 @@ const favourSchema = new mongoose.Schema({
   volunteer: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
-favourSchema.set('toJSON', {
-  virtuals: true
-});
-
 module.exports = mongoose.model('Favour', favourSchema);

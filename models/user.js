@@ -10,9 +10,9 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.virtual('favours', {
+  ref: 'Favour',
   localField: '_id',
-  foreignField: 'volunteer',
-  ref: 'Favour'
+  foreignField: 'volunteer'
 });
 
 userSchema.set('toJSON', {
