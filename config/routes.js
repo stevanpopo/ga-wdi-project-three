@@ -20,6 +20,7 @@ router.route('/users/:id')
   .get(users.show)
   .put(users.update);
 
+router.get('/users/:id', users.show);
 router.get('/users/', users.index);
 
 module.exports = router;
