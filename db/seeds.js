@@ -23,7 +23,8 @@ mongoose.connect(dbURI, (err, db) => {
       return Favour.create([{
         title: 'Lawnmower rental',
         category: 'DIY',
-        owner: users[0]
+        owner: users[0],
+        volunteer: users[1]
       },{
         title: 'Steward at Church fair',
         category: 'Events',
