@@ -9,7 +9,7 @@ router.route('/favours')
   .post(secureRoute, favours.create);
 
 router.route('/favours/:id')
-  .get(favours.show)
+  .get(secureRoute, favours.show)
   .put(secureRoute, favours.update)
   .delete(secureRoute, favours.delete);
 
