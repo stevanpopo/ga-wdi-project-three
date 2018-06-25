@@ -5,6 +5,14 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true }
+},{
+  id: false
+});
+
+userSchema.virtual('favours', {
+  ref: 'Favour',
+  localField: '_id',
+  foreignField: 'volunteer'
 });
 
 userSchema.set('toJSON', {
@@ -14,6 +22,7 @@ userSchema.set('toJSON', {
     return json;
   }
 });
+
 
 userSchema.virtual('passwordConfirmation')
   .set(function setPasswordConfirmation(passwordConfirmation) {
