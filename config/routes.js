@@ -18,6 +18,11 @@ router.post('/favours/:id/volunteers', secureRoute, favours.addVolunteer);
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 
+router.route('/users/:id')
+  .get(users.show)
+  .put(users.update)
+  .delete(users.delete);
+
 router.get('/users/:id', users.show);
 router.get('/users/', users.index);
 
