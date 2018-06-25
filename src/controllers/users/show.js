@@ -8,9 +8,9 @@ function UsersShowCtrl($scope, $http, $state){
   $scope.deleteUser = function(){
     $http({
       method: 'DELETE',
-      url: `api/favours/${$state.params.id}`
+      url: `api/users/${$state.params.id}`
     })
-      .then(() => $state.go('favourIndex'));
+      .then(() => $state.go('usersIndex'));
   };
 }
 
