@@ -1,6 +1,6 @@
-<h1>
-  Current Volunteer: 
-  {{ favour.volunteer[0].username }}
+Current Volunteers:
+<h1 ng-repeat="volunteer in favour.volunteer">
+  {{ volunteer.username }}
 </h1>
 <div class="columns">
   <div class="column is-one-third-desktop">
@@ -22,8 +22,9 @@
       </div>
     </div>
     <div class="buttons is-centered" ng-click="claimFavour()">
-      <button class="button is-success">Claim this favour</button>
+      <button class="button is-success" ng-if="!isVolunteer">Claim this favour</button>
     </div>
+    <p ng-if="isVolunteer">You've already volunteered!</p>
   </div>
 </div>
 <section>
