@@ -16,6 +16,7 @@ import AuthRegisterCtrl from './controllers/auth/register';
 import AuthLoginCtrl from './controllers/auth/login';
 import UsersIndexCtrl from './controllers/users/index';
 import UsersShowCtrl from './controllers/users/show';
+import UsersEditCtrl from './controllers/users/edit';
 
 angular.module('favourAPI', ['ui.router', 'satellizer'])
   .config(Router)
@@ -26,6 +27,7 @@ angular.module('favourAPI', ['ui.router', 'satellizer'])
   .controller('FavoursNewCtrl', FavoursNewCtrl)
   .controller('FavoursEditCtrl', FavoursEditCtrl)
   .controller('AuthRegisterCtrl', AuthRegisterCtrl)
+  .controller('AuthLoginCtrl', AuthLoginCtrl)
   .controller('UsersIndexCtrl', UsersIndexCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
-  .controller('AuthLoginCtrl', AuthLoginCtrl);
+  .controller('UsersEditCtrl', UsersEditCtrl);
