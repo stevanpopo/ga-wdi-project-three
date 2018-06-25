@@ -1,4 +1,5 @@
 function MainCtrl($scope, $state, $transitions, $auth) {
+  $scope.isAuthenticated = $auth.isAuthenticated;
   $scope.navbarOpen = false;
 
   $transitions.onSuccess({}, () => {

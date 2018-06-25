@@ -8,9 +8,13 @@ function indexRoute(req, res, next){
 }
 
 function showRoute(req, res, next){
+  const user = req.currentUser;
   Favour.findById(req.params.id)
     .populate('volunteer')
-    .then(favour => res.json(favour))
+    .then(favour => res.json({
+      favour,
+      user
+    }))
     .catch(next);
 }
 
@@ -42,21 +46,10 @@ function addVolunteerRoute(req, res, next) {
       favour.volunteer.push(req.currentUser);
       return favour.save();
     })
+    .populate('volunteer')
     .then(favour => res.json(favour))
     .catch(next);
 }
-
-// function commentCreateRoute(req, res, next) {
-//   req.body.author = req.currentUser;
-//   Boat.findById(req.params.id)
-//     .populate('comments.author')
-//     .then(boat => {
-//       boat.comments.push(req.body);
-//       return boat.save();
-//     })
-//     .then(boat => res.json(boat))
-//     .catch(next);
-// }
 
 module.exports = {
   index: indexRoute,
