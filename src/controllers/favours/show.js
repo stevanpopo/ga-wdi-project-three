@@ -16,7 +16,7 @@ function FavoursShowCtrl($scope, $http, $state) {
       });
     });
 
-
+  console.log($scope.currentUser, 'global');
 
 
 
