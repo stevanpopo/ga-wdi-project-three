@@ -6,7 +6,7 @@ function FavoursEditCtrl($http, $scope, $state) {
       url: `api/favours/${$state.params.id}`,
       data: $scope.data
     })
-      .then(() => $state.go('favoursShow', { id: $state.params.id }));
+      .then(() => $state.go('favourShow', { id: $state.params.id }));
   };
 
   $http({
