@@ -18,4 +18,4 @@ app.use('/api', routes);
 app.use(errorHandler);
 app.listen(port, ()=> console.log(`Listening for action on port:${port}`));
 
-module.exports = app;
+module.exports = app; // needed for test suite
