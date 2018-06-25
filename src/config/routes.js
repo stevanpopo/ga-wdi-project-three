@@ -28,6 +28,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: './views/favours/show.html',
       controller: 'FavoursShowCtrl'
     })
+    .state('favoursEdit', {
+      url: '/favours/:id/edit',
+      templateUrl: './views/favours/edit.html',
+      controller: 'FavoursEditCtrl'
+    })
     .state('favoursNew', {
       url: '/favours/new',
       templateUrl: './views/favours/new.html',

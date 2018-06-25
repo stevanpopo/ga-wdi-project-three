@@ -1,5 +1,4 @@
-function MainCtrl($scope, $state, $transitions) {
-  $scope.test = 'test';
+function MainCtrl($scope, $state, $transitions, $auth) {
   $scope.navbarOpen = false;
 
   $transitions.onSuccess({}, () => {
@@ -9,6 +8,11 @@ function MainCtrl($scope, $state, $transitions) {
 
   $scope.toggleMenu = function() {
     $scope.navbarOpen = !$scope.navbarOpen;
+  };
+
+  $scope.logout = function() {
+    $auth.logout();
+    $state.go('login');
   };
 }
 

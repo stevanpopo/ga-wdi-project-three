@@ -1,5 +1,83 @@
 <h1 class="title is-1">Leaderboard Pending</h1>
+<!-- <h1 class="title is-1" ng-repeat="user in users">
+<a ui-sref="usersShow({ id: user._id })">{{user.username}}</a>
+</h1> -->
 
-<h1 class="title is-1" ng-repeat="user in users">
-  <a ui-sref="usersShow({ id: user._id })">{{user.username}}</a>
-</h1>
+<div class="columns">
+  <div class="column is-half-desktop is-full-mobile">
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <figure class="image">
+          <img src="http://fillmurray.com/128/128" alt="Profile picture">
+        </figure>
+      </div>
+      <div class="column is-half-desktop">
+        <div class="card">
+          <div class="card-header is-centered">
+            <h1 class="title is-2">
+              {{ users[0].username}}
+            </h1>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              POINTS ICON TO GO HERE.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-12-desktop">
+        <article class="message">
+          <div class="message-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half-desktop">
+    <div class="columns is-multiline">
+      <div class="column is-4">
+        <div class="card is-square">
+          <figure class="image">
+            <img ng-src="http://fillmurray.com/112/112" alt="Profile">
+          </figure>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="content">
+          <h2 class="title is-3">{{ users[1].username }}</h2>
+        </div>
+      </div>
+      <div class="column is-4">
+        <h2 class="subtitle">POINTS GO HERE</h2>
+      </div>
+      <div class="column is-4">
+        <div class="card is-square">
+          <figure class="image">
+            <img ng-src="http://fillmurray.com/112/112" alt="Profile">
+          </figure>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="content">
+          <h2 class="title is-3">{{ users[1].username }}</h2>
+        </div>
+      </div>
+      <div class="column is-4">
+        <h2 class="subtitle">POINTS GO HERE</h2>
+      </div>
+      <div class="column is-3">
+        <h3 class="subtitle">{{ users[0].username }}</h3>
+      </div>
+      <div class="column is-3">
+        <h3>POINTS</h3>
+      </div>
+      <div class="column is-3">
+        <h3 class="subtitle">{{ users[0].username }}</h3>
+      </div>
+      <div class="column is-3">
+        <h3>POINTS</h3>
+      </div>
+    </div>
+  </div>
+</div>
