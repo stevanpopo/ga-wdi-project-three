@@ -1,24 +1,23 @@
 function FavoursShowCtrl($scope, $http, $state) {
 
-  $scope.isVolunteer = false;
-
   $http({
     method: 'GET',
     url: `api/favours/${$state.params.id}`
   })
     .then(res => {
       $scope.favour = res.data;
-      // console.log($scope.isVolunteer, 'after res.data');
-    })
-    .then(() => {
-        // $scope.favour.volunteer.forEach(volunteer => {
-        //   if(volunteer._id === currentUser) $scope.isVolunteer = true;
-        // });
-      // });
-      //   console.log(volunteer);
-      //   console.log($scope.currentUser);
-      // console.log($scope.isVolunteer, 'after forEach');
+      console.log($scope.currentUser, 'outside $watch');
+      $scope.$watch('currentUser', (userId) => {
+        $scope.isVolunteer = false;
+        console.log(userId,'inside $watch');
+        $scope.favour.volunteer.forEach(volunteer => {
+          if(volunteer._id === userId) $scope.isVolunteer = true;
+        });
+      });
     });
+
+
+
 
 
   $scope.deleteFavour = function(){
