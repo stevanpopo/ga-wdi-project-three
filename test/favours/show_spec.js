@@ -39,7 +39,12 @@ describe('GET /favours/:id', () => {
       });
   });
 
-
-
+  it('should return an object', done => {
+    api.get(`/api/favours/${favour._id}`)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        done();
+      });
+  });
 
 });
