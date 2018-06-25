@@ -36,10 +36,9 @@ function deleteRoute(req, res, next){
 }
 
 function addVolunteerRoute(req, res, next) {
-  const volunteer = req.currentUser;
   Favour.findById(req.params.id)
     .then(favour => {
-      favour.volunteer.push(volunteer);
+      favour.volunteer.push(req.currentUser);
       return favour.save();
     })
     .then(favour => res.json(favour))
