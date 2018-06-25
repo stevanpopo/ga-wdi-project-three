@@ -46,6 +46,7 @@ function addVolunteerRoute(req, res, next) {
       favour.volunteer.push(req.currentUser);
       return favour.save();
     })
+    .populate('volunteer')
     .then(favour => res.json(favour))
     .catch(next);
 }
