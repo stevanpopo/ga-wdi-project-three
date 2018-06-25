@@ -8,11 +8,16 @@ function FavoursShowCtrl($scope, $http, $state) {
   })
     .then(res => {
       $scope.favour = res.data;
-      console.log($scope.favour);
-      console.log($scope.currentUser);
-      $scope.favour.volunteer.forEach(volunteer => {
-        if(volunteer._id === $scope.currentUser) $scope.isVolunteer = true;
-      });
+      // console.log($scope.isVolunteer, 'after res.data');
+    })
+    .then(() => {
+        // $scope.favour.volunteer.forEach(volunteer => {
+        //   if(volunteer._id === currentUser) $scope.isVolunteer = true;
+        // });
+      // });
+      //   console.log(volunteer);
+      //   console.log($scope.currentUser);
+      // console.log($scope.isVolunteer, 'after forEach');
     });
 
 
