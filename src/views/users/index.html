@@ -20,7 +20,7 @@
           </div>
           <div class="card-content">
             <div class="content points">
-              120
+              {{ users[0].points }}
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
         </div>
       </div>
       <div class="column is-4 points-medium">
-        <h2 class="subtitle">100</h2>
+        <h2 class="subtitle">{{ users[1].points }}</h2>
       </div>
       <div class="column is-4">
         <div class="card is-square">
@@ -60,17 +60,17 @@
       </div>
       <div class="column is-4">
         <div class="content">
-          <h2 class="title is-3">{{ users[1].username }}</h2>
+          <h2 class="title is-3">{{ users[2].username }}</h2>
         </div>
       </div>
       <div class="column is-4 points-medium">
-        <h2 class="subtitle">90</h2>
+        <h2 class="subtitle">{{ users[2].points }}</h2>
       </div>
       <div class="column is-3">
-        <h3 class="subtitle">{{ users[0].username }}</h3>
+        <h3 class="subtitle">{{ users[3].username }}</h3>
       </div>
       <div class="column is-3 points-small">
-        <h3>40</h3>
+        <h3> {{ users[3].points }} </h3>
       </div>
       <div class="column is-3">
         <h3 class="subtitle">{{ users[0].username }}</h3>
