@@ -1,5 +1,5 @@
 function FavoursShowCtrl($scope, $http, $state) {
-
+  $scope.data = {};
   $scope.isOwner = false;
   $scope.canVolunteer = true;
 
@@ -8,6 +8,14 @@ function FavoursShowCtrl($scope, $http, $state) {
     return true;
   };
 
+  $scope.addComment = function(){
+    $http({
+      method: 'POST',
+      url: `api/favours/${$state.params.id}/comments`,
+      data: $scope.data
+    })
+      .then(res => $scope.favour = res.data);
+  };
 
   $http({
     method: 'GET',
