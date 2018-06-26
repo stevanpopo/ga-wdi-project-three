@@ -11,6 +11,27 @@
         <label class="label" for="category">Category</label>
         <input class="input" name="category" id="category" ng-model="data.category" />
       </div>
+
+
+      <div class="field">
+        <label class="label" for="points">Points</label>
+        <div class="control">
+          <div class="select">
+            <select ng-model="data.points" name="points" id="points">
+              <option>Select Points</option>
+              <option>10</option>
+              <option>20</option>
+              <option>30</option>
+              <option>40</option>
+              <option>50</option>
+              <option>60</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
       <button class="button">Submit</button>
     </form>
   </div>

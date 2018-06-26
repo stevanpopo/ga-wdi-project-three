@@ -1,9 +1,6 @@
-<h1 class="title is-1">Leaderboard Pending</h1>
-<h1 class="title is-1" ng-repeat="user in users">
-<a ui-sref="usersShow({ id: user._id })">{{user.username}}</a>
-</h1>
+<h1 class="title is-1">User Top 5</h1>
 
-<div class="columns">
+<div class="columns is-multiline">
   <div class="column is-half-desktop is-full-mobile">
     <div class="columns is-multiline">
       <div class="column is-half">
@@ -12,18 +9,20 @@
         </figure>
       </div>
       <div class="column is-half-desktop">
-        <div class="card">
-          <div class="card-header is-centered">
-            <h1 class="title is-2">
-              <a ui-sref="usersShow({ id: users[0]._id })">{{ users[0].username}}</a>
-            </h1>
-          </div>
-          <div class="card-content">
-            <div class="content points">
-              {{ users[0].points }}
+        <a ui-sref="usersShow({ id: usersTopFive[0]._id })">
+          <div class="card">
+            <div class="card-header is-centered">
+              <h1 class="title is-2">
+                {{ usersTopFive[0].username}}
+              </h1>
+            </div>
+            <div class="card-content">
+              <div class="content points">
+                {{ usersTopFive[0].points }}
+              </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
       <div class="column is-12-desktop">
         <article class="message">
@@ -45,11 +44,11 @@
       </div>
       <div class="column is-4">
         <div class="content">
-          <h2 class="title is-3">{{ users[1].username }}</h2>
+          <h2 class="title is-3">{{ usersTopFive[1].username }}</h2>
         </div>
       </div>
       <div class="column is-4 points-medium">
-        <h2 class="subtitle">{{ users[1].points }}</h2>
+        <h2 class="subtitle">{{ usersTopFive[1].points }}</h2>
       </div>
       <div class="column is-4">
         <div class="card is-square">
@@ -60,23 +59,33 @@
       </div>
       <div class="column is-4">
         <div class="content">
-          <h2 class="title is-3">{{ users[2].username }}</h2>
+          <h2 class="title is-3">{{ usersTopFive[2].username }}</h2>
         </div>
       </div>
       <div class="column is-4 points-medium">
-        <h2 class="subtitle">{{ users[2].points }}</h2>
+        <h2 class="subtitle">{{ usersTopFive[2].points }}</h2>
       </div>
       <div class="column is-3">
-        <h3 class="subtitle">{{ users[3].username }}</h3>
+        <h3 class="subtitle">{{ usersTopFive[3].username }}</h3>
       </div>
       <div class="column is-3 points-small">
-        <h3> {{ users[3].points }} </h3>
+        <h3> {{ usersTopFive[3].points }} </h3>
       </div>
       <div class="column is-3">
-        <h3 class="subtitle">{{ users[0].username }}</h3>
+        <h3 class="subtitle">{{ usersTopFive[4].username }}</h3>
       </div>
       <div class="column is-3 points-small">
-        <h3>40</h3>
+        <h3>{{ usersTopFive[4].points }}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="column is-3" ng-repeat="user in usersRest">
+    <div class="columns">
+      <div class="column is-6">
+        <h3 class="subtitle">{{ user.username }}</h3>
+      </div>
+      <div class="column is-6 points-small">
+        <h3>{{ user.points }}</h3>
       </div>
     </div>
   </div>
