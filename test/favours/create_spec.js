@@ -64,7 +64,7 @@ describe('POST /favours', () => {
       });
   });
 
-  it('should return a favour object', done => {
+  it('should return the created favour object', done => {
     api.post('/api/favours')
       .set('Authorization', `Bearer ${token}`)
       .send(favourData)
@@ -76,6 +76,20 @@ describe('POST /favours', () => {
           'category',
           'owner'
         ]);
+        done();
+      });
+  });
+
+  it('should return the correct data', done => {
+    api.post('/api/favours')
+      .set('Authorization', `Bearer ${token}`)
+      .send(favourData)
+      .end((err, res) => {
+        expect(res.body.title).to.eq(favourData.title);
+        expect(res.body.category).to.eq(favourData.category);
+        expect(favourData.owner._id.equals(res.body.owner._id)).to.be.true;
+        expect(res.body.owner.username).to.eq(favourData.owner.username);
+        expect(res.body.owner.email).to.eq(favourData.owner.email);
         done();
       });
   });
