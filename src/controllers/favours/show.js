@@ -9,8 +9,6 @@ function FavoursShowCtrl($scope, $http, $state) {
     .then(res => {
       $scope.favour = res.data;
       $scope.favour.volunteer.forEach(volunteer => {
-        console.log(volunteer._id, 'vol');
-        console.log($scope.currentUser,'user');
         if(volunteer._id === $scope.currentUser) $scope.isVolunteer = true;
       });
     });
