@@ -54,4 +54,14 @@ describe('POST /favours', () => {
       });
   });
 
+  it('should return an object', done => {
+    api.post('/api/favours')
+      .set('Authorization', `Bearer ${token}`)
+      .send(favourData)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        done();
+      });
+  });
+
 });
