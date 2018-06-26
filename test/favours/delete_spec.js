@@ -52,4 +52,13 @@ describe('DELETE /favours/:id', () => {
       });
   });
 
+  it('should return no data', done => {
+    api.delete(`/api/favours/${favour._id}`)
+      .set('Authorization', `Bearer ${token}`)
+      .end((err, res) => {
+        expect(res.body).to.be.empty;
+        done();
+      });
+  });
+
 });
