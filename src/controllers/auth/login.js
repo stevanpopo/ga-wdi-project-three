@@ -1,9 +1,14 @@
-function AuthLoginCtrl($scope, $auth, $state) {
+function AuthLoginCtrl($scope, $auth, $state, $rootScope) {
   $scope.data = {};
 
   $scope.handleSubmit = function() {
     $auth.login($scope.data)
-      .then(() => $state.go('favourIndex'));
+      .then(res => {
+        console.log(res);
+        $state.go('favourIndex');
+        $scope.setCurrentUser();
+        // $rootScope.$broadcast('loggedIn', res.data.user);
+      });
   };
 }
 
