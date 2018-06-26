@@ -2,7 +2,7 @@ function MainCtrl($scope, $state, $transitions, $auth) {
   $scope.isAuthenticated = $auth.isAuthenticated;
   $scope.navbarOpen = false;
 
-  $scope.currentUser = $auth.getPayload() && $auth.getPayload().sub;
+  // $scope.currentUser = $auth.getPayload() && $auth.getPayload().sub;
 
   $scope.setCurrentUser = function() {
     return $scope.currentUser = $auth.getPayload().sub;
