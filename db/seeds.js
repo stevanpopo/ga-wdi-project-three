@@ -31,6 +31,36 @@ mongoose.connect(dbURI, (err, db) => {
     password: 'm',
     passwordConfirmation: 'm',
     points: 350
+  },{
+    username: 'Rachel',
+    email: 'r@r.r',
+    password: 'r',
+    passwordConfirmation: 'r',
+    points: 375
+  },{
+    username: 'Linda',
+    email: 'l@l.l',
+    password: 'l',
+    passwordConfirmation: 'l',
+    points: 1000
+  },{
+    username: 'James',
+    email: 'j@j.j',
+    password: 'j',
+    passwordConfirmation: 'j',
+    points: 100
+  },{
+    username: 'Josh',
+    email: 'j@t.j',
+    password: 'j',
+    passwordConfirmation: 'j',
+    points: 450
+  },{
+    username: 'Gerry',
+    email: 'g@g.g',
+    password: 'g',
+    passwordConfirmation: 'g',
+    points: 400
   }])
     .then(users => {
       console.log(`${users.length} users created.`);
@@ -38,11 +68,27 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Lawnmower rental',
         category: 'DIY',
         owner: users[0],
-        volunteer: users[1]
+        volunteer: users[1],
+        comments: [{
+          content: 'I\'ll do it, for a few points more',
+          author: users[7]
+        },{
+          content: 'Hey, when do you need this by?',
+          author: users[3]
+        }],
+        points: 20
       },{
         title: 'Steward at Church fair',
         category: 'Events',
-        owner: users[1]
+        owner: users[1],
+        comments: [{
+          content: 'Would love to, but I\'m out of town',
+          author: users[3]
+        },{
+          content: 'Hey guys, lets just go to Jujus!',
+          author: users[8]
+        }],
+        points: 75
       }]);
     })
     .then(favours => console.log(`${favours.length} favours created`))

@@ -10,7 +10,8 @@ const favourSchema = new mongoose.Schema({
   category: { type: String, required: true },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   volunteer: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-  comments: [commentSchema]
+  comments: [commentSchema],
+  points: { type: Number, required: true }
 });
 
 module.exports = mongoose.model('Favour', favourSchema);

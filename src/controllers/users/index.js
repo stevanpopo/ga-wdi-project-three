@@ -1,13 +1,22 @@
 function UsersIndexCtrl($scope, $http){
+
   $http({
     method: 'GET',
     url: '/api/users'
   })
     .then(res => {
-      $scope.users = res.data.sort((a, b) => {
-        return  b.points - a.points;
-      });
-      console.log($scope.users,'first');
+      $scope.usersTopFive = res.data
+        .sort((a, b) => {
+          return b.points - a.points;
+        })
+        .slice(0,5);
+      $scope.usersRest = res.data
+        .sort((a, b) => {
+          return b.points - a.points;
+        })
+        .slice(5);
+      console.log($scope.usersTopFive,'users top');
+      console.log($scope.usersRest,'users rest');
     });
 }
 
