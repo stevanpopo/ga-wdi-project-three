@@ -71,7 +71,6 @@ describe('PUT /favours/:id', () => {
       .set('Authorization', `Bearer ${token}`)
       .send(favourData)
       .end((err, res) => {
-        console.log(res.body);
         expect(res.body).to.include.keys([
           '_id',
           'title',
@@ -82,5 +81,15 @@ describe('PUT /favours/:id', () => {
       });
   });
 
-
+  it('should return the correct data', done => {
+    api.put(`/api/favours/${favour._id}`)
+      .set('Authorization', `Bearer ${token}`)
+      .send(favourData)
+      .end((err, res) => {
+        expect(res.body.title).to.eq(favourData.title);
+        expect(res.body.category).to.eq(favourData.category);
+        expect(favourData.owner._id.equals(res.body.owner)).to.be.true; //not populated here so just test IDs
+        done();
+      });
+  });
 });
