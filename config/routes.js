@@ -13,6 +13,8 @@ router.route('/favours/:id')
   .put(secureRoute, favours.update)
   .delete(secureRoute, favours.delete);
 
+router.post('/favours/:id/comments', secureRoute, favours.commentCreate);
+
 router.post('/favours/:id/volunteers', secureRoute, favours.addVolunteer);
 
 router.post('/register', auth.register);

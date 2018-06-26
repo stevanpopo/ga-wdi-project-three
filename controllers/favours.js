@@ -56,6 +56,7 @@ function commentCreateRoute(req, res, next){
   Favour.findById(req.params.id)
     .populate('comments.author')
     .then(favour => {
+      console.log('req.body', req.body);
       favour.comments.push(req.body);
       return favour.save();
     })
