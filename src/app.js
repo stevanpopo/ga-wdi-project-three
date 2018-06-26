@@ -3,6 +3,8 @@ import '@uirouter/angularjs';
 import 'satellizer';
 import 'bulma';
 import './scss/main.scss';
+import 'filepicker-js';
+import 'angular-filepicker/dist/angular_filepicker';
 
 import Router from './config/routes';
 import Auth from './config/satellizer';
@@ -18,7 +20,7 @@ import UsersIndexCtrl from './controllers/users/index';
 import UsersShowCtrl from './controllers/users/show';
 import UsersEditCtrl from './controllers/users/edit';
 
-angular.module('favourAPI', ['ui.router', 'satellizer'])
+angular.module('favourAPI', ['ui.router', 'satellizer', 'angular-filepicker'])
   .config(Router)
   .config(Auth)
   .controller('MainCtrl', MainCtrl)
