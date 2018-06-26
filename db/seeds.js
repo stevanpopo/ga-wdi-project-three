@@ -17,13 +17,19 @@ mongoose.connect(dbURI, (err, db) => {
     email: 's@s.s',
     password: 's',
     passwordConfirmation: 's'
+  },{
+    username: 'Nick',
+    email: 'n@n.n',
+    password: 'n',
+    passwordConfirmation: 'n'
   }])
     .then(users => {
       console.log(`${users.length} users created.`);
       return Favour.create([{
         title: 'Lawnmower rental',
         category: 'DIY',
-        owner: users[0]
+        owner: users[0],
+        volunteer: users[1]
       },{
         title: 'Steward at Church fair',
         category: 'Events',

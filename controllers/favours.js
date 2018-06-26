@@ -9,6 +9,8 @@ function indexRoute(req, res, next){
 
 function showRoute(req, res, next){
   Favour.findById(req.params.id)
+    .populate('volunteer')
+    .populate('owner')
     .then(favour => res.json(favour))
     .catch(next);
 }
@@ -24,7 +26,7 @@ function updateRoute(req, res, next){
 function createRoute(req, res, next){
   req.body.owner = req.currentUser;
   Favour.create(req.body)
-    .then(favour => res.json(favour))
+    .then(favour => res.status(201).json(favour))
     .catch(next);
 }
 
@@ -35,10 +37,24 @@ function deleteRoute(req, res, next){
     .catch(next);
 }
 
+function addVolunteerRoute(req, res, next) {
+  Favour.findById(req.params.id)
+    .populate('volunteer')
+    .then(favour => {
+      favour.volunteer.push(req.currentUser);
+      return favour.save();
+    })
+    .then(favour => {
+      res.json(favour);
+    })
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   update: updateRoute,
   create: createRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  addVolunteer: addVolunteerRoute
 };

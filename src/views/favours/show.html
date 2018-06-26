@@ -1,1 +1,37 @@
-<h1>Favour Page</h1>
+Current Volunteers:
+<h1 class="is-1 title" ng-repeat="volunteer in favour.volunteer">
+  {{ volunteer.username }}
+</h1>
+<div class="columns">
+  <div class="column is-one-third-desktop">
+    <div class="points">
+      <h1 class="title is-1">50</h1>
+    </div>
+  </div>
+  <div class="column">
+    <div class="favour-info">
+      <h2 class="title is-2">{{ favour.title }}</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div ng-if="isOwner">
+        <div class="field is-grouped">
+          <p class="control">
+            <a ui-sref="favoursEdit({ id: favour._id })" class="button is-small">Edit</a>
+          </p>
+          <p class="control">
+            <button class="button is-small" ng-click="deleteFavour()">Delete</button>
+          </p>
+        </div>
+      </div>
+      <div class="buttons is-centered" ng-click="claimFavour()">
+        <button class="button is-success" ng-if="canVolunteer">Claim this favour</button>
+      </div>
+      <!-- <p ng-if="canVolunteer()">You've already volunteered!</p> -->
+    </div>
+  </div>
+</div>
+<section>
+  Google Maps goes here
+</section>
+<section>
+  <h2 class="title is-2">Similar Available Favours</h2>
+</section>

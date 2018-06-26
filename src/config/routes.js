@@ -1,3 +1,15 @@
+function secureState($q, $state, $auth, $rootScope) {
+  return new $q(resolve => {
+    if($auth.isAuthenticated()) return resolve();
+
+    $rootScope.$broadcast('flashMessage', {
+      type: 'warning',
+      content: 'You need to be logged in to see that.'
+    });
+    $state.go('login');
+  });
+}
+
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
@@ -31,12 +43,14 @@ function Router($stateProvider, $urlRouterProvider) {
     .state('favoursEdit', {
       url: '/favours/:id/edit',
       templateUrl: './views/favours/edit.html',
-      controller: 'FavoursEditCtrl'
+      controller: 'FavoursEditCtrl',
+      resolve: { secureState }
     })
     .state('favoursNew', {
       url: '/favours/new',
       templateUrl: './views/favours/new.html',
-      controller: 'FavoursNewCtrl'
+      controller: 'FavoursNewCtrl',
+      resolve: { secureState }
     })
     .state('usersIndex', {
       url: '/users',
@@ -47,6 +61,12 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/users/:id',
       templateUrl: './views/users/show.html',
       controller: 'UsersShowCtrl'
+    })
+    .state('usersEdit', {
+      url: '/users/:id/edit',
+      templateUrl: './views/users/edit.html',
+      controller: 'UsersEditCtrl',
+      resolve: { secureState }
     });
 
   $urlRouterProvider.otherwise('/');
