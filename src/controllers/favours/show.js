@@ -30,8 +30,6 @@ function FavoursShowCtrl($scope, $http, $state) {
       });
     });
 
-
-
   $scope.deleteFavour = function(){
     $http({
       method: 'DELETE',

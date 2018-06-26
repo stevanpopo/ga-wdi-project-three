@@ -31,12 +31,16 @@ Current Volunteers:
 </div>
 
 <section>
-  <form>
+  {{data}}
+  <form ng-submit="addComment()">
     <div class="field">
       <label class="label" for="">Write a comment here...</label>
-      <textarea class="textarea" name="name" rows="4"></textarea>
+      <textarea class="textarea" name="content" id="content" rows="4" ng-model="data.content"></textarea>
     </div>
+    <button class="button is-success is-small">Add comment</button>
   </form>
+
+  <p ng-repeat="comment in favour.comments">{{comment.content}}</p>
 </section>
 
 <section>
