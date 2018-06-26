@@ -10,6 +10,7 @@ function indexRoute(req, res, next){
 function showRoute(req, res, next){
   Favour.findById(req.params.id)
     .populate('volunteer')
+    .populate('owner')
     .then(favour => res.json(favour))
     .catch(next);
 }
