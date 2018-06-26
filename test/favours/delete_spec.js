@@ -35,7 +35,13 @@ describe('DELETE /favours/:id', () => {
       .then(() => done());
   });
 
+  it('should return a 401 unauthorized response', done => {
 
-
+    api.delete(`/api/favours/${favour._id}`)
+      .end((err, res) => {
+        expect(res.status).to.eq(401);
+        done();
+      });
+  });
 
 });
