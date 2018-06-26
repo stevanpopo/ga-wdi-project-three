@@ -35,6 +35,9 @@
   <div class="section">
     <div class="container">
       <h1 class="title is-1">KarmaCommunity</h1>
+      <div class="is-{{flashMessage.type}}" ng-class="{ 'is-active': flashMessage }">
+        <p>{{ flashMessage.content }}</p>
+      </div>
       <ui-view></ui-view>
     </div>
   </div>

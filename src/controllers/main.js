@@ -1,4 +1,4 @@
-function MainCtrl($scope, $state, $transitions, $auth, $rootScope) {
+function MainCtrl($scope, $state, $transitions, $auth, $rootScope, $timeout) {
   $scope.isAuthenticated = $auth.isAuthenticated;
   $scope.navbarOpen = false;
 
@@ -7,6 +7,14 @@ function MainCtrl($scope, $state, $transitions, $auth, $rootScope) {
   $scope.setCurrentUser = function() {
     return $scope.currentUser = $auth.getPayload().sub;
   };
+
+  $rootScope.$on('flashMessage', (e, data) => {
+    $scope.flashMessage = data;
+
+    $timeout(() => {
+      $scope.flashMessage = null;
+    }, 4000);
+  });
 
   // $rootScope.$on('loggedIn', (e, data) => {
   //   $scope.currentUser = data;
