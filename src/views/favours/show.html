@@ -29,6 +29,38 @@ Current Volunteers:
     </div>
   </div>
 </div>
+
+<section>
+  <form ng-submit="addComment()">
+    <div class="field">
+      <label class="label" for="">Write a comment here...</label>
+      <textarea class="textarea" name="content" id="content" rows="4" ng-model="data.content"></textarea>
+    </div>
+    <button class="button is-success is-small">Add comment</button>
+  </form>
+
+  <article class="media" ng-repeat="comment in favour.comments">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{comment.author.username}}</strong>
+          <br>
+          {{comment.content}}
+        </p>
+      </div>
+    </div>
+    <div class="media-right">
+      <button class="delete" ng-click="removeComment(comment)"></button>
+    </div>
+  </article>
+
+</section>
+
 <section>
   Google Maps goes here
 </section>

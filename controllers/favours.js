@@ -11,6 +11,7 @@ function showRoute(req, res, next){
   Favour.findById(req.params.id)
     .populate('volunteer')
     .populate('owner')
+    .populate('comments.author')
     .then(favour => res.json(favour))
     .catch(next);
 }
@@ -50,11 +51,36 @@ function addVolunteerRoute(req, res, next) {
     .catch(next);
 }
 
+function commentCreateRoute(req, res, next){
+  req.body.author = req.currentUser;
+  Favour.findById(req.params.id)
+    .populate('comments.author')
+    .then(favour => {
+      favour.comments.push(req.body);
+      return favour.save();
+    })
+    .then(favour => res.json(favour))
+    .catch(next);
+}
+
+function commentDeleteRoute(req, res, next){
+  Favour.findById(req.params.id)
+    .then(favour => {
+      const comment = favour.comments.id(req.params.commentId);
+      comment.remove();
+      return favour.save();
+    })
+    .then(favour => res.json(favour))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   update: updateRoute,
   create: createRoute,
   delete: deleteRoute,
-  addVolunteer: addVolunteerRoute
+  addVolunteer: addVolunteerRoute,
+  commentCreate: commentCreateRoute,
+  commentDelete: commentDeleteRoute
 };
