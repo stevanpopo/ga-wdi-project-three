@@ -36,10 +36,18 @@ describe('DELETE /favours/:id', () => {
   });
 
   it('should return a 401 unauthorized response', done => {
-
     api.delete(`/api/favours/${favour._id}`)
       .end((err, res) => {
         expect(res.status).to.eq(401);
+        done();
+      });
+  });
+
+  it('should return a 204 status if auth', done => {
+    api.delete(`/api/favours/${favour._id}`)
+      .set('Authorization', `Bearer ${token}`)
+      .end((err, res) => {
+        expect(res.status).to.eq(204);
         done();
       });
   });
