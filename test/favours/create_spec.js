@@ -2,6 +2,8 @@
 
 const Favour = require('../../models/favour');
 const User = require('../../models/user');
+const jwt = require('jsonwebtoken');
+const { secret } = require('../../config/environment');
 
 const userData = {
   username: 'test',
@@ -15,6 +17,8 @@ const favourData = {
   category: 'Favour category'
 };
 
+let token;
+
 describe('POST /favours', () => {
 
   beforeEach(done => {
@@ -22,6 +26,7 @@ describe('POST /favours', () => {
       .then(() => User.remove({}))
       .then(() => User.create(userData))
       .then(user => {
+        token = jwt.sign({ sub: user._id }, secret, { expiresIn: '6h' });
         favourData.owner = user;
         return Favour.create(favourData);
       })
@@ -34,6 +39,17 @@ describe('POST /favours', () => {
       .send(favourData)
       .end((err, res) => {
         expect(res.status).to.eq(401);
+        done();
+      });
+  });
+
+  it('should return a 201 response', done => {
+
+    api.post('/api/favours')
+      .set('Authorization', `Bearer ${token}`)
+      .send(favourData)
+      .end((err, res) => {
+        expect(res.status).to.eq(201);
         done();
       });
   });
