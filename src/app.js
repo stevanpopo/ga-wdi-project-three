@@ -8,6 +8,7 @@ import 'angular-filepicker/dist/angular_filepicker';
 
 import Router from './config/routes';
 import Auth from './config/satellizer';
+import Upload from './config/filepicker';
 
 import MainCtrl from './controllers/main';
 import FavoursIndexCtrl from './controllers/favours/index';
@@ -20,9 +21,12 @@ import UsersIndexCtrl from './controllers/users/index';
 import UsersShowCtrl from './controllers/users/show';
 import UsersEditCtrl from './controllers/users/edit';
 
+import filePicker from './directives/filePicker';
+
 angular.module('favourAPI', ['ui.router', 'satellizer', 'angular-filepicker'])
   .config(Router)
   .config(Auth)
+  .config(Upload)
   .controller('MainCtrl', MainCtrl)
   .controller('FavoursIndexCtrl', FavoursIndexCtrl)
   .controller('FavoursShowCtrl', FavoursShowCtrl)
@@ -32,4 +36,5 @@ angular.module('favourAPI', ['ui.router', 'satellizer', 'angular-filepicker'])
   .controller('AuthLoginCtrl', AuthLoginCtrl)
   .controller('UsersIndexCtrl', UsersIndexCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
-  .controller('UsersEditCtrl', UsersEditCtrl);
+  .controller('UsersEditCtrl', UsersEditCtrl)
+  .directive('filePicker', filePicker);
