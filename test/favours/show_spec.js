@@ -10,10 +10,10 @@ const userData = {
   passwordConfirmation: 'pass'
 };
 
-const favourData = [{
+const favourData = {
   title: 'Favour title',
   category: 'Favour category'
-}];
+};
 
 let favour;
 
@@ -24,10 +24,10 @@ describe('GET /favours/:id', () => {
       .then(() => User.remove({}))
       .then(() => User.create(userData))
       .then(user => {
-        favourData[0].owner = user;
+        favourData.owner = user;
         return Favour.create(favourData);
       })
-      .then(favours => favour = favours[0])
+      .then(res => favour = res)
       .then(() => done());
   });
 
@@ -42,9 +42,7 @@ describe('GET /favours/:id', () => {
   it('should return an object', done => {
     api.get(`/api/favours/${favour._id}`)
       .end((err, res) => {
-        // console.log('res.body', res.body);
-        expect(res.body.favour).to.be.an('object');
-        // expect(favour).to.be.an('object');
+        expect(res.body).to.be.an('object');
         done();
       });
   });
@@ -56,15 +54,10 @@ describe('GET /favours/:id', () => {
       .end((err, res) => {
         expect(res.body.title).to.eq(favourData.title);
         expect(res.body.category).to.eq(favourData.category);
-        console.log('favour', res.body.favour);
-        console.log('owner', res.body.favour.owner);
-        console.log('favourData.owner._id', favourData[0].owner._id);
-        expect(favourData[0].owner._id.equals(res.body.favour.owner)).to.be.true;
-        expect(res.body.favour.owner.toString()).to.deep.eq(favourData[0].owner._id.toString());
-        // expect(res.body.favour.owner.username).to.eq(favourData[0].owner.username);
-        // expect(favour.owner.email).to.eq(favourData[index].owner.email);
+        expect(favourData.owner._id.equals(res.body.owner._id)).to.be.true;
+        expect(res.body.owner.username).to.eq(favourData.owner.username);
+        expect(res.body.owner.email).to.eq(favourData.owner.email);
         done();
-
       });
   });
 
