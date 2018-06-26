@@ -69,7 +69,6 @@ describe('POST /favours', () => {
       .set('Authorization', `Bearer ${token}`)
       .send(favourData)
       .end((err, res) => {
-        console.log(res.body);
         expect(res.body).to.include.keys([
           '_id',
           'title',
