@@ -47,6 +47,19 @@ describe('GET /favours/:id', () => {
       });
   });
 
+  it('should return a favour object', done => {
+    api.get(`/api/favours/${favour._id}`)
+      .end((err, res) => {
+        expect(res.body).to.include.keys([
+          '_id',
+          'title',
+          'category',
+          'owner'
+        ]);
+        done();
+      });
+  });
+
   // remember to put secureRoute back
 
   it('should return the correct data', done => {
