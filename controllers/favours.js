@@ -51,13 +51,22 @@ function addVolunteerRoute(req, res, next) {
 }
 
 function commentCreateRoute(req, res, next){
-  console.log('first req body', req.body);
   req.body.author = req.currentUser;
   Favour.findById(req.params.id)
     .populate('comments.author')
     .then(favour => {
-      console.log('req.body', req.body);
       favour.comments.push(req.body);
+      return favour.save();
+    })
+    .then(favour => res.json(favour))
+    .catch(next);
+}
+
+function commentDeleteRoute(req, res, next){
+  Favour.findById(req.params.id)
+    .then(favour => {
+      const comment = favour.comments.id(req.params.commentId);
+      comment.remove();
       return favour.save();
     })
     .then(favour => res.json(favour))
@@ -71,5 +80,6 @@ module.exports = {
   create: createRoute,
   delete: deleteRoute,
   addVolunteer: addVolunteerRoute,
-  commentCreate: commentCreateRoute
+  commentCreate: commentCreateRoute,
+  commentDelete: commentDeleteRoute
 };
