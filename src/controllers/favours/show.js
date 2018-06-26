@@ -17,6 +17,15 @@ function FavoursShowCtrl($scope, $http, $state) {
       .then(res => $scope.favour = res.data);
   };
 
+  $scope.removeComment = function(comment){
+    $http({
+      method: 'DELETE',
+      url: `api/favours/${$state.params.id}/comments/${comment._id}`,
+      data: $scope.data
+    })
+      .then(res => $scope.favour = res.data);
+  };
+
   $http({
     method: 'GET',
     url: `api/favours/${$state.params.id}`

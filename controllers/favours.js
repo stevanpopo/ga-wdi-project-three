@@ -66,6 +66,7 @@ function commentDeleteRoute(req, res, next){
   Favour.findById(req.params.id)
     .then(favour => {
       const comment = favour.comments.id(req.params.commentId);
+      console.log(comment);
       comment.remove();
       return favour.save();
     })

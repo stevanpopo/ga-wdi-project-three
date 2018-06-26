@@ -49,14 +49,14 @@ Current Volunteers:
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>{{comment.author}}</strong>
+          <strong>{{comment.author.username}}</strong>
           <br>
           {{comment.content}}
         </p>
       </div>
     </div>
     <div class="media-right">
-      <button class="delete"></button>
+      <button class="delete" ng-click="removeComment(comment)"></button>
     </div>
   </article>
 
