@@ -15,6 +15,8 @@ router.route('/favours/:id')
 
 router.post('/favours/:id/comments', secureRoute, favours.commentCreate);
 
+router.delete('/favours/:id/comments/:commentId', secureRoute, favours.commentDelete);
+
 router.post('/favours/:id/volunteers', secureRoute, favours.addVolunteer);
 
 router.post('/register', auth.register);
