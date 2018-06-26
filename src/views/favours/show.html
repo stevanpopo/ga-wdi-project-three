@@ -40,7 +40,26 @@ Current Volunteers:
     <button class="button is-success is-small">Add comment</button>
   </form>
 
-  <p ng-repeat="comment in favour.comments">{{comment.content}}</p>
+  <article class="media" ng-repeat="comment in favour.comments">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{comment.author}}</strong>
+          <br>
+          {{comment.content}}
+        </p>
+      </div>
+    </div>
+    <div class="media-right">
+      <button class="delete"></button>
+    </div>
+  </article>
+
 </section>
 
 <section>
