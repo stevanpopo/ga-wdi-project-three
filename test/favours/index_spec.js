@@ -37,6 +37,14 @@ describe('GET /favours', () => {
       });
   });
 
+  it('should return an array', done => {
+    api.get('/api/favours')
+      .end((err, res) => {
+        expect(res.body).to.be.an('array');
+        done();
+      });
+  });
+
   it('should return an array of objects', done => {
     api.get('/api/favours')
       .end((err, res) => {
