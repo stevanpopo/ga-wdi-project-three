@@ -1,6 +1,13 @@
 function FavoursShowCtrl($scope, $http, $state) {
 
-  $scope.isVolunteer = false;
+  $scope.isOwner = false;
+  $scope.canVolunteer = true;
+
+  $scope.canVolunteer = function() {
+
+    return true;
+  };
+
 
   $http({
     method: 'GET',
@@ -8,8 +15,10 @@ function FavoursShowCtrl($scope, $http, $state) {
   })
     .then(res => {
       $scope.favour = res.data;
+      if($scope.favour.owner._id === $scope.currentUser) $scope.isOwner = true;
+      if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser) return $scope.canVolunteer = false;
       $scope.favour.volunteer.forEach(volunteer => {
-        if(volunteer._id === $scope.currentUser) $scope.isVolunteer = true;
+        if(volunteer._id === $scope.currentUser) return $scope.canVolunteer = false;
       });
     });
 
@@ -31,7 +40,7 @@ function FavoursShowCtrl($scope, $http, $state) {
       .then(res => {
         $scope.favour = res.data;
       });
-    $scope.isVolunteer = true;
+    $scope.canVolunteer = false;
   };
 }
 

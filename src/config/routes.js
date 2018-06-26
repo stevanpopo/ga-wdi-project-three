@@ -3,7 +3,7 @@ function secureState($q, $state, $auth, $rootScope) {
     if($auth.isAuthenticated()) return resolve();
 
     $rootScope.$broadcast('flashMessage', {
-      type: 'danger',
+      type: 'warning',
       content: 'You need to be logged in to see that.'
     });
     $state.go('login');

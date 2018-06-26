@@ -26,7 +26,7 @@
         <a class="navbar-item" ng-if="!isAuthenticated()" ui-sref="login">Log in</a>
         <a class="navbar-item" ng-if="isAuthenticated()" ng-click="logout()">Logout</a>
         <a class="navbar-item" ng-if="isAuthenticated()" ui-sref="usersIndex">Users</a>
-        <a class="navbar-item" ng-if="isAuthenticated()" ui-sref="favourIndex">Favours</a>
+        <a class="navbar-item" ui-sref="favourIndex">Favours</a>
         <a class="navbar-item" ng-if="isAuthenticated()" ui-sref="favoursNew">New Favour</a>
         <a class="navbar-item" ng-if="isAuthenticated()" ui-sref="about">About</a>
       </div>
@@ -35,8 +35,7 @@
   <div class="section">
     <div class="container">
       <h1 class="title is-1">KarmaCommunity</h1>
-      <div class="is-{{flashMessage.type}}" ng-class="{ 'is-active': flashMessage }">
-        <p>{{ flashMessage.content }}</p>
+      <div class="is-{{flashMessage.type}}" ng-class="{ 'is-active': flashMessage }">{{ flashMessage.content }}
       </div>
       <ui-view></ui-view>
     </div>
