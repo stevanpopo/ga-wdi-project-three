@@ -28,6 +28,14 @@ describe('POST /favours', () => {
       .then(() => done());
   });
 
+  it('should return a 401 unauthorized response', done => {
 
+    api.post('/api/favours')
+      .send(favourData)
+      .end((err, res) => {
+        expect(res.status).to.eq(401);
+        done();
+      });
+  });
 
 });
