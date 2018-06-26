@@ -4,10 +4,11 @@ function UsersIndexCtrl($scope, $http){
     url: '/api/users'
   })
     .then(res => {
-      $scope.users = res.data.sort((a, b) => {
+      $scope.usersTopFive = res.data.sort((a, b) => {
+        console.log($scope.usersTopFive);
         return  b.points - a.points;
       });
-      console.log($scope.users,'first');
+      console.log($scope.usersTopFive,'users ordered');
     });
 }
 

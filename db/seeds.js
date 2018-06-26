@@ -31,6 +31,18 @@ mongoose.connect(dbURI, (err, db) => {
     password: 'm',
     passwordConfirmation: 'm',
     points: 350
+  },{
+    username: 'Rachel',
+    email: 'r@r.r',
+    password: 'r',
+    passwordConfirmation: 'r',
+    points: 375
+  },{
+    username: 'Linda',
+    email: 'l@l.l',
+    password: 'l',
+    passwordConfirmation: 'l',
+    points: 1000
   }])
     .then(users => {
       console.log(`${users.length} users created.`);
