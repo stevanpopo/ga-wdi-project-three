@@ -47,4 +47,15 @@ describe('PUT /favours/:id', () => {
       });
   });
 
+  it('should return a 201 response', done => {
+
+    api.put(`/api/favours/${favour._id}`)
+      .set('Authorization', `Bearer ${token}`)
+      .send(favourData)
+      .end((err, res) => {
+        expect(res.status).to.eq(201);
+        done();
+      });
+  });
+
 });
