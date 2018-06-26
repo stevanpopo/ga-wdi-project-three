@@ -32,8 +32,6 @@ describe('PUT /favours/:id', () => {
         return Favour.create(favourData);
       })
       .then(res => favour = res)
-      // .then(console.log('favour in then not passed', favour))
-      // .then(favour => console.log('favour in then', favour))
       .then(() => done());
   });
 
@@ -57,5 +55,44 @@ describe('PUT /favours/:id', () => {
         done();
       });
   });
+
+  it('should return an object', done => {
+    api.put('/api/favours')
+      .set('Authorization', `Bearer ${token}`)
+      .send(favourData)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        done();
+      });
+  });
+
+  // it('should return the created favour object', done => {
+  //   api.put('/api/favours')
+  //     .set('Authorization', `Bearer ${token}`)
+  //     .send(favourData)
+  //     .end((err, res) => {
+  //       expect(res.body).to.include.keys([
+  //         '_id',
+  //         'title',
+  //         'category',
+  //         'owner'
+  //       ]);
+  //       done();
+  //     });
+  // });
+  //
+  // it('should return the correct data', done => {
+  //   api.put('/api/favours')
+  //     .set('Authorization', `Bearer ${token}`)
+  //     .send(favourData)
+  //     .end((err, res) => {
+  //       expect(res.body.title).to.eq(favourData.title);
+  //       expect(res.body.category).to.eq(favourData.category);
+  //       expect(favourData.owner._id.equals(res.body.owner._id)).to.be.true;
+  //       expect(res.body.owner.username).to.eq(favourData.owner.username);
+  //       expect(res.body.owner.email).to.eq(favourData.owner.email);
+  //       done();
+  //     });
+  // });
 
 });
