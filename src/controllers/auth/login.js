@@ -3,7 +3,10 @@ function AuthLoginCtrl($scope, $auth, $state) {
 
   $scope.handleSubmit = function() {
     $auth.login($scope.data)
-      .then(() => $state.go('favourIndex'));
+      .then(() => {
+        $state.go('favourIndex');
+        $scope.setCurrentUser();
+      });
   };
 }
 
