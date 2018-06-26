@@ -2,6 +2,7 @@ const router = require('express').Router();
 const favours = require('../controllers/favours');
 const auth = require('../controllers/auth');
 const users = require('../controllers/users');
+const categories = require('../controllers/categories');
 const secureRoute = require('../lib/secureRoute');
 
 router.route('/favours')
@@ -29,6 +30,8 @@ router.route('/users/:id')
 
 router.get('/users/:id', users.show);
 router.get('/users/', users.index);
+
+router.get('/categories', categories.index);
 
 
 module.exports = router;
