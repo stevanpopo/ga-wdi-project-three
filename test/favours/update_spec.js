@@ -66,4 +66,21 @@ describe('PUT /favours/:id', () => {
       });
   });
 
+  it('should return the updated favour object', done => {
+    api.put(`/api/favours/${favour._id}`)
+      .set('Authorization', `Bearer ${token}`)
+      .send(favourData)
+      .end((err, res) => {
+        console.log(res.body);
+        expect(res.body).to.include.keys([
+          '_id',
+          'title',
+          'category',
+          'owner'
+        ]);
+        done();
+      });
+  });
+
+
 });
