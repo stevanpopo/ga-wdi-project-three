@@ -2,7 +2,8 @@ function AuthRegisterCtrl($scope, $auth, $state) {
   $scope.data = {};
 
   $scope.handleSubmit = function() {
-    console.log('In the submit');
+    if(this.form.$invalid) return false;
+
     $auth.signup($scope.data)
       .then(() => $state.go('login'));
   };

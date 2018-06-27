@@ -60,7 +60,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'g@g.g',
     password: 'g',
     passwordConfirmation: 'g',
-    points: 400
+    points: 30
   }])
     .then(users => {
       console.log(`${users.length} users created.`);

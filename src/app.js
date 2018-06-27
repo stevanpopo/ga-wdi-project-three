@@ -5,6 +5,7 @@ import 'bulma';
 import './scss/main.scss';
 import 'filepicker-js';
 import 'angular-filepicker/dist/angular_filepicker';
+import 'angular-messages';
 
 import Router from './config/routes';
 import Auth from './config/satellizer';
@@ -23,7 +24,7 @@ import UsersEditCtrl from './controllers/users/edit';
 
 import filePicker from './directives/filePicker';
 
-angular.module('favourAPI', ['ui.router', 'satellizer', 'angular-filepicker'])
+angular.module('favourAPI', ['ui.router', 'satellizer', 'angular-filepicker', 'ngMessages'])
   .config(Router)
   .config(Auth)
   .config(Upload)

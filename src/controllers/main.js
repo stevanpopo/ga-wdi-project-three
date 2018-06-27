@@ -2,10 +2,10 @@ function MainCtrl($scope, $state, $transitions, $auth, $rootScope, $timeout) {
   $scope.isAuthenticated = $auth.isAuthenticated;
   $scope.navbarOpen = false;
 
-  $scope.currentUser = $auth.getPayload() && $auth.getPayload().sub;
+  $scope.currentUser = $auth.getPayload() && $auth.getPayload().currentUser;
 
   $scope.setCurrentUser = function() {
-    return $scope.currentUser = $auth.getPayload().sub;
+    return $scope.currentUser = $auth.getPayload().currentUser;
   };
 
   $rootScope.$on('flashMessage', (e, data) => {
