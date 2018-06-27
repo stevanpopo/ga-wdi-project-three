@@ -27,8 +27,12 @@ function updateRoute(req, res, next){
 
 function createRoute(req, res, next){
   req.body.owner = req.currentUser;
+  req.body.status = 'tender';
   Favour.create(req.body)
-    .then(favour => res.status(201).json(favour))
+    .then(favour => {
+      console.log(favour);
+      res.status(201).json(favour);
+    })
     .catch(next);
 }
 

@@ -69,6 +69,7 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Domestic',
         owner: users[0],
         volunteers: [users[1]],
+        status: 'tender',
         comments: [{
           content: 'I\'ll do it, for a few points more',
           author: users[7]

@@ -33,11 +33,15 @@ Volunteers:
           </p>
         </div>
       </div>
-      <div class="buttons is-centered" ng-click="claimFavour()">
-        <button class="button is-success" ng-if="canVolunteer">Claim this favour</button>
+      <p>is owner? {{isOwner}}</p>
+      <p>can volunteer? {{canVolunteer}}</p>
+
+      <div class="buttons is-centered">
+        <button class="button is-success" ng-if="canVolunteer"  ng-click="claimFavour()">Claim this favour</button>
+        <!-- favour.status!==completed || favour.status!==verified ||  -->
+        <button class="button is-success" ng-if="!canVolunteer" ng-click="changeStatus()">Completed Favour</button>
+        <button class="button is-success" ng-if="!canVolunteer" ng-click="changeStatus()">Verify Favour Complete</button>
       </div>
-      <button class="button" ng-click="changeStatus()">Completed Favour</button>
-      <button class="button" ng-click="changeStatus()">Verify Favour Complete</button>
       <!-- <p ng-if="canVolunteer()">You've already volunteered!</p> -->
     </div>
   </div>

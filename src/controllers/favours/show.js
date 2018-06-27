@@ -67,6 +67,7 @@ function FavoursShowCtrl($scope, $http, $state) {
       method: 'PUT',
       url: `api/favours/${$state.params.id}/status`
     })
+      .then(() => $scope.canVolunteer = false)
       .then(() => $state.go($state.current, {}, {reload: true}));
   };
 }
