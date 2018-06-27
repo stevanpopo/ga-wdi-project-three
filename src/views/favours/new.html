@@ -14,13 +14,13 @@
         <label class="label" for="points">Points</label>
         <div class="control">
           <div class="select">
-            <select ng-model="data.points" name="points" id="points" ng-required="true">
-              <option ng-model="checkPoints()">10</option>
-              <option ng-model="checkPoints()">20</option>
-              <option ng-model="checkPoints()">30</option>
-              <option ng-model="checkPoints()">40</option>
-              <option ng-model="checkPoints()">50</option>
-              <option ng-model="checkPoints()">60</option>
+            <select ng-model="data.points" name="points" id="points" ng-required="true" ng-click="checkPoints()">
+              <option>10</option>
+              <option>20</option>
+              <option>30</option>
+              <option>40</option>
+              <option>50</option>
+              <option>60</option>
             </select>
           </div>
         </div>
@@ -42,16 +42,16 @@
       <button class="button" ng-disabled="!enoughPoints">Submit</button>
     </form>
 
-    <div ng-messages="form.points.$error" ng-if="form.points.$dirty">
-      <small ng-message="required">Please enter an amount of points</small>
-    </div>
-
-    <div ng-messages="form.title.$error" ng-if="form.title.$dirty">
+    <div ng-messages="form.title.$error" ng-if="form.title.$pristine || form.title.$dirty">
       <small ng-message="required">Title field is required</small>
     </div>
-    
+
+    <div ng-messages="form.points.$error" ng-if="form.points.$pristine">
+      <small>Please enter an amount of points</small>
+    </div>
+
     <div ng-messages="form.category" ng-if="form.category.$pristine">
-      <small ng-message="required">Please chose a category</small>
+      <small>Please chose a category</small>
     </div>
 
     <p ng-if="!enoughPoints">You do not have enough points</p>
