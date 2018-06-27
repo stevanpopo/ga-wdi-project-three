@@ -15,8 +15,8 @@ const favourSchema = new mongoose.Schema({
   points: { type: Number, required: true },
   category: { type: String, required: true },
   location: {
-    lat: { type: Number, required: true },
-    lng: { type: Number, required: true }
+    lat: { type: Number/*, required: true*/ },
+    lng: { type: Number/*, required: true*/ }
   }
 });
 
