@@ -61,6 +61,14 @@ function FavoursShowCtrl($scope, $http, $state) {
     })
       .then(() => $state.go($state.current, {}, {reload: true}));
   };
+
+  $scope.changeStatus = function(){
+    $http({
+      method: 'PUT',
+      url: `api/favours/${$state.params.id}`
+    })
+      .then(() => $state.go($state.current, {}, {reload: true}));
+  };
 }
 
 export default FavoursShowCtrl;
