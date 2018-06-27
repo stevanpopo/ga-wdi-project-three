@@ -21,6 +21,10 @@
       <input class="input" type="password" id="passwordConfirmation" name="passwordConfirmation" ng-model="data.passwordConfirmation">
     </div>
     <div class="field">
+      <label class="label" for="image">Image</label>
+      <button class="button" id="image" name="image" file-picker ng-model="data.image">Choose file</button>
+    </div>
+    <div class="field">
       <label class="label" for="bio">Bio</label>
       <textarea class="textarea" type="text" id="bio" name="bio" ng-model="data.bio" placeholder="Tell us a bit about you..." rows="4"></textarea>
     </div>
