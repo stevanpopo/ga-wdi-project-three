@@ -86,6 +86,7 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Steward at Church fair',
         category: 'Events',
         owner: users[1],
+        status: 'tender',
         comments: [{
           content: 'Would love to, but I\'m out of town',
           author: users[3]
@@ -102,6 +103,7 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Cook at my BBQ',
         category: 'Events',
         owner: users[4],
+        status: 'tender',
         comments: [],
         points: 20,
         location: {
