@@ -13,11 +13,16 @@ router.route('/favours/:id')
   .put(secureRoute, favours.update)
   .delete(secureRoute, favours.delete);
 
+router.route('/favours/:id/status')
+  .put(secureRoute, favours.changeFavourStatus);
+
 router.post('/favours/:id/comments', secureRoute, favours.commentCreate);
 
 router.delete('/favours/:id/comments/:commentId', secureRoute, favours.commentDelete);
 
 router.post('/favours/:id/volunteers', secureRoute, favours.addVolunteer);
+
+router.post('/favours/:id/volunteers/:volunteerId', secureRoute, favours.chooseVolunteer);
 
 router.post('/register', auth.register);
 router.post('/login', auth.login);
