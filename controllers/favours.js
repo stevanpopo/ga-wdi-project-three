@@ -71,6 +71,8 @@ function chooseVolunteerRoute(req, res, next){
       console.log('favour.volunteers', favour.volunteers);
       console.log('favour.chosen_volunteers', favour.chosen_volunteers);
 
+      favour.status = 'inProgress';
+
       return favour.save();
 
       // const volunteersStringified = favour.volunteers.map( volunteer => volunteer._id.toString());
