@@ -2,8 +2,8 @@ const Favour = require('../models/favour');
 
 function indexRoute(req, res, next){
   Favour.find()
-    .populate('owner')
     .populate('similarFavours')
+    .populate('owner')
     .then(favours => res.json(favours))
     .catch(next);
 }

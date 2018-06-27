@@ -29,12 +29,16 @@ favourSchema.virtual('similarFavours', {
 favourSchema.set('toJSON', {
   virtuals: true,
   transform(doc, json) {
-    // console.log(json.similarFavours);
-    // console.log(json);
-    console.log(doc);
-    // json.similarFavours.forEach(el => {
-    //   console.log(el);
-    // });
+    if(json.similarFavours === null) {
+      delete json.similarFavours;
+      return json;
+    }
+    json.similarFavours.forEach((el, ind) => {
+      if (String(json._id) === String(el.id)) {
+        json.similarFavours.splice(ind, 1);
+      }
+    });
+    return json;
   }
 });
 
