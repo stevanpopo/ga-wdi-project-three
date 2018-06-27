@@ -25,7 +25,11 @@
 
     <div class="field">
       <label class="label" for="password">Password</label>
-      <input class="input" type="password" id="password" name="password" ng-model="data.password">
+      <input class="input" type="password" id="password" name="password" ng-model="data.password" required />
+
+      <div ng-messages="form.password.$error" ng-if="form.password.$dirty">
+        <small ng-message="required">This field is required</small>
+      </div>
     </div>
 
     <div class="field">
