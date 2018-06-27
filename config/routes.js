@@ -11,8 +11,10 @@ router.route('/favours')
 router.route('/favours/:id')
   .get(favours.show)
   .put(secureRoute, favours.update)
-  .put(secureRoute, favours.changeFavourStatus)
   .delete(secureRoute, favours.delete);
+
+router.route('/favours/:id/status')
+  .put(secureRoute, favours.changeFavourStatus);
 
 router.post('/favours/:id/comments', secureRoute, favours.commentCreate);
 

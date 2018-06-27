@@ -65,7 +65,7 @@ function FavoursShowCtrl($scope, $http, $state) {
   $scope.changeStatus = function(){
     $http({
       method: 'PUT',
-      url: `api/favours/${$state.params.id}`
+      url: `api/favours/${$state.params.id}/status`
     })
       .then(() => $state.go($state.current, {}, {reload: true}));
   };

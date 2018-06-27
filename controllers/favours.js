@@ -57,19 +57,19 @@ function chooseVolunteerRoute(req, res, next){
     .populate('volunteers') //do i need this?
     .then(favour => {
 
-      console.log('all volunteers', favour.volunteers);
+      // console.log('all volunteers', favour.volunteers);
 
       const chosenVolunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() === req.params.volunteerId);
       const notChosenVolunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() !== req.params.volunteerId);
 
-      console.log('chosen volunteers', chosenVolunteers);
-      console.log('not chosen volunteers', notChosenVolunteers);
+      // console.log('chosen volunteers', chosenVolunteers);
+      // console.log('not chosen volunteers', notChosenVolunteers);
 
       favour.volunteers = notChosenVolunteers;
       favour.chosen_volunteers = chosenVolunteers;
 
-      console.log('favour.volunteers', favour.volunteers);
-      console.log('favour.chosen_volunteers', favour.chosen_volunteers);
+      // console.log('favour.volunteers', favour.volunteers);
+      // console.log('favour.chosen_volunteers', favour.chosen_volunteers);
 
       favour.status = 'inProgress';
 
@@ -84,6 +84,15 @@ function changeFavourStatusRoute(req, res, next){
     .then(favour => {
       console.log('in the change status route');
       console.log(favour.status);
+      if(favour.status === 'inProgress'){
+        console.log('in the if');
+        favour.status = 'completed';
+        return favour.save();
+      } else if (favour.status === 'completed'){
+        console.log('in the else if');
+        favour.status = 'verified';
+        return favour.save();
+      }
     })
     .then(favour => res.json(favour))
     .catch(next);
