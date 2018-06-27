@@ -76,7 +76,11 @@ mongoose.connect(dbURI, (err, db) => {
           content: 'Hey, when do you need this by?',
           author: users[3]
         }],
-        points: 20
+        points: 20,
+        location: {
+          lat: 51.464,
+          lng: -0.03607
+        }
       },{
         title: 'Steward at Church fair',
         category: 'Events',
@@ -88,7 +92,11 @@ mongoose.connect(dbURI, (err, db) => {
           content: 'Hey guys, lets just go to Jujus!',
           author: users[8]
         }],
-        points: 75
+        points: 75,
+        location: {
+          lat: 51.5138453,
+          lng: -0.0983506
+        }
       }]);
     })
     .then(favours => console.log(`${favours.length} favours created`))

@@ -11,7 +11,17 @@ const favourSchema = new mongoose.Schema({
   volunteer: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
   comments: [commentSchema],
   points: { type: Number, required: true },
-  category: { type: String, required: true }
+  category: { type: String, required: true },
+  location: {
+    lat: { type: Number, required: true },
+    lng: { type: Number, required: true }
+  }
+});
+
+favourSchema.virtual('similarFavours', {
+  localField: 'category',
+  foreignField: 'category',
+  ref: 'Favour'
 });
 
 module.exports = mongoose.model('Favour', favourSchema);

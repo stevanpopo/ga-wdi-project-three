@@ -12,6 +12,7 @@ function showRoute(req, res, next){
     .populate('volunteer')
     .populate('owner')
     .populate('comments.author')
+    .populate('similarFavours')
     .then(favour => res.json(favour))
     .catch(next);
 }
