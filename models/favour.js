@@ -11,7 +11,7 @@ const favourSchema = new mongoose.Schema({
   volunteer: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
   comments: [commentSchema],
   points: { type: Number, required: true },
-  category: { type: mongoose.Schema.ObjectId, ref: 'Category'}
+  category: { type: String, required: true }
 });
 
 module.exports = mongoose.model('Favour', favourSchema);

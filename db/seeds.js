@@ -2,24 +2,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 const Favour = require('../models/favour');
 const User = require('../models/user');
-const Category = require('../models/category');
 const { dbURI } = require('../config/environment');
 
 mongoose.connect(dbURI, (err, db) => {
   db.dropDatabase();
-
-  const categories = Category.create([{
-    name: 'Domestic'
-  },{
-    name: 'Event'
-  },{
-    name: 'Recreational'
-  },{
-    name: 'Academic'
-  }])
-    .then(categories => {
-      console.log(`${categories.length} categories created`);
-    });
 
   User.create([{
     username: 'Martin',
@@ -80,7 +66,7 @@ mongoose.connect(dbURI, (err, db) => {
       console.log(`${users.length} users created.`);
       return Favour.create([{
         title: 'Lawnmower rental',
-        category: categories[1],
+        category: 'Domestic',
         owner: users[0],
         volunteer: users[1],
         comments: [{
@@ -93,7 +79,7 @@ mongoose.connect(dbURI, (err, db) => {
         points: 20
       },{
         title: 'Steward at Church fair',
-        category: categories[0],
+        category: 'Events',
         owner: users[1],
         comments: [{
           content: 'Would love to, but I\'m out of town',

@@ -7,12 +7,7 @@
         <input class="input" name="title" id="title" ng-model="data.title" />
       </div>
 
-      <div class="field">
-        <label class="label" for="category">Category</label>
-        <input class="input" name="category" id="category" ng-model="data.category" />
-      </div>
-
-      <div class="field">
+      <div class="field is-grouped">
         <label class="label" for="points">Points</label>
         <div class="control">
           <div class="select">
@@ -24,6 +19,19 @@
               <option>40</option>
               <option>50</option>
               <option>60</option>
+            </select>
+          </div>
+        </div>
+        <label class="label" for="category">Category</label>
+        <div class="control">
+          <div class="select">
+            <select ng-model="data.category" name="category" id="category">
+              <option>Select Category</option>
+              <option>Domestic</option>
+              <option>Event</option>
+              <option>Recreation</option>
+              <option>Education</option>
+              <option>Befriending</option>
             </select>
           </div>
         </div>
