@@ -35,10 +35,11 @@ Volunteers:
       </div>
 
       <p>is owner? {{isOwner}}</p>
-      <p>is volunteer? {{isChosenVolunteer}}</p>
+      <p>is chosen volunteer? {{isChosenVolunteer}}</p>
       <p>can volunteer? {{canVolunteer}}</p>
 
       <p>{{favour.status==='completed'}}</p>
+      <p>{{favour.volunteers[0]._id === currentUser._id}}</p>
 
       <div class="buttons is-centered">
         <button class="button is-success" ng-if="canVolunteer"  ng-click="claimFavour()">Claim this favour</button>

@@ -68,7 +68,6 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Lawnmower rental',
         category: 'Domestic',
         owner: users[0],
-        volunteers: [users[1]],
         status: 'tender',
         comments: [{
           content: 'I\'ll do it, for a few points more',
