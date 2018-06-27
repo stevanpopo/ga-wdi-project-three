@@ -1,7 +1,9 @@
 Current Volunteers:
-<h6 class="is-6 title" ng-repeat="volunteer in favour.volunteer">
-  {{ volunteer.username }} {{volunteer._id}}
-</h6>
+<div class=""  ng-repeat="volunteer in favour.volunteers">
+  <h6 class="is-6 title">{{ volunteer.username }}</h6>
+  <button class="button">{{volunteer._id}}</button>
+</div>
+
 <div class="columns">
   <div class="column is-one-third-desktop">
     <div class="points">
