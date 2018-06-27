@@ -26,10 +26,10 @@ mongoose.connect(dbURI, (err, db) => {
     passwordConfirmation: 'n',
     points: 200
   },{
-    username: 'Mike',
-    email: 'm@m.m',
-    password: 'm',
-    passwordConfirmation: 'm',
+    username: 'Chavez',
+    email: 'c@c.c',
+    password: 'c',
+    passwordConfirmation: 'c',
     points: 350
   },{
     username: 'Rachel',
