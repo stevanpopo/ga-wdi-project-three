@@ -10,6 +10,7 @@ function indexRoute(req, res, next){
 function showRoute(req, res, next){
   Favour.findById(req.params.id)
     .populate('volunteers')
+    .populate('chosen_volunteers')
     .populate('owner')
     .populate('comments.author')
     .then(favour => res.json(favour))
@@ -55,21 +56,39 @@ function chooseVolunteerRoute(req, res, next){
   Favour.findById(req.params.id)
     .populate('volunteers') //do i need this?
     .then(favour => {
-      const volunteersStringified = favour.volunteers.map( volunteer => volunteer._id.toString());
 
-      if(volunteersStringified.includes(req.params.volunteerId)){
+      console.log('all volunteers', favour.volunteers);
 
-        favour.chosen_volunteers.push(req.params.volunteerId);
-        const index = volunteersStringified.indexOf(req.params.volunteerId);
+      const chosenVolunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() === req.params.volunteerId);
+      const notChosenVolunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() !== req.params.volunteerId);
 
-        if (index > -1) {
-          volunteersStringified.splice(index, 1);
-          console.log('volunteersStringified', volunteersStringified);
-        }
-        
-      } else {
-        console.log('volunteer not found');
-      }
+      console.log('chosen volunteers', chosenVolunteers);
+      console.log('not chosen volunteers', notChosenVolunteers);
+
+      favour.volunteers = notChosenVolunteers;
+      favour.chosen_volunteers = chosenVolunteers;
+
+      console.log('favour.volunteers', favour.volunteers);
+      console.log('favour.chosen_volunteers', favour.chosen_volunteers);
+
+      return favour.save();
+
+      // const volunteersStringified = favour.volunteers.map( volunteer => volunteer._id.toString());
+      //
+      // if(volunteersStringified.includes(req.params.volunteerId)){
+      //
+      //   favour.chosen_volunteers.push(req.params.volunteerId);
+      //   const index = volunteersStringified.indexOf(req.params.volunteerId);
+      //
+      //   if (index > -1) {
+      //     volunteersStringified.splice(index, 1);
+      //     console.log('volunteersStringified', volunteersStringified);
+      //   }
+      //
+      //
+      // } else {
+      //   console.log('volunteer not found');
+      // }
 
 
       // check if volunteer is there

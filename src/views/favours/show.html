@@ -1,7 +1,13 @@
-Current Volunteers:
+Volunteers:
 <div class=""  ng-repeat="volunteer in favour.volunteers">
-  <h6 class="is-6 title">{{ volunteer.username }}</h6>
+  <h6 class="is-6 title">{{ volunteer.username }} {{ volunteer._id }}</h6>
   <button class="button" ng-click="chooseVolunteer(volunteer)">choose volunteer</button>
+</div>
+
+Selected volunteer:
+<div class=""  ng-repeat="chosen in favour.chosen_volunteers">
+  <p>Hi</p>
+  <h6 class="is-6 title">{{ chosen.username }} {{ chosen._id }}</h6>
 </div>
 
 <div class="columns">
