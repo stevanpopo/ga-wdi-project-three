@@ -3,7 +3,7 @@
     <h1 class="title is-1">New Favour</h1>
 
     <form ng-submit="createFavour()" name="form" novalidate>
-      
+
       <div class="field">
         <label class="label" for="title">Title</label>
         <input class="input" name="title" id="title" ng-model="data.title" required />
@@ -21,14 +21,13 @@
             <select ng-model="data.points" name="points" id="points" required>
               <option>Select Points</option>
               <option ng-model="checkPoints()">10</option>
-              <option>20</option>
-              <option>30</option>
+              <option ng-model="checkPoints()">20</option>
+              <option ng-model="checkPoints()">30</option>
               <option ng-model="checkPoints()">40</option>
-              <option>50</option>
-              <option>60</option>
+              <option ng-model="checkPoints()">50</option>
+              <option ng-model="checkPoints()">60</option>
             </select>
           </div>
-          <p ng-if="enoughPoints">Words</p>
         </div>
         <p>You have {{ currentUser.points }} points available to you.</p>
         <label class="label" for="category">Category</label>
@@ -53,5 +52,6 @@
 
       <button class="button" ng-disabled="!enoughPoints">Submit</button>
     </form>
+    <p ng-if="!enoughPoints">You do not have enough points</p>
   </div>
 </div>
