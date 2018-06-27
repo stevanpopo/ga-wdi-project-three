@@ -53,6 +53,14 @@ function FavoursShowCtrl($scope, $http, $state) {
       });
     $scope.canVolunteer = false;
   };
+
+  $scope.chooseVolunteer = function(volunteer){
+    $http({
+      method: 'POST',
+      url: `api/favours/${$state.params.id}/volunteers/${volunteer._id}`
+    })
+      .then(() => $state.go($state.current, {}, {reload: true}));
+  };
 }
 
 export default FavoursShowCtrl;
