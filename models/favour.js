@@ -8,7 +8,9 @@ const commentSchema = new mongoose.Schema({
 const favourSchema = new mongoose.Schema({
   title: { type: String, required: true },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  volunteer: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  volunteers: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  chosen_volunteers: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  status: { type: String },
   comments: [commentSchema],
   points: { type: Number, required: true },
   category: { type: String, required: true },
