@@ -1,7 +1,7 @@
 Volunteers:
 <div class=""  ng-repeat="volunteer in favour.volunteers">
   <h6 class="is-6 title">{{ volunteer.username }} {{ volunteer._id }}</h6>
-  <button class="button" ng-if="!favour.chosen_volunteers" ng-click="chooseVolunteer(volunteer)">choose volunteer</button>
+  <button class="button" ng-if="favour.chosen_volunteers.length === 0" ng-click="chooseVolunteer(volunteer)">choose volunteer</button>
 </div>
 
 
