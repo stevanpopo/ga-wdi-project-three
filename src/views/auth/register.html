@@ -1,29 +1,43 @@
 <h3 class="title is-2">Sign Up</h3>
 
-{{data}}
-<form ng-submit="handleSubmit()">
+<form ng-submit="handleSubmit()" name="form" novalidate>
   <!-- class="columns new-user-form" -->
   <!-- <div class="column"> -->
     <div class="field">
       <label class="label" for="username">Username</label>
-      <input class="input" type="text" id="username" name="username" ng-model="data.username">
+      <input class="input" type="text" id="username" name="username" ng-model="data.username" required />
+
+      <div ng-messages="form.username.$error" ng-if="form.username.$dirty">
+        <small ng-message="required">This field is required</small>
+      </div>
+
     </div>
+
     <div class="field">
       <label class="label" for="email">Email</label>
-      <input class="input" type="email" id="email" name="email" ng-model="data.email">
+      <input class="input" type="email" id="email" name="email" ng-model="data.email" required />
+
+      <div ng-messages="form.email.$error" ng-if="form.email.$dirty">
+        <small ng-message="required">This field is required</small>
+        <small ng-message="email">Please enter a valid email address</small>
+      </div>
     </div>
+
     <div class="field">
       <label class="label" for="password">Password</label>
       <input class="input" type="password" id="password" name="password" ng-model="data.password">
     </div>
+
     <div class="field">
       <label class="label" for="passwordConfirmation">Password Confirmation</label>
       <input class="input" type="password" id="passwordConfirmation" name="passwordConfirmation" ng-model="data.passwordConfirmation">
     </div>
+
     <div class="field">
       <label class="label" for="image">Image</label>
       <button class="button" id="image" name="image" file-picker ng-model="data.image">Choose file</button>
     </div>
+
     <div class="field">
       <label class="label" for="bio">Bio</label>
       <textarea class="textarea" type="text" id="bio" name="bio" ng-model="data.bio" placeholder="Tell us a bit about you..." rows="4"></textarea>
