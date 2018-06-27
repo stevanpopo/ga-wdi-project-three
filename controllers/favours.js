@@ -55,10 +55,48 @@ function chooseVolunteerRoute(req, res, next){
   Favour.findById(req.params.id)
     .populate('volunteers') //do i need this?
     .then(favour => {
-      //find id in favour.volunteers
-      // splice it out
-      // add it to chosen array
-    });
+      const volunteersStringified = favour.volunteers.map( volunteer => volunteer._id.toString());
+
+      if(volunteersStringified.includes(req.params.volunteerId)){
+
+        favour.chosen_volunteers.push(req.params.volunteerId);
+        const index = volunteersStringified.indexOf(req.params.volunteerId);
+
+        if (index > -1) {
+          volunteersStringified.splice(index, 1);
+          console.log('volunteersStringified', volunteersStringified);
+        }
+        
+      } else {
+        console.log('volunteer not found');
+      }
+
+
+      // check if volunteer is there
+      // push volunteer to chosen_volunteers
+      // if(favour.volunteers[0]._id.toString() === req.params.volunteerId){
+      //   // console.log('found volunteer');
+      //   // console.log('favour.chosen_volunteers', favour.chosen_volunteers);
+      //   favour.chosen_volunteers.push(req.params.volunteerId);
+      //   // console.log('favour.chosen_volunteers after', favour.chosen_volunteers);
+      //   // console.log('volunteers', favour.volunteers);
+      //
+      //   // var array = [2, 5, 9];
+      //   const volId = req.params.volunteerId.toString();
+      //   console.log('type volId', typeof(volId));
+      //   const index = favour.volunteers.indexOf(volId);
+      //   console.log('index', index);
+      //   if (index > -1) {
+      //     const resultingArray = favour.volunteers.splice(index, 1);
+      //     console.log('resultingArray', resultingArray);
+      //   }
+      // } else {
+      //   console.log('volunteer not found');
+      // }
+      // splice out from volunteers array
+    })
+    .then(favour => res.json(favour))
+    .catch(next);
 }
 
 function commentCreateRoute(req, res, next){
