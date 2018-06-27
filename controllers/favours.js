@@ -2,6 +2,7 @@ const Favour = require('../models/favour');
 
 function indexRoute(req, res, next){
   Favour.find()
+    .populate('similarFavours')
     .populate('owner')
     .then(favours => res.json(favours))
     .catch(next);
@@ -13,6 +14,7 @@ function showRoute(req, res, next){
     .populate('chosen_volunteers')
     .populate('owner')
     .populate('comments.author')
+    .populate('similarFavours')
     .then(favour => res.json(favour))
     .catch(next);
 }

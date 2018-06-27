@@ -77,7 +77,11 @@ mongoose.connect(dbURI, (err, db) => {
           content: 'Hey, when do you need this by?',
           author: users[3]
         }],
-        points: 20
+        points: 20,
+        location: {
+          lat: 51.464,
+          lng: -0.03607
+        }
       },{
         title: 'Steward at Church fair',
         category: 'Events',
@@ -89,7 +93,33 @@ mongoose.connect(dbURI, (err, db) => {
           content: 'Hey guys, lets just go to Jujus!',
           author: users[8]
         }],
-        points: 75
+        points: 75,
+        location: {
+          lat: 51.5138453,
+          lng: -0.0983506
+        }
+      },{
+        title: 'Cook at my BBQ',
+        category: 'Events',
+        owner: users[4],
+        comments: [],
+        points: 20,
+        location: {
+          lat: 55.5138453,
+          lng: -0.0983506
+        }
+      },{
+        title: 'Feed my cat',
+        category: 'Domestic',
+        owner: users[6],
+        volunteers: [users[3]],
+        status: 'tender',
+        comments: [],
+        points: 20,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
       }]);
     })
     .then(favours => console.log(`${favours.length} favours created`))
