@@ -98,6 +98,28 @@ mongoose.connect(dbURI, (err, db) => {
           lat: 51.5138453,
           lng: -0.0983506
         }
+      },{
+        title: 'Cook at my BBQ',
+        category: 'Events',
+        owner: users[4],
+        comments: [],
+        points: 20,
+        location: {
+          lat: 55.5138453,
+          lng: -0.0983506
+        }
+      },{
+        title: 'Feed my cat',
+        category: 'Domestic',
+        owner: users[6],
+        volunteers: [users[3]],
+        status: 'tender',
+        comments: [],
+        points: 20,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
       }]);
     })
     .then(favours => console.log(`${favours.length} favours created`))
