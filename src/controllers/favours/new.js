@@ -4,6 +4,7 @@ function FavoursNewCtrl($scope, $http, $state) {
   $scope.enoughPoints = true;
 
   $scope.checkPoints = function() {
+    console.log('Executed checkPoints');
     if ($scope.data.points > $scope.currentUser.points) return $scope.enoughPoints = false;
     else return $scope.enoughPoints = true;
   };
