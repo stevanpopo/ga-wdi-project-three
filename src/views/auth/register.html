@@ -1,5 +1,5 @@
 <h3 class="title is-2">Sign Up</h3>
-{{ data }}
+
 <form ng-submit="handleSubmit()" name="form" novalidate>
   <!-- class="columns new-user-form" -->
   <!-- <div class="column"> -->
@@ -27,10 +27,6 @@
       <label class="label" for="password">Password</label>
       <input class="input" type="password" id="password" name="password" ng-model="data.password" minlength="6" required />
 
-      <div ng-password-strength="data.password" >
-
-      </div>
-
       <div ng-messages="form.password.$error" ng-if="form.password.$dirty">
         <small ng-message="required">This field is required</small>
         <small ng-message="minlength">Password must be at least 6 characters</small>
@@ -39,7 +35,13 @@
 
     <div class="field">
       <label class="label" for="passwordConfirmation">Password Confirmation</label>
-      <input class="input" type="password" id="passwordConfirmation" name="passwordConfirmation" ng-model="data.passwordConfirmation">
+      <input class="input" type="password" id="passwordConfirmation" name="passwordConfirmation" ng-model="data.passwordConfirmation" required ng-pattern="data.password">
+
+      <div ng-messages="form.passwordConfirmation.$error">
+        <small ng-message="required">This field is required</small>
+        <small ng-message="pattern">Passwords don't match</small>
+      </div>
+
     </div>
 
     <div class="field">
