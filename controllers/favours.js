@@ -9,7 +9,7 @@ function indexRoute(req, res, next){
 
 function showRoute(req, res, next){
   Favour.findById(req.params.id)
-    .populate('volunteer')
+    .populate('volunteers')
     .populate('owner')
     .populate('comments.author')
     .then(favour => res.json(favour))
@@ -40,9 +40,9 @@ function deleteRoute(req, res, next){
 
 function addVolunteerRoute(req, res, next) {
   Favour.findById(req.params.id)
-    .populate('volunteer')
+    .populate('volunteers')
     .then(favour => {
-      favour.volunteer.push(req.currentUser);
+      favour.volunteers.push(req.currentUser);
       return favour.save();
     })
     .then(favour => {
