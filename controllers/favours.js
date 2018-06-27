@@ -51,6 +51,16 @@ function addVolunteerRoute(req, res, next) {
     .catch(next);
 }
 
+function chooseVolunteerRoute(req, res, next){
+  Favour.findById(req.params.id)
+    .populate('volunteers') //do i need this?
+    .then(favour => {
+      //find id in favour.volunteers
+      // splice it out
+      // add it to chosen array
+    });
+}
+
 function commentCreateRoute(req, res, next){
   req.body.author = req.currentUser;
   Favour.findById(req.params.id)
