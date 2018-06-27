@@ -91,6 +91,7 @@ module.exports = {
   create: createRoute,
   delete: deleteRoute,
   addVolunteer: addVolunteerRoute,
+  chooseVolunteer: chooseVolunteerRoute,
   commentCreate: commentCreateRoute,
   commentDelete: commentDeleteRoute
 };
