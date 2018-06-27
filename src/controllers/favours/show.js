@@ -1,12 +1,8 @@
 function FavoursShowCtrl($scope, $http, $state) {
   $scope.data = {};
+  
   $scope.isOwner = false;
   $scope.canVolunteer = true;
-
-  $scope.canVolunteer = function() {
-
-    return true;
-  };
 
   $scope.addComment = function(){
     $http({
