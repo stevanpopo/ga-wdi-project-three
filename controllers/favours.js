@@ -81,9 +81,12 @@ function chooseVolunteerRoute(req, res, next){
 
 function changeFavourStatusRoute(req, res, next){
   Favour.findById(req.params.id)
-  .then(favour => {
-    console.log(favour.status);
-  })
+    .then(favour => {
+      console.log('in the change status route');
+      console.log(favour.status);
+    })
+    .then(favour => res.json(favour))
+    .catch(next);
 }
 
 function commentCreateRoute(req, res, next){
@@ -118,5 +121,6 @@ module.exports = {
   addVolunteer: addVolunteerRoute,
   chooseVolunteer: chooseVolunteerRoute,
   commentCreate: commentCreateRoute,
-  commentDelete: commentDeleteRoute
+  commentDelete: commentDeleteRoute,
+  changeFavourStatus: changeFavourStatusRoute
 };
