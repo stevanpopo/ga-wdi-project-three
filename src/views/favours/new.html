@@ -1,8 +1,9 @@
 <div class="columns is-centered">
   <div class="column is-6">
     <h1 class="title is-1">New Favour</h1>
-    <form ng-submit="createFavour()" name="form" novalidate>
 
+    <form ng-submit="createFavour()" name="form" novalidate>
+{{ form.points | json }}
       <div class="field">
         <label class="label" for="title">Title</label>
         <input class="input" name="title" id="title" ng-model="data.title" required />
@@ -19,7 +20,7 @@
           <div class="select">
             <select ng-model="data.points" name="points" id="points">
               <option>Select Points</option>
-              <option>10</option>
+              <option ng-model="enoughPoints()">10</option>
               <option>20</option>
               <option>30</option>
               <option>40</option>
@@ -28,6 +29,7 @@
             </select>
           </div>
         </div>
+        <p>You have {{ availablePoints }} points available to you.</p>
         <label class="label" for="category">Category</label>
         <div class="control">
           <div class="select">
@@ -41,6 +43,11 @@
             </select>
           </div>
         </div>
+
+        <div ng-messages="form.points.$error">
+
+        </div>
+
       </div>
 
       <button class="button">Submit</button>
