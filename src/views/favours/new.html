@@ -8,18 +8,13 @@
         <label class="label" for="title">Title</label>
         <input class="input" name="title" id="title" ng-model="data.title" required />
 
-        <div ng-messages="form.title.$error" ng-if="form.title.$dirty">
-          <small ng-message="required">This field is required</small>
-        </div>
-
       </div>
 
       <div class="field is-grouped">
         <label class="label" for="points">Points</label>
         <div class="control">
           <div class="select">
-            <select ng-model="data.points" name="points" id="points" required>
-              <option>Select Points</option>
+            <select ng-model="data.points" name="points" id="points" ng-required="true">
               <option ng-model="checkPoints()">10</option>
               <option ng-model="checkPoints()">20</option>
               <option ng-model="checkPoints()">30</option>
@@ -29,12 +24,10 @@
             </select>
           </div>
         </div>
-        <p>You have {{ currentUser.points }} points available to you.</p>
         <label class="label" for="category">Category</label>
         <div class="control">
           <div class="select">
-            <select ng-model="data.category" name="category" id="category">
-              <option>Select Category</option>
+            <select ng-model="data.category" name="category" id="category" required>
               <option>Domestic</option>
               <option>Event</option>
               <option>Recreation</option>
@@ -43,15 +36,25 @@
             </select>
           </div>
         </div>
-
-        <div ng-messages="form.points.$error">
-
-        </div>
-
       </div>
 
+      <p>You have {{ currentUser.points }} points available to you.</p>
       <button class="button" ng-disabled="!enoughPoints">Submit</button>
     </form>
+
+    <div ng-messages="form.points.$error" ng-if="form.points.$dirty">
+      <small ng-message="required">Please enter an amount of points</small>
+    </div>
+
+    <div ng-messages="form.title.$error" ng-if="form.title.$dirty">
+      <small ng-message="required">Title field is required</small>
+    </div>
+    
+    <div ng-messages="form.category" ng-if="form.category.$pristine">
+      <small ng-message="required">Please chose a category</small>
+    </div>
+
     <p ng-if="!enoughPoints">You do not have enough points</p>
+
   </div>
 </div>
