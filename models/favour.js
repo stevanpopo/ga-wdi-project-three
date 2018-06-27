@@ -24,4 +24,11 @@ favourSchema.virtual('similarFavours', {
   ref: 'Favour'
 });
 
+favourSchema.set('toJSON', {
+  virtuals: true,
+  transform(doc, json) {
+    console.log(json);
+  }
+});
+
 module.exports = mongoose.model('Favour', favourSchema);
