@@ -26,10 +26,10 @@ mongoose.connect(dbURI, (err, db) => {
     passwordConfirmation: 'n',
     points: 200
   },{
-    username: 'Mike',
-    email: 'm@m.m',
-    password: 'm',
-    passwordConfirmation: 'm',
+    username: 'Chavez',
+    email: 'c@c.c',
+    password: 'c',
+    passwordConfirmation: 'c',
     points: 350
   },{
     username: 'Rachel',
@@ -68,7 +68,6 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Lawnmower rental',
         category: 'Domestic',
         owner: users[0],
-        volunteers: [users[1]],
         status: 'tender',
         comments: [{
           content: 'I\'ll do it, for a few points more',
@@ -86,6 +85,7 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Steward at Church fair',
         category: 'Events',
         owner: users[1],
+        status: 'tender',
         comments: [{
           content: 'Would love to, but I\'m out of town',
           author: users[3]
@@ -102,6 +102,7 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Cook at my BBQ',
         category: 'Events',
         owner: users[4],
+        status: 'tender',
         comments: [],
         points: 20,
         location: {

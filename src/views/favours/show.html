@@ -1,7 +1,7 @@
 Volunteers:
 <div class=""  ng-repeat="volunteer in favour.volunteers">
   <h6 class="is-6 title">{{ volunteer.username }} {{ volunteer._id }}</h6>
-  <button class="button" ng-if="favour.chosen_volunteers.length === 0" ng-click="chooseVolunteer(volunteer)">choose volunteer</button>
+  <button class="button" ng-if="favour.chosen_volunteers.length === 0 && isOwner" ng-click="chooseVolunteer(volunteer)">choose volunteer</button>
 </div>
 
 <div class="" ng-if="favour.chosen_volunteers"  ng-repeat="chosen in favour.chosen_volunteers">
@@ -33,14 +33,19 @@ Volunteers:
           </p>
         </div>
       </div>
+
       <p>is owner? {{isOwner}}</p>
+      <p>is chosen volunteer? {{isChosenVolunteer}}</p>
       <p>can volunteer? {{canVolunteer}}</p>
+
+      <p>{{favour.status==='completed'}}</p>
+      <p>{{favour.volunteers[0]._id === currentUser._id}}</p>
 
       <div class="buttons is-centered">
         <button class="button is-success" ng-if="canVolunteer"  ng-click="claimFavour()">Claim this favour</button>
         <!-- favour.status!==completed || favour.status!==verified ||  -->
-        <button class="button is-success" ng-if="!canVolunteer" ng-click="changeStatus()">Completed Favour</button>
-        <button class="button is-success" ng-if="!canVolunteer" ng-click="changeStatus()">Verify Favour Complete</button>
+        <button class="button is-success" ng-if="isChosenVolunteer && favour.status==='inProgress'" ng-click="changeStatus()">I've Completed Favour</button>
+        <button class="button is-success" ng-if="isOwner && favour.status==='completed'" ng-click="changeStatus()">I've Verifed Favour Complete</button>
       </div>
       <!-- <p ng-if="canVolunteer()">You've already volunteered!</p> -->
     </div>
