@@ -27,7 +27,12 @@ favourSchema.virtual('similarFavours', {
 favourSchema.set('toJSON', {
   virtuals: true,
   transform(doc, json) {
-    console.log(json);
+    // console.log(json.similarFavours);
+    // console.log(json);
+    console.log(doc);
+    // json.similarFavours.forEach(el => {
+    //   console.log(el);
+    // });
   }
 });
 

@@ -2,16 +2,17 @@ const Favour = require('../models/favour');
 
 function indexRoute(req, res, next){
   Favour.find()
-    .populate('owner')
+    // .populate('owner')
+    .populate('similarFavours')
     .then(favours => res.json(favours))
     .catch(next);
 }
 
 function showRoute(req, res, next){
   Favour.findById(req.params.id)
-    .populate('volunteer')
-    .populate('owner')
-    .populate('comments.author')
+    // .populate('volunteer')
+    // .populate('owner')
+    // .populate('comments.author')
     .populate('similarFavours')
     .then(favour => res.json(favour))
     .catch(next);
