@@ -2,7 +2,7 @@ function FavoursShowCtrl($scope, $http, $state) {
   $scope.data = {};
 
   $scope.isOwner = false;
-  $scope.isVolunteer = false;
+  $scope.isChosenVolunteer = false;
   $scope.canVolunteer = true;
 
   $scope.addComment = function(){
@@ -33,7 +33,7 @@ function FavoursShowCtrl($scope, $http, $state) {
       if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser._id || $scope.favour.status !== 'tender') $scope.canVolunteer = false;
       // if(true) console.log('obviously true');
       // if($scope.favour.chosen_volunteers[0]._id === $scope.currentUser._id) return $scope.isVolunteer = true;
-      if($scope.favour.chosen_volunteers[0]._id === $scope.currentUser._id) $scope.isVolunteer = true;
+      if($scope.favour.chosen_volunteers[0]._id === $scope.currentUser._id) $scope.isChosenVolunteer = true;
       $scope.favour.volunteers.forEach(volunteer => {
         if(volunteer._id === $scope.currentUser._id) return $scope.canVolunteer = false;
       });

@@ -33,18 +33,18 @@ Volunteers:
           </p>
         </div>
       </div>
-      <p><b>favour.chosen_volunteers[0]._id</b>: {{ favour.chosen_volunteers[0]._id }}</p>
-      <p><b>currentUser._id</b>: {{ currentUser._id }}</p>
 
       <p>is owner? {{isOwner}}</p>
-      <p>is volunteer? {{isVolunteer}}</p>
+      <p>is volunteer? {{isChosenVolunteer}}</p>
       <p>can volunteer? {{canVolunteer}}</p>
+
+      <p>{{favour.status==='completed'}}</p>
 
       <div class="buttons is-centered">
         <button class="button is-success" ng-if="canVolunteer"  ng-click="claimFavour()">Claim this favour</button>
         <!-- favour.status!==completed || favour.status!==verified ||  -->
-        <button class="button is-success" ng-if="!canVolunteer && isVolunteer" ng-click="changeStatus()">Completed Favour</button>
-        <button class="button is-success" ng-if="!canVolunteer && favour.status===completed" ng-click="changeStatus()">Verify Favour Complete</button>
+        <button class="button is-success" ng-if="isChosenVolunteer && favour.status==='inProgress'" ng-click="changeStatus()">Completed Favour</button>
+        <button class="button is-success" ng-if="isOwner && favour.status==='completed'" ng-click="changeStatus()">Verify Favour Complete</button>
       </div>
       <!-- <p ng-if="canVolunteer()">You've already volunteered!</p> -->
     </div>
