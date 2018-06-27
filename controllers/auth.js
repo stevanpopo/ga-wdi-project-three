@@ -15,7 +15,11 @@ function login(req, res, next) {
         return res.status(401).json({ message: 'Unauthorised' });
       }
 
-      const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '6h' });
+      const token = jwt.sign({
+        sub: user._id,
+        currentUser: user
+      },
+      secret, { expiresIn: '6h' });
 
       res.json({
         user,

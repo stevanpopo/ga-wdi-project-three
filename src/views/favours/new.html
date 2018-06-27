@@ -1,10 +1,16 @@
 <div class="columns is-centered">
   <div class="column is-6">
     <h1 class="title is-1">New Favour</h1>
-    <form ng-submit="createFavour()">
+    <form ng-submit="createFavour()" name="form" novalidate>
+
       <div class="field">
         <label class="label" for="title">Title</label>
-        <input class="input" name="title" id="title" ng-model="data.title" />
+        <input class="input" name="title" id="title" ng-model="data.title" required />
+
+        <div ng-messages="form.title.$error" ng-if="form.title.$dirty">
+          <small ng-message="required">This field is required</small>
+        </div>
+
       </div>
 
       <div class="field is-grouped">

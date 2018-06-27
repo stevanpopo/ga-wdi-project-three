@@ -1,6 +1,6 @@
 function FavoursShowCtrl($scope, $http, $state) {
   $scope.data = {};
-  
+
   $scope.isOwner = false;
   $scope.canVolunteer = true;
 
@@ -28,10 +28,10 @@ function FavoursShowCtrl($scope, $http, $state) {
   })
     .then(res => {
       $scope.favour = res.data;
-      if($scope.favour.owner._id === $scope.currentUser) $scope.isOwner = true;
-      if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser) return $scope.canVolunteer = false;
+      if($scope.favour.owner._id === $scope.currentUser._id) $scope.isOwner = true;
+      if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser._id) return $scope.canVolunteer = false;
       $scope.favour.volunteer.forEach(volunteer => {
-        if(volunteer._id === $scope.currentUser) return $scope.canVolunteer = false;
+        if(volunteer._id === $scope.currentUser._id) return $scope.canVolunteer = false;
       });
     });
 

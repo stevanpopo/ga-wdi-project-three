@@ -19,7 +19,7 @@
     </div>
     <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
       <div class="navbar-start">
-        <span class="navbar-item" ng-if="isAuthenticated()">Welcome back {{ currentUser }}</span>
+        <span class="navbar-item" ng-if="isAuthenticated()">Welcome back {{ currentUser.username }}</span>
       </div>
       <div class="navbar-end">
         <a class="navbar-item" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
@@ -41,7 +41,7 @@
       </div>
 
       <ui-view></ui-view>
-      
+
     </div>
   </div>
   <footer class="footer">
