@@ -62,6 +62,7 @@ function addVolunteerRoute(req, res, next) {
 function chooseVolunteerRoute(req, res, next){
   Favour.findById(req.params.id)
     .populate('volunteers') //do i need this?
+    .populate('owner') //do i need this?
     .then(favour => {
 
       // console.log('all volunteers', favour.volunteers);
@@ -80,8 +81,14 @@ function chooseVolunteerRoute(req, res, next){
 
       favour.status = 'inProgress';
 
-      return twilio.sendSMS(`Hello ${favour.chosen_volunteers[0].username} - You have been chosen to complete this favour. Thanks for contributing to the Karma Community!`, favour.chosen_volunteers[0].telephone)
-        .then(() => favour.save());
+      if(favour.chosen_volunteers[0].telephone){
+        console.log('TELEPHONE EXISTS');
+        twilio.sendSMS(`Hello ${favour.chosen_volunteers[0].username} - You have been chosen to complete the favour ${favour.title} for ${favour.owner.username}. Thanks for contributing to the Karma Community!`, favour.chosen_volunteers[0].telephone);
+      }
+
+      return favour.save();
+      // return twilio.sendSMS(`Hello ${favour.chosen_volunteers[0].username} - You have been chosen to complete this favour. Thanks for contributing to the Karma Community!`, favour.chosen_volunteers[0].telephone)
+      //   .then(() => favour.save());
     })
     .then(favour => res.json(favour))
     .catch(next);
