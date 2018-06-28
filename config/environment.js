@@ -1,4 +1,4 @@
-const port = 4000;
+const port = process.env.PORT || 4000;
 const env = process.env.NODE_ENV || 'dev';
 const dbURI = process.env.MONGODB_URI || `mongodb://localhost/ga-wdi-project-three-${env}`;
 const secret = '!%6f.Hxkz3A<4F%S';
