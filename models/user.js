@@ -61,9 +61,7 @@ userSchema.pre('validate', function checkPasswordsMatch(next) {
 
 userSchema.pre('save', function checkTelephoneFormat(next) {
   if(this.isModified('telephone')) {
-    console.log('in the pre save');
     this.telephone = phoneUtil.format(phoneUtil.parse(this.telephone, 'GB'), PNF.E164);
-    console.log(this.telephone);
   }
   next();
 });

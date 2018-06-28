@@ -71,25 +71,12 @@ function chooseVolunteerRoute(req, res, next){
     .populate('volunteers') //do i need this?
     .populate('owner') //do i need this?
     .then(favour => {
-
-      // console.log('all volunteers', favour.volunteers);
-
       favour.chosen_volunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() === req.params.volunteerId);
       favour.volunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() !== req.params.volunteerId);
-
-      // console.log('chosen volunteers', chosenVolunteers);
-      // console.log('not chosen volunteers', notChosenVolunteers);
-
-      // favour.volunteers = notChosenVolunteers;
-      // favour.chosen_volunteers = chosenVolunteers;
-
-      // console.log('favour.volunteers', favour.volunteers);
-      // console.log('favour.chosen_volunteers', favour.chosen_volunteers);
 
       favour.status = 'inProgress';
 
       if(favour.chosen_volunteers[0].telephone){
-        console.log('TELEPHONE EXISTS');
         twilio.sendSMS(`Hello ${favour.chosen_volunteers[0].username} - You have been chosen to complete the favour ${favour.title} for ${favour.owner.username}. Thanks for contributing to the Karma Community!`, favour.chosen_volunteers[0].telephone);
       }
 
