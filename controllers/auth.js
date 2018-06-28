@@ -3,6 +3,9 @@ const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
 
 function register(req, res, next) {
+  const inputtedTel = req.body.telephone;
+  console.log(inputtedTel);
+
   User.create(req.body)
     .then(user => res.json(user))
     .catch(next);
