@@ -1,9 +1,6 @@
 const Favour = require('../models/favour');
-<<<<<<< HEAD
 const twilio = require('../lib/twilio');
-=======
 const User = require('../models/user');
->>>>>>> development
 
 function indexRoute(req, res, next){
   Favour.find()
