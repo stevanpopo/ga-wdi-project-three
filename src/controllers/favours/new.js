@@ -19,7 +19,7 @@ function FavoursNewCtrl($scope, $http, $state) {
       url: '/api/favours',
       data: $scope.data
     })
-      .then(() => $state.go('favourIndex'));
+      .then(() => $state.go('home'));
   };
 }
 
