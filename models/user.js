@@ -10,9 +10,16 @@ const userSchema = new mongoose.Schema({
   points: { type: Number },
   image: { type: String },
   bio: { type: String },
-  telephone: { type: String }
+  telephone: { type: String },
+  completedFavours: [{type: mongoose.Schema.ObjectId, ref: 'Favour' }]
 },{
   id: false
+});
+
+userSchema.virtual('inProgress', {
+  localField: '_id',
+  foreignField: 'chosen_volunteers',
+  ref: 'Favour'
 });
 
 userSchema.virtual('favours', {
@@ -24,6 +31,16 @@ userSchema.virtual('favours', {
 userSchema.set('toJSON', {
   virtuals: true,
   transform(doc, json) {
+
+    if(json.inProgress) {
+      json.inProgress.forEach((el, ind) => {
+        if(el.status === 'verified') {
+          json.inProgress.splice(ind, 1);
+        }
+        return json;
+      });
+    }
+
     delete json.password;
     return json;
   }

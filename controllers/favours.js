@@ -1,5 +1,9 @@
 const Favour = require('../models/favour');
+<<<<<<< HEAD
 const twilio = require('../lib/twilio');
+=======
+const User = require('../models/user');
+>>>>>>> development
 
 function indexRoute(req, res, next){
   Favour.find()
@@ -33,7 +37,11 @@ function createRoute(req, res, next){
   req.body.status = 'tender';
   Favour.create(req.body)
     .then(favour => {
-      console.log(favour);
+      User.findById(req.currentUser)
+        .then(user => {
+          user.points = user.points - req.body.points;
+          user.save();
+        });
       res.status(201).json(favour);
     })
     .catch(next);
@@ -49,6 +57,7 @@ function deleteRoute(req, res, next){
 function addVolunteerRoute(req, res, next) {
   Favour.findById(req.params.id)
     .populate('volunteers')
+    .populate('owner')
     .then(favour => {
       favour.volunteers.push(req.currentUser);
       return favour.save();
@@ -99,10 +108,7 @@ function changeFavourStatusRoute(req, res, next){
     .populate('owner')
     .populate('chosen_volunteers')
     .then(favour => {
-      console.log('in the change status route');
-      console.log(favour.status);
       if(favour.status === 'inProgress'){
-        console.log('in the if');
         favour.status = 'completed';
         if(favour.owner.telephone){
           twilio.sendSMS(`Hello ${favour.owner.username} - Your volunteer ${favour.chosen_volunteers[0].username} has marked your favour ${favour.title} as complete. Please check its completion and verify in the app.`, favour.owner.telephone);
@@ -110,7 +116,16 @@ function changeFavourStatusRoute(req, res, next){
 
         return favour.save();
       } else if (favour.status === 'completed'){
-        console.log('in the else if');
+
+        favour.chosen_volunteers.forEach(volunteer => {
+          User.findById(volunteer._id)
+            .then(user => {
+              user.completedFavours.push(favour._id);
+              user.points = user.points + favour.points;
+              user.save();
+            });
+        });
+
         favour.status = 'verified';
         if(favour.chosen_volunteers[0].telephone){
           twilio.sendSMS(`Hello ${favour.chosen_volunteers[0].username} - Thanks for completing the favour ${favour.title}. ${favour.owner.username} has verified its completion and you have been given your KarmaCoins! Thanks for contributing to the Karma Community.`, favour.chosen_volunteers[0].telephone);
