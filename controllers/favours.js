@@ -49,6 +49,7 @@ function deleteRoute(req, res, next){
 function addVolunteerRoute(req, res, next) {
   Favour.findById(req.params.id)
     .populate('volunteers')
+    .populate('owner')
     .then(favour => {
       favour.volunteers.push(req.currentUser);
       return favour.save();
