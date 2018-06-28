@@ -149,6 +149,19 @@ mongoose.connect(dbURI, (err, db) => {
           lat: 52.464,
           lng: -0.03607
         }
+      },{
+        title: 'Check my homework',
+        category: 'Education',
+        owner: users[2],
+        volunteers: [users[3],users[5]],
+        chosen_volunteers: [users[0]],
+        status: 'verified',
+        comments: [],
+        points: 30,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
       }]);
     })
     .then(favours => console.log(`${favours.length} favours created`))
