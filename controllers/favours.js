@@ -66,14 +66,14 @@ function chooseVolunteerRoute(req, res, next){
 
       // console.log('all volunteers', favour.volunteers);
 
-      const chosenVolunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() === req.params.volunteerId);
-      const notChosenVolunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() !== req.params.volunteerId);
+      favour.chosen_volunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() === req.params.volunteerId);
+      favour.volunteers = favour.volunteers.filter(volunteer => volunteer._id.toString() !== req.params.volunteerId);
 
       // console.log('chosen volunteers', chosenVolunteers);
       // console.log('not chosen volunteers', notChosenVolunteers);
 
-      favour.volunteers = notChosenVolunteers;
-      favour.chosen_volunteers = chosenVolunteers;
+      // favour.volunteers = notChosenVolunteers;
+      // favour.chosen_volunteers = chosenVolunteers;
 
       // console.log('favour.volunteers', favour.volunteers);
       // console.log('favour.chosen_volunteers', favour.chosen_volunteers);
