@@ -1,4 +1,5 @@
 const Favour = require('../models/favour');
+const twilio = require('../lib/twilio');
 
 function indexRoute(req, res, next){
   Favour.find()
@@ -79,7 +80,8 @@ function chooseVolunteerRoute(req, res, next){
 
       favour.status = 'inProgress';
 
-      return favour.save();
+      return twilio.sendSMS('BODY', )
+        .then(() => favour.save());
     })
     .then(favour => res.json(favour))
     .catch(next);
