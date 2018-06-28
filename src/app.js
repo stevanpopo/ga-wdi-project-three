@@ -22,7 +22,7 @@ import UsersIndexCtrl from './controllers/users/index';
 import UsersShowCtrl from './controllers/users/show';
 import UsersEditCtrl from './controllers/users/edit';
 
-import filePicker from './directives/filePicker';
+import filePicker from './directives/filepicker';
 import googleMap from './directives/googleMaps';
 import googleAutocomplete from './directives/googleAutocomplete';
 import infoCard from './directives/infoCard';
