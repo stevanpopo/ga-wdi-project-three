@@ -36,11 +36,13 @@
   <div class="column is-half-desktop">
     <div class="columns is-multiline">
       <div class="column is-4">
-        <div class="card is-square">
-          <figure class="image">
-            <img ng-src="http://fillmurray.com/112/112" alt="Profile">
-          </figure>
-        </div>
+        <a ui-sref="usersShow({ id: usersTopFive[1]._id })">
+          <div class="card is-square">
+            <figure class="image">
+              <img ng-src="http://fillmurray.com/112/112" alt="Profile">
+            </figure>
+          </div>
+        </a>
       </div>
       <div class="column is-4">
         <div class="content">
@@ -51,11 +53,13 @@
         <h2>{{ usersTopFive[1].points }}</h2>
       </div>
       <div class="column is-4">
-        <div class="card is-square">
-          <figure class="image">
-            <img ng-src="http://fillmurray.com/112/112" alt="Profile">
-          </figure>
-        </div>
+        <a ui-sref="usersShow({ id: usersTopFive[2]._id })">
+          <div class="card is-square">
+            <figure class="image">
+              <img ng-src="http://fillmurray.com/112/112" alt="Profile">
+            </figure>
+          </div>
+        </a>
       </div>
       <div class="column is-4">
         <div class="content">
@@ -66,13 +70,17 @@
         <h2>{{ usersTopFive[2].points }}</h2>
       </div>
       <div class="column is-3">
-        <h3 class="subtitle">{{ usersTopFive[3].username }}</h3>
+        <a ui-sref="usersShow({ id: usersTopFive[3]._id })">
+          <h3 class="subtitle">{{ usersTopFive[3].username }}</h3>
+        </a>
       </div>
       <div class="column is-3 points-small">
         <h3> {{ usersTopFive[3].points }} </h3>
       </div>
       <div class="column is-3">
-        <h3 class="subtitle">{{ usersTopFive[4].username }}</h3>
+        <a ui-sref="usersShow({ id: usersTopFive[4]._id })">
+          <h3 class="subtitle">{{ usersTopFive[4].username }}</h3>
+        </a>
       </div>
       <div class="column is-3 points-small">
         <h3>{{ usersTopFive[4].points }}</h3>
@@ -82,7 +90,9 @@
   <div class="column is-3" ng-repeat="user in usersRest">
     <div class="columns">
       <div class="column is-6">
-        <h3 class="subtitle">{{ user.username }}</h3>
+        <a ui-sref="usersShow({ id: user._id })">
+          <h3 class="subtitle">{{ user.username }}</h3>
+        </a>
       </div>
       <div class="column is-6 points-small">
         <h3>{{ user.points }}</h3>

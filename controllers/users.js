@@ -9,6 +9,8 @@ function indexRoute(req, res, next){
 
 function showRoute(req, res, next){
   User.findById(req.params.id)
+    .populate('inProgress')
+    .populate('completedFavours')
     .then(user => res.json(user))
     .catch(next);
 }

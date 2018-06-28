@@ -91,7 +91,8 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Steward at Church fair',
         category: 'Events',
         owner: users[1],
-        status: 'tender',
+        status: 'completed',
+        chosen_volunteers: [users[0]],
         comments: [{
           content: 'Would love to, but I\'m out of town',
           author: users[3]
