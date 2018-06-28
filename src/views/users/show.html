@@ -20,12 +20,12 @@
   <div class="column">
     <div class="columns is-multiline">
 
-      <div class="column is-half">
+      <div class="column is-full" ng-if="isOwner">
         <div class="columns is-multiline">
           <div class="column is-12">
-            <h2>Favours in transit</h2>
+            <h2 class="subtitle is-3">Favours in transit</h2>
           </div>
-          <div class="column is-half" ng-repeat="inProgress in user.inProgress">
+          <div class="column is-3" ng-repeat="inProgress in user.inProgress">
             <a ui-sref="favourShow({ id: inProgress._id })">
               <info-card name="inProgress.title" points="inProgress.points"></info-card>
             </a>
@@ -33,12 +33,12 @@
         </div>
       </div>
 
-      <div class="column is-half">
+      <div class="column is-full">
         <div class="columns is-multiline">
           <div class="column is-12">
-            <h2>Previous Favours</h2>
+            <h2 class="subtitle is-3">Previous Favours</h2>
           </div>
-          <div class="column is-half" ng-repeat="completedFavour in user.completedFavours">
+          <div class="column is-3-desktop is-6-tablet" ng-repeat="completedFavour in user.completedFavours">
             <a ui-sref="favourShow({ id: completedFavour._id })">
               <info-card name="completedFavour.title" points="completedFavour.points"></info-card>
             </a>
@@ -46,11 +46,6 @@
         </div>
       </div>
 
-      <h2>{{ inProgress.title }}</h2>
-      <div class="column is-4" ng-repeat="completedFavour in user.completedFavours">
-        <h2>Completed Favours:</h2>
-        {{ completedFavour.title }}
-      </div>
     </div>
   </div>
 </div>

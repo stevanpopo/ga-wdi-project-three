@@ -20,7 +20,9 @@
     </div>
     <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
       <div class="navbar-start">
-        <span class="navbar-item" ng-if="isAuthenticated()">Welcome back {{ currentUser.username }}</span>
+        <a ui-sref="usersShow({ id: currentUser._id })">
+          <span class="navbar-item" ng-if="isAuthenticated()">Welcome back {{ currentUser.username }}</span>
+        </a>
       </div>
       <div class="navbar-end">
         <a class="navbar-item" ng-if="!isAuthenticated()" ui-sref="register">Register</a>

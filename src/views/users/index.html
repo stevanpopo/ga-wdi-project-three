@@ -5,7 +5,7 @@
     <div class="columns is-multiline">
       <div class="column is-half">
         <figure class="image">
-          <img src="http://fillmurray.com/128/128" alt="Profile picture">
+          <img src="{{ usersTopFive[0].image }}" alt="Profile picture">
         </figure>
       </div>
       <div class="column is-half-desktop">
@@ -27,7 +27,7 @@
       <div class="column is-12-desktop">
         <article class="message">
           <div class="message-body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+            {{ usersTopFive[0].bio }}
           </div>
         </article>
       </div>
@@ -35,39 +35,49 @@
   </div>
   <div class="column is-half-desktop">
     <div class="columns is-multiline">
-      <div class="column is-4">
+
+      <div class="column is-full">
         <a ui-sref="usersShow({ id: usersTopFive[1]._id })">
-          <div class="card is-square">
-            <figure class="image">
-              <img ng-src="http://fillmurray.com/112/112" alt="Profile">
-            </figure>
+          <div class="columns">
+            <div class="column is-4">
+              <div class="card is-square">
+                <figure class="image">
+                  <img src="{{ usersTopFive[1].image }}" alt="Profile picture">
+                </figure>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="content">
+                <h2 class="title is-3">{{ usersTopFive[1].username }}</h2>
+              </div>
+            </div>
+            <div class="column is-4 points-medium">
+              <h2>{{ usersTopFive[1].points }}</h2>
+            </div>
           </div>
         </a>
       </div>
-      <div class="column is-4">
-        <div class="content">
-          <h2 class="title is-3">{{ usersTopFive[1].username }}</h2>
-        </div>
-      </div>
-      <div class="column is-4 points-medium">
-        <h2>{{ usersTopFive[1].points }}</h2>
-      </div>
-      <div class="column is-4">
+
+      <div class="column is-full">
         <a ui-sref="usersShow({ id: usersTopFive[2]._id })">
-          <div class="card is-square">
-            <figure class="image">
-              <img ng-src="http://fillmurray.com/112/112" alt="Profile">
-            </figure>
+          <div class="columns">
+            <div class="column is-4">
+              <div class="card is-square">
+                <figure class="image">
+                  <img src="{{ usersTopFive[2].image }}" alt="Profile picture">
+                </figure>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="content">
+                <h2 class="title is-3">{{ usersTopFive[2].username }}</h2>
+              </div>
+            </div>
+            <div class="column is-4 points-medium">
+              <h2>{{ usersTopFive[2].points }}</h2>
+            </div>
           </div>
         </a>
-      </div>
-      <div class="column is-4">
-        <div class="content">
-          <h2 class="title is-3">{{ usersTopFive[2].username }}</h2>
-        </div>
-      </div>
-      <div class="column is-4 points-medium">
-        <h2>{{ usersTopFive[2].points }}</h2>
       </div>
 
       <div class="column is-half-desktop">
@@ -84,9 +94,11 @@
 
     </div>
   </div>
+
   <div class="column is-3" ng-repeat="user in usersRest">
-        <a ui-sref="usersShow({ id: user._id })">
-          <info-card name="user.username" points="user.points"></info-card>
-        </a>
+    <a ui-sref="usersShow({ id: user._id })">
+      <info-card name="user.username" points="user.points"></info-card>
+    </a>
   </div>
+
 </div>
