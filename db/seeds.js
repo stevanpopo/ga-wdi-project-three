@@ -20,13 +20,14 @@ mongoose.connect(dbURI, (err, db) => {
     password: 's',
     passwordConfirmation: 's',
     points: 300,
-    telephone: '+447530486805'
+    telephone: '07530486805'
   },{
     username: 'Nick',
     email: 'n@n.n',
     password: 'n',
     passwordConfirmation: 'n',
-    points: 200
+    points: 200,
+    telephone: '(075)30 486 805'
   },{
     username: 'Chavez',
     email: 'c@c.c',

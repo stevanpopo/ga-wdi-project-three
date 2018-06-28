@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance(),
+  PNF = require('google-libphonenumber').PhoneNumberFormat;
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
@@ -36,6 +38,15 @@ userSchema.virtual('passwordConfirmation')
 userSchema.pre('validate', function checkPasswordsMatch(next) {
   if(this.isModified('password') && this._passwordConfirmation !== this.password) {
     this.invalidate('passwordConfirmation', 'Passwords do not match');
+  }
+  next();
+});
+
+userSchema.pre('save', function checkTelephoneFormat(next) {
+  if(this.isModified('telephone')) {
+    console.log('in the pre save');
+    this.telephone = phoneUtil.format(phoneUtil.parse(this.telephone, 'GB'), PNF.E164);
+    console.log(this.telephone);
   }
   next();
 });
