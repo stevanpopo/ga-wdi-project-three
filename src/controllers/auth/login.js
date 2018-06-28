@@ -4,7 +4,7 @@ function AuthLoginCtrl($scope, $auth, $state, $rootScope) {
   $scope.handleSubmit = function() {
     $auth.login($scope.data)
       .then(() => {
-        $state.go('favourIndex');
+        $state.go('home');
         $scope.setCurrentUser();
         // $rootScope.$broadcast('loggedIn', res.data.user);
       })
