@@ -7,7 +7,7 @@ const commentSchema = new mongoose.Schema({
 
 const favourSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  description: { type: String, required: true },
+  description: { type: String/*, required: true */},
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   volunteers: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
   chosen_volunteers: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
