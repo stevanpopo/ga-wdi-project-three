@@ -1,0 +1,30 @@
+div.points {
+  height: 250px;
+  width: 250px;
+  border-radius: 100%;
+  font-size: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid blue;
+}
+div.points-small {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid blue;
+}
+div.points-medium {
+  height: 190px;
+  font-size: 60px;
+  width: 190px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid blue;
+}
