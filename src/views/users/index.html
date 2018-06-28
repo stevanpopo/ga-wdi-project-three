@@ -1,15 +1,15 @@
 <h1 class="title is-1">User Top 5</h1>
 
-<div class="columns is-multiline">
-  <div class="column is-half-desktop is-full-mobile">
-    <div class="columns is-multiline">
-      <div class="column is-half">
-        <figure class="image">
-          <img src="{{ usersTopFive[0].image }}" alt="Profile picture">
-        </figure>
-      </div>
-      <div class="column is-half-desktop">
-        <a ui-sref="usersShow({ id: usersTopFive[0]._id })">
+<div class="columns is-multiline page-wrapper">
+  <div class="column is-half-desktop is-full-mobile card-wrapper">
+    <a ui-sref="usersShow({ id: usersTopFive[0]._id })">
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <figure class="image">
+            <img src="{{ usersTopFive[0].image }}" alt="Profile picture">
+          </figure>
+        </div>
+        <div class="column is-half-desktop">
           <div class="card">
             <div class="card-header is-centered">
               <h1 class="title is-2">
@@ -22,21 +22,21 @@
               </div>
             </div>
           </div>
-        </a>
+        </div>
+        <div class="column is-12-desktop">
+          <article class="message">
+            <div class="message-body">
+              {{ usersTopFive[0].bio }}
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="column is-12-desktop">
-        <article class="message">
-          <div class="message-body">
-            {{ usersTopFive[0].bio }}
-          </div>
-        </article>
-      </div>
-    </div>
+    </a>
   </div>
-  <div class="column is-half-desktop">
+  <div class="column is-half-desktop second-to-fifth">
     <div class="columns is-multiline">
 
-      <div class="column is-full">
+      <div class="column is-full card-wrapper">
         <a ui-sref="usersShow({ id: usersTopFive[1]._id })">
           <div class="columns">
             <div class="column is-4">
@@ -58,7 +58,7 @@
         </a>
       </div>
 
-      <div class="column is-full">
+      <div class="column is-full card-wrapper">
         <a ui-sref="usersShow({ id: usersTopFive[2]._id })">
           <div class="columns">
             <div class="column is-4">
@@ -80,13 +80,13 @@
         </a>
       </div>
 
-      <div class="column is-half-desktop">
+      <div class="column is-half-desktop card-wrapper">
         <a ui-sref="usersShow({ id: usersTopFive[3]._id })">
           <info-card name="usersTopFive[3].username" points="usersTopFive[3].points"></info-card>
         </a>
       </div>
 
-      <div class="column is-half-desktop">
+      <div class="column is-half-desktop card-wrapper">
         <a ui-sref="usersShow({ id: usersTopFive[4]._id })">
           <info-card name="usersTopFive[4].username" points="usersTopFive[4].points"></info-card>
         </a>
@@ -95,7 +95,7 @@
     </div>
   </div>
 
-  <div class="column is-3" ng-repeat="user in usersRest">
+  <div class="column is-3 card-wrapper" ng-repeat="user in usersRest">
     <a ui-sref="usersShow({ id: user._id })">
       <info-card name="user.username" points="user.points"></info-card>
     </a>
