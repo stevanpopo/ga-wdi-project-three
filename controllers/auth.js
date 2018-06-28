@@ -14,8 +14,8 @@ function register(req, res, next) {
   // console.log('tel', tel);
   // console.log('formatted tel', phoneUtil.format(tel, PNF.E164));
 
-  req.body.telephone = phoneUtil.format(phoneUtil.parse(req.body.telephone, 'GB'), PNF.E164);
-  console.log('req.body.telephone', req.body.telephone);
+  // req.body.telephone = phoneUtil.format(phoneUtil.parse(req.body.telephone, 'GB'), PNF.E164);
+  // console.log('req.body.telephone', req.body.telephone);
 
   User.create(req.body)
     .then(user => res.json(user))
