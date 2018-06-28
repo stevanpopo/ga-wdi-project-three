@@ -12,31 +12,36 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'm@m.m',
     password: 'm',
     passwordConfirmation: 'm',
-    points: 400
+    points: 400,
+    telephone: '07530 486 805'
   },{
     username: 'Steve',
     email: 's@s.s',
     password: 's',
     passwordConfirmation: 's',
-    points: 300
+    points: 300,
+    telephone: '07530486805'
   },{
     username: 'Nick',
     email: 'n@n.n',
     password: 'n',
     passwordConfirmation: 'n',
-    points: 200
+    points: 200,
+    telephone: '(075)30 486 805'
   },{
     username: 'Chavez',
     email: 'c@c.c',
     password: 'c',
     passwordConfirmation: 'c',
-    points: 350
+    points: 350,
+    telephone: '07530-486-805'
   },{
     username: 'Rachel',
     email: 'r@r.r',
     password: 'r',
     passwordConfirmation: 'r',
-    points: 375
+    points: 375,
+    telephone: '+447530 486 805'
   },{
     username: 'Linda',
     email: 'l@l.l',
@@ -48,7 +53,8 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'j@j.j',
     password: 'j',
     passwordConfirmation: 'j',
-    points: 100
+    points: 100,
+    telephone: '+447530 486 805'
   },{
     username: 'Josh',
     email: 'j@t.j',
