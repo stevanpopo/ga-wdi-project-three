@@ -94,7 +94,8 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Domestic',
         owner: users[0],
         status: 'tender',
-        chosen_volunteers: [users[0]],
+        volunteers: [users[2], users[5]],
+        chosen_volunteers: [],
         comments: [{
           content: 'I\'ll do it, for a few points more',
           author: users[7]
@@ -112,7 +113,7 @@ mongoose.connect(dbURI, (err, db) => {
         description: 'I\'m looking for someone to help me a steward at our next Church fair. The local council madates that we have one for security due to the number of people on site. Can anyone help?',
         category: 'Events',
         owner: users[1],
-        status: 'completed',
+        status: 'inProgress',
         chosen_volunteers: [users[0]],
         comments: [{
           content: 'Would love to, but I\'m out of town',
@@ -145,7 +146,7 @@ mongoose.connect(dbURI, (err, db) => {
         description: 'I\'ll be away from my home next week and would love for someone to feed my cat whilst i\'m away. Any cat lovers available to help out?',
         owner: users[6],
         volunteers: [users[3]],
-        chosen_volunteers: [users[0]],
+        chosen_volunteers: [],
         status: 'tender',
         comments: [],
         points: 20,
