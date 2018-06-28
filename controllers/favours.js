@@ -80,7 +80,7 @@ function chooseVolunteerRoute(req, res, next){
 
       favour.status = 'inProgress';
 
-      return twilio.sendSMS('BODY', )
+      return twilio.sendSMS('You have been chosen to complete this favour.','+447530486805')
         .then(() => favour.save());
     })
     .then(favour => res.json(favour))
