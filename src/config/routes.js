@@ -14,7 +14,8 @@ function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: './views/home.html'
+      templateUrl: './views/favours/index.html',
+      controller: 'FavoursIndexCtrl'
     })
     .state('about', {
       url: '/about',
@@ -30,11 +31,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: './views/auth/login.html',
       controller: 'AuthLoginCtrl'
     })
-    .state('favourIndex', {
-      url: '/favours',
-      templateUrl: './views/favours/index.html',
-      controller: 'FavoursIndexCtrl'
-    })
+    // .state('favourIndex', {
+    //   url: '/favours',
+    //   templateUrl: './views/favours/index.html',
+    //   controller: 'FavoursIndexCtrl'
+    // })
     .state('favourShow', {
       url: '/favours/:id',
       templateUrl: './views/favours/show.html',

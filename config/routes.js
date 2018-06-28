@@ -4,6 +4,9 @@ const auth = require('../controllers/auth');
 const users = require('../controllers/users');
 const secureRoute = require('../lib/secureRoute');
 
+router.route('/')
+  .get(favours.index);
+
 router.route('/favours')
   .get(favours.index)
   .post(secureRoute, favours.create);
