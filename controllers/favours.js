@@ -94,11 +94,13 @@ function changeFavourStatusRoute(req, res, next){
         favour.status = 'completed';
         return favour.save();
       } else if (favour.status === 'completed'){
-        favour.chosen_volunteers.forEach(volunteer => {
-          console.log(volunteer, 'volunteer before');
-          volunteer.completedFavours.push(favour._id);
-          console.log(volunteer, 'volunteer after');
 
+        favour.chosen_volunteers.forEach(volunteer => {
+          User.findById(volunteer._id)
+            .then(user => {
+              user.completedFavours.push(favour._id);
+              user.save();
+            });
         });
 
         favour.status = 'verified';

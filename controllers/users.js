@@ -3,7 +3,6 @@ const User = require('../models/user');
 function indexRoute(req, res, next){
   User.find()
     .populate('favours')
-    .populate('inProgress')
     .then(users => res.json(users))
     .catch(next);
 }
@@ -11,6 +10,7 @@ function indexRoute(req, res, next){
 function showRoute(req, res, next){
   User.findById(req.params.id)
     .populate('inProgress')
+    .populate('completedFavours')
     .then(user => res.json(user))
     .catch(next);
 }

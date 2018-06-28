@@ -28,6 +28,16 @@ userSchema.virtual('favours', {
 userSchema.set('toJSON', {
   virtuals: true,
   transform(doc, json) {
+
+    if(json.inProgress) {
+      json.inProgress.forEach((el, ind) => {
+        if(el.status === 'verified') {
+          json.inProgress.splice(ind, 1);
+        }
+        return json;
+      });
+    }
+
     delete json.password;
     return json;
   }
