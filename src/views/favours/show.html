@@ -19,10 +19,10 @@ Volunteers:
   </div>
   <div class="column">
     <div class="favour-info">
-      Status: {{favour.status}}
       <h2 class="title is-2">{{ favour.title }},</h2>
         <h3 class="subtitle is-4">asked by {{ favour.owner.username }}</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h4 class="subtitle is-4">Status: {{favour.status}}</h4>
       <div ng-if="isOwner">
         <div class="field is-grouped">
           <p class="control">
@@ -37,9 +37,6 @@ Volunteers:
       <p>is owner? {{isOwner}}</p>
       <p>is chosen volunteer? {{isChosenVolunteer}}</p>
       <p>can volunteer? {{canVolunteer}}</p>
-
-      <p>{{favour.status==='completed'}}</p>
-      <p>{{favour.volunteers[0]._id === currentUser._id}}</p>
 
       <div class="buttons is-centered">
         <button class="button is-success" ng-if="canVolunteer"  ng-click="claimFavour()">Claim this favour</button>
