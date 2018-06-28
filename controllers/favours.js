@@ -96,16 +96,25 @@ function chooseVolunteerRoute(req, res, next){
 
 function changeFavourStatusRoute(req, res, next){
   Favour.findById(req.params.id)
+    .populate('owner')
+    .populate('chosen_volunteers')
     .then(favour => {
       console.log('in the change status route');
       console.log(favour.status);
       if(favour.status === 'inProgress'){
         console.log('in the if');
         favour.status = 'completed';
+        if(favour.owner.telephone){
+          twilio.sendSMS(`Hello ${favour.owner.username} - Your volunteer ${favour.chosen_volunteers[0].username} has marked your favour ${favour.title} as complete. Please check its completion and verify in the app.`, favour.owner.telephone);
+        }
+
         return favour.save();
       } else if (favour.status === 'completed'){
         console.log('in the else if');
         favour.status = 'verified';
+        if(favour.chosen_volunteers[0].telephone){
+          twilio.sendSMS(`Hello ${favour.chosen_volunteers[0].username} - Thanks for completing the favour ${favour.title}. ${favour.owner.username} has verified its completion and you have been given your KarmaCoins! Thanks for contributing to the Karma Community.`, favour.chosen_volunteers[0].telephone);
+        }
         return favour.save();
       }
     })
