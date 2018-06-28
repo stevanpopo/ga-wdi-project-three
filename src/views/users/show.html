@@ -1,0 +1,51 @@
+<div class="columns is-multiline is-centered">
+
+  <div class="column is-one-third-desktop is-one-half-tablet">
+    <img ng-src="{{user.image}}" alt="user_profile">
+  </div>
+
+  <div class="column is-two-thirds-desktop is-one-half-table">
+    <h1 class="title is-1">{{user.username}}</h1>
+    <p>{{user.bio}}</p>
+    <p>{{user.telephone}}</p>
+    <div class="field is-grouped">
+      <p class="control">
+        <a ui-sref="usersEdit({ id: user._id })" class="button is-small">Edit Profile</a>
+      </p>
+      <p class="control">
+        <button class="button is-small" ng-click="deleteUser()">Delete Profile</button>
+      </p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="columns is-multiline">
+
+      <div class="column is-full" ng-if="isOwner">
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <h2 class="subtitle is-3">Favours in transit</h2>
+          </div>
+          <div class="column is-3" ng-repeat="inProgress in user.inProgress">
+            <a ui-sref="favourShow({ id: inProgress._id })">
+              <info-card name="inProgress.title" points="inProgress.points"></info-card>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-full">
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <h2 class="subtitle is-3">Previous Favours</h2>
+          </div>
+          <div class="column is-3-desktop is-6-tablet" ng-repeat="completedFavour in user.completedFavours">
+            <a ui-sref="favourShow({ id: completedFavour._id })">
+              <info-card name="completedFavour.title" points="completedFavour.points"></info-card>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<h1>Favours index</h1>
+<div class="columns is-centered is-multiline">
+  <div class="column is-3" ng-repeat="favour in favours">
+    <a ui-sref="favourShow({ id: favour._id })">
+      <div class="card">
+        <div class="card-header-title points">
+          {{ favour.points }}
+        </div>
+        <div class="card-content">
+          {{ favour.title}}
+        </div>
+      </a>
+      <footer class="card-footer">
+        <div class="card-footer-item">
+          {{ favour.category }}
+        </div>
+        <a ui-sref="usersShow({ id: favour.owner._id })" class="card-footer-item">
+          {{ favour.owner.username }}
+      </a>
+      </footer>
+    </div>
+  </div>
+</div>
