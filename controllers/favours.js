@@ -1,4 +1,5 @@
 const Favour = require('../models/favour');
+const User = require('../models/user');
 
 function indexRoute(req, res, next){
   Favour.find()
@@ -87,15 +88,19 @@ function chooseVolunteerRoute(req, res, next){
 
 function changeFavourStatusRoute(req, res, next){
   Favour.findById(req.params.id)
+    .populate('chosen_volunteers')
     .then(favour => {
-      console.log('in the change status route');
-      console.log(favour.status);
       if(favour.status === 'inProgress'){
-        console.log('in the if');
         favour.status = 'completed';
         return favour.save();
       } else if (favour.status === 'completed'){
-        console.log('in the else if');
+        favour.chosen_volunteers.forEach(volunteer => {
+          console.log(volunteer, 'volunteer before');
+          volunteer.completedFavours.push(favour._id);
+          console.log(volunteer, 'volunteer after');
+
+        });
+
         favour.status = 'verified';
         return favour.save();
       }

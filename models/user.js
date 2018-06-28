@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   points: { type: Number },
   image: { type: String },
-  bio: { type: String }
+  bio: { type: String },
+  completedFavours: [{type: mongoose.Schema.ObjectId, ref: 'Favour' }]
 },{
   id: false
 });
