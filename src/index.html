@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>KarmaCommunity</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdsDypPEp9X7T8qg-p41_pz_c2EYsqr8Y&libraries=places"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdsDypPEp9X7T8qg-p41_pz_c2EYsqr8Y&libraries=places"></script>
 </head>
 <body ng-controller="MainCtrl">
 
@@ -20,7 +20,9 @@
     </div>
     <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
       <div class="navbar-start">
-        <span class="navbar-item" ng-if="isAuthenticated()">Welcome back {{ currentUser.username }}</span>
+        <a class="navbar-item" ng-if="isAuthenticated()" ui-sref="usersShow({ id: currentUser._id })">
+          Welcome back {{ currentUser.username }}
+        </a>
       </div>
       <div class="navbar-end">
         <a class="navbar-item" ng-if="!isAuthenticated()" ui-sref="register">Register</a>

@@ -12,6 +12,8 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'm@m.m',
     password: 'm',
     passwordConfirmation: 'm',
+    image: 'http://www.fillmurray.com/200/201',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 400,
     telephone: '07530 486 805'
   },{
@@ -19,6 +21,8 @@ mongoose.connect(dbURI, (err, db) => {
     email: 's@s.s',
     password: 's',
     passwordConfirmation: 's',
+    image: 'http://www.fillmurray.com/200/202',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 300,
     telephone: '07530486805'
   },{
@@ -26,6 +30,8 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'n@n.n',
     password: 'n',
     passwordConfirmation: 'n',
+    image: 'http://www.fillmurray.com/200/203',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 200,
     telephone: '(075)30 486 805'
   },{
@@ -33,6 +39,8 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'c@c.c',
     password: 'c',
     passwordConfirmation: 'c',
+    image: 'http://www.fillmurray.com/200/204',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 350,
     telephone: '07530-486-805'
   },{
@@ -40,6 +48,8 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'r@r.r',
     password: 'r',
     passwordConfirmation: 'r',
+    image: 'http://www.fillmurray.com/200/205',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 375,
     telephone: '+447530 486 805'
   },{
@@ -47,12 +57,16 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'l@l.l',
     password: 'l',
     passwordConfirmation: 'l',
+    image: 'http://www.fillmurray.com/200/206',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 1000
   },{
     username: 'James',
     email: 'j@j.j',
     password: 'j',
     passwordConfirmation: 'j',
+    image: 'http://www.fillmurray.com/202/200',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 100,
     telephone: '+447530 486 805'
   },{
@@ -60,12 +74,16 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'j@t.j',
     password: 'j',
     passwordConfirmation: 'j',
+    image: 'http://www.fillmurray.com/203/200',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 450
   },{
     username: 'Gerry',
     email: 'g@g.g',
     password: 'g',
     passwordConfirmation: 'g',
+    image: 'http://www.fillmurray.com/204/200',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 30
   }])
     .then(users => {
@@ -76,6 +94,7 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Domestic',
         owner: users[0],
         status: 'tender',
+        chosen_volunteers: [users[0]],
         comments: [{
           content: 'I\'ll do it, for a few points more',
           author: users[7]
@@ -114,6 +133,7 @@ mongoose.connect(dbURI, (err, db) => {
         owner: users[4],
         status: 'tender',
         comments: [],
+        chosen_volunteers: [users[0]],
         points: 20,
         location: {
           lat: 55.5138453,
@@ -125,9 +145,23 @@ mongoose.connect(dbURI, (err, db) => {
         description: 'I\'ll be away from my home next week and would love for someone to feed my cat whilst i\'m away. Any cat lovers available to help out?',
         owner: users[6],
         volunteers: [users[3]],
+        chosen_volunteers: [users[0]],
         status: 'tender',
         comments: [],
         points: 20,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
+      },{
+        title: 'Check my homework',
+        category: 'Education',
+        owner: users[2],
+        volunteers: [users[3],users[5]],
+        chosen_volunteers: [users[0]],
+        status: 'verified',
+        comments: [],
+        points: 30,
         location: {
           lat: 52.464,
           lng: -0.03607

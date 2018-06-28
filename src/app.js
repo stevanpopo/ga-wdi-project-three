@@ -24,11 +24,13 @@ import UsersEditCtrl from './controllers/users/edit';
 
 import filePicker from './directives/filePicker';
 import googleMap from './directives/googleMaps';
+import infoCard from './directives/infoCard';
 
 angular.module('favourAPI', ['ui.router', 'satellizer', 'angular-filepicker', 'ngMessages'])
   .config(Router)
   .config(Auth)
   .config(Upload)
+  
   .controller('MainCtrl', MainCtrl)
   .controller('FavoursIndexCtrl', FavoursIndexCtrl)
   .controller('FavoursShowCtrl', FavoursShowCtrl)
@@ -39,5 +41,7 @@ angular.module('favourAPI', ['ui.router', 'satellizer', 'angular-filepicker', 'n
   .controller('UsersIndexCtrl', UsersIndexCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl)
+
   .directive('filePicker', filePicker)
-  .directive('googleMap', googleMap);
+  .directive('googleMap', googleMap)
+  .directive('infoCard', infoCard);
