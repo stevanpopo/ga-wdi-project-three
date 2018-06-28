@@ -30,6 +30,7 @@ function updateRoute(req, res, next){
 }
 
 function createRoute(req, res, next){
+  console.log(req.body);
   req.body.owner = req.currentUser;
   req.body.status = 'tender';
   Favour.create(req.body)

@@ -7,7 +7,6 @@
       <div class="field">
         <label class="label" for="title">Title</label>
         <input class="input" name="title" id="title" ng-model="data.title" required />
-
       </div>
 
       <div class="field is-grouped">
@@ -37,6 +36,11 @@
             </select>
           </div>
         </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="address">Address</label>
+        <input class="input" id="address" name="address" placeholder="Address" ng-model="data.address" google-autocomplete update-location="updateLocation(location)" />
       </div>
 
       <p>You have {{ currentUser.points }} points available to you.</p>

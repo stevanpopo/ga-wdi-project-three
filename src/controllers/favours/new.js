@@ -3,8 +3,12 @@ function FavoursNewCtrl($scope, $http, $state) {
 
   $scope.enoughPoints = true;
 
+  $scope.updateLocation = function(location) {
+    $scope.data.location = location;
+    $scope.$apply();
+  };
+
   $scope.checkPoints = function() {
-    console.log('Executed checkPoints');
     if ($scope.data.points > $scope.currentUser.points) return $scope.enoughPoints = false;
     else return $scope.enoughPoints = true;
   };
