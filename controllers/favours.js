@@ -33,7 +33,11 @@ function createRoute(req, res, next){
   req.body.status = 'tender';
   Favour.create(req.body)
     .then(favour => {
-      console.log(favour);
+      User.findById(req.currentUser)
+        .then(user => {
+          user.points = user.points - req.body.points;
+          user.save();
+        });
       res.status(201).json(favour);
     })
     .catch(next);
@@ -100,6 +104,7 @@ function changeFavourStatusRoute(req, res, next){
           User.findById(volunteer._id)
             .then(user => {
               user.completedFavours.push(favour._id);
+              user.points = user.points + favour.points;
               user.save();
             });
         });
