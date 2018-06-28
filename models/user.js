@@ -12,6 +12,12 @@ const userSchema = new mongoose.Schema({
   id: false
 });
 
+userSchema.virtual('inProgress', {
+  localField: '_id',
+  foreignField: 'chosen_volunteers',
+  ref: 'Favour'
+});
+
 userSchema.virtual('favours', {
   localField: '_id',
   foreignField: 'volunteer',
