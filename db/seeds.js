@@ -72,6 +72,7 @@ mongoose.connect(dbURI, (err, db) => {
       console.log(`${users.length} users created.`);
       return Favour.create([{
         title: 'Lawnmower rental',
+        description: 'I desperately need to borrow a lawnmower so I can tend to my garden (forest). If anyone has a large scale lawnmower they could lend me that would be super useful.',
         category: 'Domestic',
         owner: users[0],
         status: 'tender',
@@ -89,6 +90,7 @@ mongoose.connect(dbURI, (err, db) => {
         }
       },{
         title: 'Steward at Church fair',
+        description: 'I\'m looking for someone to help me a steward at our next Church fair. The local council madates that we have one for security due to the number of people on site. Can anyone help?',
         category: 'Events',
         owner: users[1],
         status: 'completed',
@@ -107,6 +109,7 @@ mongoose.connect(dbURI, (err, db) => {
         }
       },{
         title: 'Cook at my BBQ',
+        description: 'I\'m hosting a bbq for my little nephew and his friends birthday. It would be great if someone could help to cook the bbq whilst I look after the children. Anyone free?',
         category: 'Events',
         owner: users[4],
         status: 'tender',
@@ -119,6 +122,7 @@ mongoose.connect(dbURI, (err, db) => {
       },{
         title: 'Feed my cat',
         category: 'Domestic',
+        description: 'I\'ll be away from my home next week and would love for someone to feed my cat whilst i\'m away. Any cat lovers available to help out?',
         owner: users[6],
         volunteers: [users[3]],
         status: 'tender',
