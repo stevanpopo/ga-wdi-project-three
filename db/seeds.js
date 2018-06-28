@@ -53,7 +53,8 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'j@j.j',
     password: 'j',
     passwordConfirmation: 'j',
-    points: 100
+    points: 100,
+    telephone: '+447530 486 805'
   },{
     username: 'Josh',
     email: 'j@t.j',

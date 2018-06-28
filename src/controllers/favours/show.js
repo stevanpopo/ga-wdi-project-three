@@ -29,12 +29,12 @@ function FavoursShowCtrl($scope, $http, $state) {
   })
     .then(res => {
       $scope.favour = res.data;
-      console.log($scope.favour.owner._id,'owner');
-      console.log($scope.currentUser._id,'currentUser');
+      // console.log($scope.favour.owner._id,'owner');
+      // console.log($scope.currentUser._id,'currentUser');
       if($scope.favour.owner._id === $scope.currentUser._id) $scope.isOwner = true;
       if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser._id) $scope.canVolunteer = false;
       if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser._id || $scope.favour.status !== 'tender') $scope.canVolunteer = false;
-      // if($scope.favour.chosen_volunteers[0]._id === $scope.currentUser._id) $scope.isChosenVolunteer = true;
+      if($scope.favour.chosen_volunteers.length > 0 && $scope.favour.chosen_volunteers[0]._id === $scope.currentUser._id) $scope.isChosenVolunteer = true;
       $scope.favour.volunteers.forEach(volunteer => {
         console.log('entered for each');
         console.log(volunteer);
