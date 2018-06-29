@@ -169,6 +169,48 @@ mongoose.connect(dbURI, (err, db) => {
           lat: 52.464,
           lng: -0.03607
         }
+      },{
+        title: 'Tutor my son anyone?',
+        category: 'Education',
+        description: 'Hey everyone - My son struggles with Maths at school but is really keen to learn. Could anyone help him with algebra?',
+        owner: users[2],
+        volunteers: [users[3],users[5]],
+        chosen_volunteers: [users[0]],
+        status: 'verified',
+        comments: [],
+        points: 50,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
+      },{
+        title: 'Run with my mum',
+        category: 'Domestic',
+        description: 'Hey everyone - My mum really wants to get fit but hates excersise. I thought if she had a friend to run with she might be more up for it. Would anyone want to join her?',
+        owner: users[2],
+        volunteers: [users[3],users[5]],
+        chosen_volunteers: [users[0]],
+        status: 'verified',
+        comments: [],
+        points: 30,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
+      },{
+        title: 'Tutor my daughter',
+        category: 'Education',
+        description: 'Hey everyone - My daughter struggles with English at school but is really keen to learn. Could anyone help him with algebra?',
+        owner: users[2],
+        volunteers: [users[3],users[5]],
+        chosen_volunteers: [users[0]],
+        status: 'verified',
+        comments: [],
+        points: 30,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
       }]);
     })
     .then(favours => console.log(`${favours.length} favours created`))
