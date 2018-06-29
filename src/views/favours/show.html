@@ -102,7 +102,7 @@
       </div>
     </div>
     <div class="media-right">
-      <button class="delete" ng-click="removeComment(comment)"></button>
+      <button ng-show="isOwner" class="delete" ng-click="removeComment(comment)"></button>
     </div>
   </article>
 
