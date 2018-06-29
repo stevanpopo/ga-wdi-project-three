@@ -113,8 +113,8 @@ mongoose.connect(dbURI, (err, db) => {
         }],
         points: 20,
         location: {
-          lat: 51.464,
-          lng: -0.03607
+          lat: 51.531270,
+          lng: -0.156969
         }
       },{
         title: 'Steward at Church fair',
@@ -132,8 +132,8 @@ mongoose.connect(dbURI, (err, db) => {
         }],
         points: 75,
         location: {
-          lat: 51.5138453,
-          lng: -0.0983506
+          lat: 51.515252,
+          lng: -0.072344
         }
       },{
         title: 'Cook at my BBQ',
@@ -152,8 +152,8 @@ mongoose.connect(dbURI, (err, db) => {
         chosen_volunteers: [users[0]],
         points: 20,
         location: {
-          lat: 55.5138453,
-          lng: -0.0983506
+          lat: 51.513845,
+          lng: -0.098351
         }
       },{
         title: 'Feed my cat please',
@@ -166,8 +166,8 @@ mongoose.connect(dbURI, (err, db) => {
         comments: [],
         points: 20,
         location: {
-          lat: 52.464,
-          lng: -0.03607
+          lat: 51.515252,
+          lng: -0.072344
         }
       },{
         title: 'Check my homework',
@@ -180,8 +180,8 @@ mongoose.connect(dbURI, (err, db) => {
         comments: [],
         points: 30,
         location: {
-          lat: 52.464,
-          lng: -0.03607
+          lat: 51.515252,
+          lng: -0.072344
         }
       },{
         title: 'Tutor my son anyone?',
@@ -200,8 +200,8 @@ mongoose.connect(dbURI, (err, db) => {
         }],
         points: 50,
         location: {
-          lat: 52.464,
-          lng: -0.03607
+          lat: 51.515252,
+          lng: -0.072344
         }
       },{
         title: 'Run with my mum',
@@ -214,8 +214,8 @@ mongoose.connect(dbURI, (err, db) => {
         comments: [],
         points: 30,
         location: {
-          lat: 52.464,
-          lng: -0.03607
+          lat: 51.531270,
+          lng: -0.156969
         }
       },{
         title: 'Tutor my daughter',
@@ -228,8 +228,8 @@ mongoose.connect(dbURI, (err, db) => {
         comments: [],
         points: 30,
         location: {
-          lat: 52.464,
-          lng: -0.03607
+          lat: 51.515252,
+          lng: -0.072344
         }
       }]);
     })
