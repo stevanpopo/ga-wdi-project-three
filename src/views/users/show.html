@@ -23,7 +23,7 @@
       <div class="column is-full" ng-if="isOwner">
         <div class="columns is-multiline">
           <div class="column is-12">
-            <h2 class="subtitle is-3">Favours in transit</h2>
+            <h2 class="title is-2">Favours in transit</h2>
           </div>
           <div class="column is-3" ng-repeat="inProgress in user.inProgress">
             <a ui-sref="favourShow({ id: inProgress._id })">
@@ -50,19 +50,6 @@
       </div>
 
 
-
     </div>
   </div>
 </div>
-
-<!-- <section class="similar-favours">
-  <h2 class="title is-2">Similar Available Favours</h2>
-  <div class="columns">
-    <div class="similar-favours-show" ng-if="favour.similarFavours.length===0">
-      <p>This is where other favours from the {{favour.category}} category will appear if available to volunteer for.</p>
-    </div>
-    <div class="similar-favours-show column is-half" ng-repeat="sfavour in favour.similarFavours">
-      <h4 class="title is-4"><a ui-sref="favoursShow({ id: favour._id })">{{ sfavour.title }}</a></h4>
-    </div>
-  </div>
-</section> -->
