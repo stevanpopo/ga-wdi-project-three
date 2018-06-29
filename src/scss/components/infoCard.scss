@@ -1,25 +1,5 @@
-* {
-  border-color: saddlebrown;
-}
-
-div.info-card {
-  background-color: goldenRod;
-  .info-card-title {
-    display: flex;
-    align-items: center;
-    background-color: saddlebrown;
+a {
+  &.info-card-wrap:hover {
+    border: 2px solid $colour-four;
   }
 }
-
-a.link-wrap{
-  div.test {
-    color: green !important;
-    background-color: green;
-  }
-}
-.test {
-  font-family: "Gill Sans", sans-serif;
-  font-size: 60px;
-  background-color: inherit;
-}
-// justify-content: center;

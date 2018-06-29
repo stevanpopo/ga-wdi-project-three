@@ -119,7 +119,7 @@
       <p>This is where other favours from the {{favour.category}} category will appear if available to volunteer for.</p>
     </div>
     <div class="column is-3" ng-repeat="sfavour in favour.similarFavours">
-      <a ui-sref="favourShow({ id: sfavour._id })">
+      <a class="info-card-wrap" ui-sref="favourShow({ id: sfavour._id })">
         <info-card name="sfavour.title" points="sfavour.points"></info-card>
       </a>
     </div>
