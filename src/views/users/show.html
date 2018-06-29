@@ -45,7 +45,7 @@
               <p>{{user.username}} is yet to complete any favours. When {{user.username}} does complete her first favour, they will show here.</p>
             </div>
           </div>
-          <div class="column is-3-desktop is-6-tablet similar-favours-show" ng-repeat="completedFavour in user.completedFavours">
+          <div class="column is-3-desktop is-6-tablet" ng-repeat="completedFavour in user.completedFavours">
             <a ui-sref="favourShow({ id: completedFavour._id })">
               <info-card name="completedFavour.title" points="completedFavour.points"></info-card>
             </a>
