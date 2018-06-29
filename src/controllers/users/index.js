@@ -15,8 +15,6 @@ function UsersIndexCtrl($scope, $http){
           return b.points - a.points;
         })
         .slice(5);
-      console.log($scope.usersTopFive,'users top');
-      console.log($scope.usersRest,'users rest');
     });
 }
 
