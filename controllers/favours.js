@@ -135,7 +135,11 @@ function commentCreateRoute(req, res, next){
 
 function commentDeleteRoute(req, res, next){
   Favour.findById(req.params.id)
+    .populate('volunteers')
+    .populate('chosen_volunteers')
+    .populate('owner')
     .populate('comments.author')
+    .populate('similarFavours')
     .then(favour => {
       const comment = favour.comments.id(req.params.commentId);
       comment.remove();
