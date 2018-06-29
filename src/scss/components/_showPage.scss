@@ -5,5 +5,12 @@
 div.volunteer-cards {
   border: 3px solid $colour-two;
   border-radius: 5%;
-  background-color: white;
+  background-color: $colour-five;
+}
+
+div.similar-favours-show {
+  border: 3px solid $colour-two;
+  border-radius: 3%;
+  background-color: $colour-five;
+  padding: 14px 0px 14px 20px;
 }

@@ -114,8 +114,12 @@
 
 <section class="similar-favours">
   <h2 class="title is-2">Similar Available Favours</h2>
-  <ul>
-    <li ng-if="favour.similarFavours.length===0">This is where other favours from the {{favour.category}} category will appear if available to volunteer for. </li>
-    <li ng-repeat="sfavour in favour.similarFavours">{{ sfavour.title }}</li>
-  </ul>
+  <div class="columns">
+    <div class="similar-favours-show" ng-if="favour.similarFavours.length===0">
+      <p>This is where other favours from the {{favour.category}} category will appear if available to volunteer for.</p>
+    </div>
+    <div class="similar-favours-show column is-half" ng-repeat="sfavour in favour.similarFavours">
+      <h4 class="title is-4"><a ui-sref="favoursShow({ id: favour._id })">{{ sfavour.title }}</a></h4>
+    </div>
+  </div>
 </section>

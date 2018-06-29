@@ -142,7 +142,7 @@ mongoose.connect(dbURI, (err, db) => {
           lng: -0.0983506
         }
       },{
-        title: 'Feed my cat',
+        title: 'Feed my cat please',
         category: 'Domestic',
         description: 'I\'ll be away from my home next week and would love for someone to feed my cat whilst i\'m away. Any cat lovers available to help out?',
         owner: users[6],
