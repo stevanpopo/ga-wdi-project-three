@@ -142,7 +142,13 @@ mongoose.connect(dbURI, (err, db) => {
         owner: users[4],
         status: 'inProgress',
         volunteers: [users[2], users[5]],
-        comments: [],
+        comments: [{
+          content: 'Would love to, but I\'m out of town',
+          author: users[5]
+        },{
+          content: 'Hey guys, lets just go to Jujus!',
+          author: users[8]
+        }],
         chosen_volunteers: [users[0]],
         points: 20,
         location: {
@@ -154,7 +160,7 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Domestic',
         description: 'I\'ll be away from my home next week and would love for someone to feed my cat whilst i\'m away. Any cat lovers available to help out?',
         owner: users[6],
-        volunteers: [users[3]],
+        volunteers: [users[3], users[7], users[5]],
         chosen_volunteers: [],
         status: 'tender',
         comments: [],
@@ -169,7 +175,7 @@ mongoose.connect(dbURI, (err, db) => {
         description: 'Hey everyone - I\'m working on a big homework for school and I\'d love for someone older than me to give me some feedback. The topic is WW2 so anyone with a passion for history - even better!',
         owner: users[2],
         volunteers: [users[3],users[5]],
-        chosen_volunteers: [users[0]],
+        chosen_volunteers: [users[3]],
         status: 'verified',
         comments: [],
         points: 30,
@@ -181,11 +187,17 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Tutor my son anyone?',
         category: 'Education',
         description: 'Hey everyone - My son struggles with Maths at school but is really keen to learn. Could anyone help him with algebra?',
-        owner: users[2],
-        volunteers: [users[3],users[5]],
-        chosen_volunteers: [users[0]],
-        status: 'verified',
-        comments: [],
+        owner: users[1],
+        volunteers: [users[3], users[5], users[0]],
+        chosen_volunteers: [],
+        status: 'tender',
+        comments: [{
+          content: 'Would love to, but I\'m out of town',
+          author: users[3]
+        },{
+          content: 'Hey guys, lets just go to Jujus!',
+          author: users[8]
+        }],
         points: 50,
         location: {
           lat: 52.464,
@@ -197,7 +209,7 @@ mongoose.connect(dbURI, (err, db) => {
         description: 'Hey everyone - My mum really wants to get fit but hates excersise. I thought if she had a friend to run with she might be more up for it. Would anyone want to join her?',
         owner: users[2],
         volunteers: [users[3],users[5]],
-        chosen_volunteers: [users[0]],
+        chosen_volunteers: [users[1]],
         status: 'completed',
         comments: [],
         points: 30,
@@ -209,7 +221,7 @@ mongoose.connect(dbURI, (err, db) => {
         title: 'Tutor my daughter',
         category: 'Education',
         description: 'Hey everyone - My daughter struggles with English at school but is really keen to learn. Could anyone help him with algebra?',
-        owner: users[2],
+        owner: users[6],
         volunteers: [users[3],users[5]],
         chosen_volunteers: [users[0]],
         status: 'verified',
