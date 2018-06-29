@@ -6,7 +6,8 @@ div.points {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid blue;
+  border: 2px solid $colour-two;
+  background-color: white;
 }
 div.points-small {
   height: 150px;
@@ -16,7 +17,8 @@ div.points-small {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid blue;
+  border: 2px solid $colour-two;
+  background-color: white;
 }
 div.points-medium {
   height: 190px;
@@ -26,5 +28,6 @@ div.points-medium {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid blue;
+  border: 2px solid $colour-two;
+  background-color: white;
 }

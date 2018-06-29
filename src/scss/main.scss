@@ -1,9 +1,9 @@
 
 // Partials
+@import "helper/_variables.scss";
+
 @import "partials/_pointsLogo.scss";
 @import "partials/_typography.scss";
-
-@import "helper/_variables.scss";
 
 @import "components/_showPage.scss";
 @import "components/_indexPage.scss";
@@ -13,5 +13,9 @@ section.comments, section.gmap, section.similar-favours  {
 }
 
 body {
-  background-color: $colour-two;
+  background-color: $colour-one;
+}
+
+nav {
+  border-bottom: 3px solid $colour-three;
 }

@@ -37,6 +37,7 @@
         <div class="columns is-multiline">
           <div class="column is-12">
             <h2 class="subtitle is-3">Previous Favours</h2>
+            <p ng-if="user.completedFavours.length===0">{{user.username}} is yet to complete any favours. When {{user.username}} does complete her first favour, they will show here.</p>
           </div>
           <div class="column is-3-desktop is-6-tablet" ng-repeat="completedFavour in user.completedFavours">
             <a ui-sref="favourShow({ id: completedFavour._id })">

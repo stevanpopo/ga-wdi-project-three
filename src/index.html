@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>KarmaCommunity</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Open+Sans:400,400i,700|Roboto" rel="stylesheet">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdsDypPEp9X7T8qg-p41_pz_c2EYsqr8Y&libraries=places"></script>
 </head>
 <body ng-controller="MainCtrl">
@@ -37,7 +38,7 @@
   </nav>
   <div class="section">
     <div class="container">
-      <h1 class="title is-1">KarmaCommunity</h1>
+      <h1 class="title is-1 logo-title">KarmaCommunity</h1>
 
       <div class="is-{{flashMessage.type}}" ng-class="{ 'is-active': flashMessage }">
         {{ flashMessage.content }}
@@ -50,7 +51,7 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>KarmaCommunity</strong> was built by <a href="https://github.com/cerbeh">Martin</a> and <a href="https://github.com/stevanpopo">Stevan</a>.
+        <span class="footer-logo-title">KarmaCommunity</span> was built by <a href="https://github.com/cerbeh">Martin</a> and <a href="https://github.com/stevanpopo">Stevan</a>.
       </p>
     </div>
   </footer>

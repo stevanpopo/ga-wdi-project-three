@@ -13,7 +13,7 @@ mongoose.connect(dbURI, (err, db) => {
     password: 'm',
     passwordConfirmation: 'm',
     image: 'http://www.fillmurray.com/200/201',
-    bio: 'I\ve worked in the social sector for years and love to contribute to the community. Particularly useful for working at events or caring for the elderly.',
+    bio: 'I\'ve worked in the social sector for years and love to contribute to the community. Particularly useful for working at events or caring for the elderly.',
     points: 400,
     telephone: '07530 486 805'
   },{
