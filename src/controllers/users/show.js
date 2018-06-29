@@ -1,6 +1,5 @@
 function UsersShowCtrl($scope, $http, $state){
 
-  $scope.isOwner = false;
 
   $http({
     method: 'GET',
@@ -8,7 +7,6 @@ function UsersShowCtrl($scope, $http, $state){
   })
     .then( res => {
       $scope.user = res.data;
-      if($scope.user._id === $scope.currentUser._id) $scope.isOwner = true;
     });
 
   $scope.deleteUser = function(){

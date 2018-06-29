@@ -2,15 +2,16 @@
 
   <div class="column is-one-third-desktop">
     <div class="points">
-      <h1 class="title is-1">{{ favour.points }}</h1>
+      <h1 class="title is-1 favour-show-points">{{ favour.points }}</h1>
     </div>
   </div>
   <div class="column">
     <div class="favour-info">
       <h2 class="title is-2">{{ favour.title }},</h2>
-        <h3 class="subtitle is-4">asked by {{ favour.owner.username }}</h3>
-      <p>{{favour.description}}</p>
-      <h4 class="subtitle is-4">Status: {{favour.status}}</h4>
+        <h3 class="subtitle is-4">asked by <a ui-sref="usersShow({ id: favour.owner._id })">{{ favour.owner.username }}</a></h3>
+      <p class="favour-description">{{favour.description}}</p>
+      <h4 class="subtitle is-4 favour-header-four"><span class="category-title">Category: <strong>{{favour.category}}</strong></span></h4>
+      <h4 class="subtitle is-4 favour-header-four"><span class="favour-status">Status: <strong>{{favour.status}}</strong></span></h4>
       <div ng-if="isOwner">
         <div class="field is-grouped">
           <p class="control">
@@ -35,7 +36,7 @@
 <section class="selected-volunteers-bar" ng-if="favour.chosen_volunteers.length !== 0">
   <h2 class="title is-2">Selected Volunteer:</h2>
   <div class="volunteers columns">
-    <div class="card column is-3" ng-repeat="chosen in favour.chosen_volunteers">
+    <div class="card column is-3 volunteer-cards" ng-repeat="chosen in favour.chosen_volunteers">
       <div class="card-content">
         <div class="media">
           <div class="media-left">
@@ -57,7 +58,7 @@
 <section class="volunteers-bar" ng-if="favour.chosen_volunteers.length === 0">
   <h2 class="title is-2">Volunteers:</h2>
   <div class="volunteers columns">
-    <div class="card column is-3" ng-repeat="volunteer in favour.volunteers">
+    <div class="card column is-3 volunteer-cards" ng-repeat="volunteer in favour.volunteers">
       <div class="card-content">
         <div class="media">
           <div class="media-left">
@@ -113,7 +114,12 @@
 
 <section class="similar-favours">
   <h2 class="title is-2">Similar Available Favours</h2>
-  <ul>
-    <li ng-repeat="sfavour in favour.similarFavours">{{ sfavour.title }}</li>
-  </ul>
+  <div class="columns">
+    <div class="similar-favours-show" ng-if="favour.similarFavours.length===0">
+      <p>This is where other favours from the {{favour.category}} category will appear if available to volunteer for.</p>
+    </div>
+    <div class="similar-favours-show column is-half" ng-repeat="sfavour in favour.similarFavours">
+      <h4 class="title is-4"><a ui-sref="favoursShow({ id: favour._id })">{{ sfavour.title }}</a></h4>
+    </div>
+  </div>
 </section>

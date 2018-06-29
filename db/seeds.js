@@ -13,7 +13,7 @@ mongoose.connect(dbURI, (err, db) => {
     password: 'm',
     passwordConfirmation: 'm',
     image: 'http://www.fillmurray.com/200/201',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
+    bio: 'I\'ve worked in the social sector for years and love to contribute to the community. Particularly useful for working at events or caring for the elderly.',
     points: 400,
     telephone: '07530 486 805'
   },{
@@ -22,7 +22,7 @@ mongoose.connect(dbURI, (err, db) => {
     password: 's',
     passwordConfirmation: 's',
     image: 'http://www.fillmurray.com/200/202',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
+    bio: 'I love to help the KarmaCommunity. I have my security qualification so can help with large-scale events. I also love working with children and anything to do with sports. Reach out any time.',
     points: 300,
     telephone: '07530486805'
   },{
@@ -133,6 +133,7 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Events',
         owner: users[4],
         status: 'inProgress',
+        volunteers: [users[2], users[5]],
         comments: [],
         chosen_volunteers: [users[0]],
         points: 20,
@@ -141,7 +142,7 @@ mongoose.connect(dbURI, (err, db) => {
           lng: -0.0983506
         }
       },{
-        title: 'Feed my cat',
+        title: 'Feed my cat please',
         category: 'Domestic',
         description: 'I\'ll be away from my home next week and would love for someone to feed my cat whilst i\'m away. Any cat lovers available to help out?',
         owner: users[6],
@@ -157,6 +158,49 @@ mongoose.connect(dbURI, (err, db) => {
       },{
         title: 'Check my homework',
         category: 'Education',
+        description: 'Hey everyone - I\'m working on a big homework for school and I\'d love for someone older than me to give me some feedback. The topic is WW2 so anyone with a passion for history - even better!',
+        owner: users[2],
+        volunteers: [users[3],users[5]],
+        chosen_volunteers: [users[0]],
+        status: 'verified',
+        comments: [],
+        points: 30,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
+      },{
+        title: 'Tutor my son anyone?',
+        category: 'Education',
+        description: 'Hey everyone - My son struggles with Maths at school but is really keen to learn. Could anyone help him with algebra?',
+        owner: users[2],
+        volunteers: [users[3],users[5]],
+        chosen_volunteers: [users[0]],
+        status: 'verified',
+        comments: [],
+        points: 50,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
+      },{
+        title: 'Run with my mum',
+        category: 'Domestic',
+        description: 'Hey everyone - My mum really wants to get fit but hates excersise. I thought if she had a friend to run with she might be more up for it. Would anyone want to join her?',
+        owner: users[2],
+        volunteers: [users[3],users[5]],
+        chosen_volunteers: [users[0]],
+        status: 'completed',
+        comments: [],
+        points: 30,
+        location: {
+          lat: 52.464,
+          lng: -0.03607
+        }
+      },{
+        title: 'Tutor my daughter',
+        category: 'Education',
+        description: 'Hey everyone - My daughter struggles with English at school but is really keen to learn. Could anyone help him with algebra?',
         owner: users[2],
         volunteers: [users[3],users[5]],
         chosen_volunteers: [users[0]],

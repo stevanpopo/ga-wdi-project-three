@@ -1,9 +1,9 @@
 
 // Partials
+@import "helper/_variables.scss";
+
 @import "partials/_pointsLogo.scss";
 @import "partials/_typography.scss";
-
-@import "helper/_variables.scss";
 
 @import "components/_showPage.scss";
 @import "components/_indexPage.scss";
@@ -16,8 +16,15 @@ section {
   div.page-wrapper {
     .card-wrapper {
       .link-wrap {
-        background-color: green;  
+        background-color: green;
       }
     }
   }
+}
+body {
+  background-color: $colour-one;
+}
+
+nav {
+  border-bottom: 3px solid $colour-three;
 }
