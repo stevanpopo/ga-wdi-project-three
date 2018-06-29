@@ -8,7 +8,7 @@
   <div class="column">
     <div class="favour-info">
       <h2 class="title is-2">{{ favour.title }},</h2>
-        <h3 class="subtitle is-4">asked by <a ui-sref="usersShow({ id: favour.owner._id })">{{ favour.owner.username }}</a></h3>
+      <h3 class="subtitle is-4">asked by <a ui-sref="usersShow({ id: favour.owner._id })">{{ favour.owner.username }}</a></h3>
       <p class="favour-description">{{favour.description}}</p>
       <h4 class="subtitle is-4 favour-header-four"><span class="category-title">Category: <strong>{{favour.category}}</strong></span></h4>
       <h4 class="subtitle is-4 favour-header-four"><span class="favour-status">Status: <strong>{{favour.status}}</strong></span></h4>
@@ -118,8 +118,10 @@
     <div class="similar-favours-show" ng-if="favour.similarFavours.length===0">
       <p>This is where other favours from the {{favour.category}} category will appear if available to volunteer for.</p>
     </div>
-    <div class="similar-favours-show column is-half" ng-repeat="sfavour in favour.similarFavours">
-      <h4 class="title is-4"><a ui-sref="favourShow({ id: sfavour._id })">{{ sfavour.title }}</a></h4>
+    <div class="column is-3" ng-repeat="sfavour in favour.similarFavours">
+      <a ui-sref="favourShow({ id: sfavour._id })">
+        <info-card name="sfavour.title" points="sfavour.points"></info-card>
+      </a>
     </div>
   </div>
 </section>
