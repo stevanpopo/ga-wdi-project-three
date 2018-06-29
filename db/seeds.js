@@ -35,11 +35,11 @@ mongoose.connect(dbURI, (err, db) => {
     points: 200,
     telephone: '(075)30 486 805'
   },{
-    username: 'Chavez',
-    email: 'c@c.c',
-    password: 'c',
-    passwordConfirmation: 'c',
-    image: 'http://www.fillmurray.com/200/204',
+    username: 'Bianca',
+    email: 'b@b.b',
+    password: 'b',
+    passwordConfirmation: 'b',
+    image: 'https://media.licdn.com/dms/image/C5603AQGP8ydXXjyNfw/profile-displayphoto-shrink_800_800/0?e=1535587200&v=beta&t=CxYDDIjlTbd7ibP8CCmXaiOnbowWDFOi51wbLVgM_h4',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 350,
     telephone: '07530-486-805'
@@ -82,7 +82,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'g@g.g',
     password: 'g',
     passwordConfirmation: 'g',
-    image: 'http://www.fillmurray.com/204/200',
+    image: 'https://pbs.twimg.com/profile_images/562341218416226304/JpFdjFFD_400x400.jpeg',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 30
   }])
