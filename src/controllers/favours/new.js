@@ -19,7 +19,10 @@ function FavoursNewCtrl($scope, $http, $state) {
       url: '/api/favours',
       data: $scope.data
     })
-      .then(() => $state.go('home'));
+      .then(() => {
+        $scope.currentUser.points = $scope.currentUser.points - $scope.data.points;
+        $state.go('home');
+      });
   };
 }
 
