@@ -12,7 +12,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'm@m.m',
     password: 'm',
     passwordConfirmation: 'm',
-    image: 'http://www.fillmurray.com/200/201',
+    image: 'https://media.licdn.com/dms/image/C5603AQGu6wh3qYGBLw/profile-displayphoto-shrink_800_800/0?e=1535587200&v=beta&t=XnUnHb-LzDPn31_F5TCnZj94SrBbkZT7dhtjiCR6CZU',
     bio: 'I\'ve worked in the social sector for years and love to contribute to the community. Particularly useful for working at events or caring for the elderly.',
     points: 400,
     telephone: '07530 486 805'
@@ -21,7 +21,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 's@s.s',
     password: 's',
     passwordConfirmation: 's',
-    image: 'http://www.fillmurray.com/200/202',
+    image: 'https://media.licdn.com/dms/image/C5603AQE3dxyabVPi5Q/profile-displayphoto-shrink_200_200/0?e=1535587200&v=beta&t=j7-pRuhjXGBbnCd4ivBEY1S0gMwoG7VTSbJVwOKA3JM',
     bio: 'I love to help the KarmaCommunity. I have my security qualification so can help with large-scale events. I also love working with children and anything to do with sports. Reach out any time.',
     points: 300,
     telephone: '07530486805'
@@ -30,7 +30,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'n@n.n',
     password: 'n',
     passwordConfirmation: 'n',
-    image: 'http://www.fillmurray.com/200/203',
+    image: 'https://media.licdn.com/dms/image/C4D03AQGAdx9OO-rnhQ/profile-displayphoto-shrink_800_800/0?e=1535587200&v=beta&t=1W9dgTtyBdRDuzigd2Yd0ZZDg7wPFoONbTfynCmguU4',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 200,
     telephone: '(075)30 486 805'
@@ -48,7 +48,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'r@r.r',
     password: 'r',
     passwordConfirmation: 'r',
-    image: 'http://www.fillmurray.com/200/205',
+    image: 'https://media.licdn.com/dms/image/C4E03AQGcViLKNakmhw/profile-displayphoto-shrink_800_800/0?e=1535587200&v=beta&t=3LKBu-tMf3OkUKOmQQtwvF1yjrzuG8iJeH9hV3Jd3Gc',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 375,
     telephone: '+447530 486 805'
@@ -57,7 +57,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'l@l.l',
     password: 'l',
     passwordConfirmation: 'l',
-    image: 'http://www.fillmurray.com/200/206',
+    image: 'https://media.licdn.com/dms/image/C4D03AQFeCLnOxdNYog/profile-displayphoto-shrink_800_800/0?e=1535587200&v=beta&t=ttKHbyOJJ2d9_1XNBNkKDU1SwITJCXQq8jSFgHzTdmM',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 1000
   },{
@@ -65,7 +65,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'j@j.j',
     password: 'j',
     passwordConfirmation: 'j',
-    image: 'http://www.fillmurray.com/202/200',
+    image: 'https://media.licdn.com/dms/image/C4D03AQHazaIQs2xaYQ/profile-displayphoto-shrink_800_800/0?e=1535587200&v=beta&t=ATmiw41BLCHVpd4paMKJm-Rm2s6bWQU8M2_jI83AULA',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 100,
     telephone: '+447530 486 805'
@@ -74,7 +74,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'j@t.j',
     password: 'j',
     passwordConfirmation: 'j',
-    image: 'http://www.fillmurray.com/203/200',
+    image: 'https://media.licdn.com/dms/image/C4D03AQHRh22KeWwTRg/profile-displayphoto-shrink_800_800/0?e=1535587200&v=beta&t=W5odKLyHdmVHxg6irq-9z1lwit71E4cqGzFqdbBzXgA',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 450
   },{

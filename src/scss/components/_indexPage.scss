@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 section {
   // background-color: $colour-two;
   div {
@@ -9,12 +10,24 @@ section {
         opacity: 1;
       }
     }
+=======
+.card-wrapper {
+  // background-color: $colour-three;
+  opacity: 0.8;
+  border-radius: 5px;
+  padding: -3px;
+  &:hover {
+    opacity: 1;
+  }
+}
+>>>>>>> development
 
     .second-to-fifth {
       display: flex;
       justify-content: space-between;
     }
 
+<<<<<<< HEAD
     .page-wrapper {
       background-color: $colour-two;
       opacity: 0.8;
@@ -24,4 +37,34 @@ section {
       background-color: inherit;
     }
   }
+=======
+.page-wrapper {
+  // background-color: $colour-three;
+  opacity: 0.8;
+  border-radius: 5px;
+  padding: 3px;
+}
+.card {
+  background-color: inherit;
+>>>>>>> development
+}
+
+// div.favour-index-card {
+//   display: flex;
+// }
+//
+// div.card-header-title {
+//   justify-content: center;
+// }
+
+div.favour-index-points-wrapper {
+  display: flex;
+
+  div.favour-index-points {
+    justify-content: center;
+  }
+}
+
+a.leaderboard-link {
+  border: 5px solid $colour-three;
 }
