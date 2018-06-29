@@ -190,7 +190,7 @@ mongoose.connect(dbURI, (err, db) => {
         owner: users[2],
         volunteers: [users[3],users[5]],
         chosen_volunteers: [users[0]],
-        status: 'verified',
+        status: 'completed',
         comments: [],
         points: 30,
         location: {

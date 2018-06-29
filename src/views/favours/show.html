@@ -40,8 +40,8 @@
       <div class="card-content">
         <div class="media">
           <div class="media-left">
-            <figure ng-if="chosen.image" class="image is-48x48">
-              <img src="{{chosen.image}}" alt="Placeholder image">
+            <figure class="image is-48x48">
+              <img ng-src="{{ chosen.image }}" alt="Placeholder image">
             </figure>
           </div>
           <div class="media-content">
@@ -55,7 +55,7 @@
   </div>
 </section>
 
-<section class="volunteers-bar" ng-if="favour.chosen_volunteers.length === 0">
+<section class="volunteers-bar" ng-show="favour.chosen_volunteers.length === 0">
   <h2 class="title is-2">Volunteers:</h2>
   <div class="volunteers columns">
     <div class="card column is-3 volunteer-cards" ng-repeat="volunteer in favour.volunteers">
@@ -63,7 +63,7 @@
         <div class="media">
           <div class="media-left">
             <figure ng-if="volunteer.image" class="image is-48x48">
-              <img src="{{volunteer.image}}" alt="Placeholder image">
+              <img ng-src="{{volunteer.image}}" alt="User Avatar">
             </figure>
           </div>
           <div class="media-content">

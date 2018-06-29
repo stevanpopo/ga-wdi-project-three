@@ -5,6 +5,13 @@ function FavoursShowCtrl($scope, $http, $state) {
   $scope.isChosenVolunteer = false;
   $scope.canVolunteer = true;
 
+  $scope.status = {
+    tender: false,
+    inProgress: false,
+    completed: false,
+    verified: false
+  };
+
   $scope.addComment = function(){
     $http({
       method: 'POST',

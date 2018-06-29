@@ -12,6 +12,15 @@ section.comments, section.gmap, section.similar-favours  {
   margin-top: 30px;
 }
 
+section {
+  div.page-wrapper {
+    .card-wrapper {
+      .link-wrap {
+        background-color: green;
+      }
+    }
+  }
+}
 body {
   background-color: $colour-one;
 }
