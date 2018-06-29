@@ -2,16 +2,16 @@
 
   <div class="column is-one-third-desktop">
     <div class="points">
-      <h1 class="title is-1">{{ favour.points }}</h1>
+      <h1 class="title is-1 favour-show-points">{{ favour.points }}</h1>
     </div>
   </div>
   <div class="column">
     <div class="favour-info">
       <h2 class="title is-2">{{ favour.title }},</h2>
         <h3 class="subtitle is-4">asked by <a ui-sref="usersShow({ id: favour.owner._id })">{{ favour.owner.username }}</a></h3>
-      <p>{{favour.description}}</p>
-      <h4 class="subtitle is-4">Category: {{favour.category}}</h4>
-      <h4 class="subtitle is-4">Status: {{favour.status}}</h4>
+      <p class="favour-description">{{favour.description}}</p>
+      <h4 class="subtitle is-4 favour-header-four"><span class="category-title">Category: <strong>{{favour.category}}</strong></span></h4>
+      <h4 class="subtitle is-4 favour-header-four"><span class="favour-status">Status: <strong>{{favour.status}}</strong></span></h4>
       <div ng-if="isOwner">
         <div class="field is-grouped">
           <p class="control">
@@ -58,7 +58,7 @@
 <section class="volunteers-bar" ng-if="favour.chosen_volunteers.length === 0">
   <h2 class="title is-2">Volunteers:</h2>
   <div class="volunteers columns">
-    <div class="card column is-3" ng-repeat="volunteer in favour.volunteers">
+    <div class="card column is-3 volunteer-cards" ng-repeat="volunteer in favour.volunteers">
       <div class="card-content">
         <div class="media">
           <div class="media-left">
