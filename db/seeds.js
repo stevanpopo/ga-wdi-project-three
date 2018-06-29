@@ -102,7 +102,7 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Domestic',
         owner: users[0],
         status: 'tender',
-        volunteers: [users[2], users[5], users[6]],
+        volunteers: [users[2], users[5]],
         chosen_volunteers: [],
         comments: [{
           content: 'I\'ll do it, for a few points more',
@@ -142,7 +142,13 @@ mongoose.connect(dbURI, (err, db) => {
         owner: users[4],
         status: 'inProgress',
         volunteers: [users[2], users[5]],
-        comments: [],
+        comments: [{
+          content: 'Would love to, but I\'m out of town',
+          author: users[5]
+        },{
+          content: 'Hey guys, lets just go to Jujus!',
+          author: users[8]
+        }],
         chosen_volunteers: [users[0]],
         points: 20,
         location: {
@@ -154,7 +160,7 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Domestic',
         description: 'I\'ll be away from my home next week and would love for someone to feed my cat whilst i\'m away. Any cat lovers available to help out?',
         owner: users[6],
-        volunteers: [users[3], users[4], users[5]],
+        volunteers: [users[3], users[7], users[5]],
         chosen_volunteers: [],
         status: 'tender',
         comments: [],
@@ -169,15 +175,9 @@ mongoose.connect(dbURI, (err, db) => {
         description: 'Hey everyone - I\'m working on a big homework for school and I\'d love for someone older than me to give me some feedback. The topic is WW2 so anyone with a passion for history - even better!',
         owner: users[2],
         volunteers: [users[3],users[5]],
-        chosen_volunteers: [users[0]],
-        comments: [{
-          content: 'I can help, but I\'mpretty terrible at history. Worth a try anyway?',
-          author: users[1]
-        },{
-          content: 'I love history and I studied WW2 extensively at University. I can definitely help!',
-          author: users[4]
-        }],
-        status: 'inProgress',
+        chosen_volunteers: [users[3]],
+        status: 'verified',
+        comments: [],
         points: 30,
         location: {
           lat: 52.464,
@@ -188,10 +188,16 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Education',
         description: 'Hey everyone - My son struggles with Maths at school but is really keen to learn. Could anyone help him with algebra?',
         owner: users[2],
-        volunteers: [users[3],users[5]],
+        volunteers: [users[3], users[5], users[0]],
         chosen_volunteers: [],
         status: 'tender',
-        comments: [],
+        comments: [{
+          content: 'Would love to, but I\'m out of town',
+          author: users[3]
+        },{
+          content: 'Hey guys, lets just go to Jujus!',
+          author: users[8]
+        }],
         points: 50,
         location: {
           lat: 52.464,
@@ -202,9 +208,9 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Domestic',
         description: 'Hey everyone - My mum really wants to get fit but hates excersise. I thought if she had a friend to run with she might be more up for it. Would anyone want to join her?',
         owner: users[2],
-        volunteers: [users[3], users[5], users[1]],
-        chosen_volunteers: [],
-        status: 'tender',
+        volunteers: [users[3],users[5]],
+        chosen_volunteers: [users[1]],
+        status: 'completed',
         comments: [],
         points: 30,
         location: {
@@ -217,12 +223,9 @@ mongoose.connect(dbURI, (err, db) => {
         description: 'Hey everyone - My daughter struggles with English at school but is really keen to learn. Could anyone help him with algebra?',
         owner: users[2],
         volunteers: [users[3],users[5]],
-        chosen_volunteers: [users[1]],
+        chosen_volunteers: [users[0]],
         status: 'verified',
-        comments: [{
-          content: 'I\'m an English teacher and more than happy to help!',
-          author: users[7]
-        },{
+        comments: [],
         points: 30,
         location: {
           lat: 52.464,
