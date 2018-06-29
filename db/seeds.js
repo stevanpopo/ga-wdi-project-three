@@ -102,7 +102,7 @@ mongoose.connect(dbURI, (err, db) => {
         category: 'Domestic',
         owner: users[0],
         status: 'tender',
-        volunteers: [users[2], users[5]],
+        volunteers: [users[2], users[5], users[6]],
         chosen_volunteers: [],
         comments: [{
           content: 'I\'ll do it, for a few points more',
@@ -170,8 +170,14 @@ mongoose.connect(dbURI, (err, db) => {
         owner: users[2],
         volunteers: [users[3],users[5]],
         chosen_volunteers: [users[0]],
-        status: 'verified',
-        comments: [],
+        comments: [{
+          content: 'I can help, but I\'mpretty terrible at history. Worth a try anyway?',
+          author: users[1]
+        },{
+          content: 'I love history and I studied WW2 extensively at University. I can definitely help!',
+          author: users[4]
+        }],
+        status: 'inProgress',
         points: 30,
         location: {
           lat: 52.464,
@@ -184,7 +190,7 @@ mongoose.connect(dbURI, (err, db) => {
         owner: users[2],
         volunteers: [users[3],users[5]],
         chosen_volunteers: [],
-        status: 'verified',
+        status: 'tender',
         comments: [],
         points: 50,
         location: {
@@ -198,7 +204,7 @@ mongoose.connect(dbURI, (err, db) => {
         owner: users[2],
         volunteers: [users[3], users[5], users[1]],
         chosen_volunteers: [],
-        status: 'completed',
+        status: 'tender',
         comments: [],
         points: 30,
         location: {
@@ -213,7 +219,10 @@ mongoose.connect(dbURI, (err, db) => {
         volunteers: [users[3],users[5]],
         chosen_volunteers: [users[1]],
         status: 'verified',
-        comments: [],
+        comments: [{
+          content: 'I\'m an English teacher and more than happy to help!',
+          author: users[7]
+        },{
         points: 30,
         location: {
           lat: 52.464,
