@@ -4,18 +4,6 @@ function FavoursShowCtrl($scope, $http, $state) {
   $scope.isOwner = false;
   $scope.isChosenVolunteer = false;
   $scope.canVolunteer = true;
-  $scope.deleteComment = false;
-
-  $scope.setPageState = function() {
-    if($scope.favour.owner._id === $scope.currentUser._id) $scope.isOwner = true;
-    if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser._id) $scope.canVolunteer = false;
-    if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser._id || $scope.favour.status !== 'tender') $scope.canVolunteer = false;
-    if($scope.favour.chosen_volunteers.length > 0 && $scope.favour.chosen_volunteers[0]._id === $scope.currentUser._id) $scope.isChosenVolunteer = true;
-    $scope.favour.volunteers.forEach(volunteer => {
-      if(volunteer._id === $scope.currentUser._id) return $scope.canVolunteer = false;
-    });
-    if($scope.isOwner || $scope.favour.comments.author._id === $scope.currentUser._id) $scope.deleteComment = true;
-  };
 
   $scope.addComment = function(){
     $http({
@@ -46,7 +34,13 @@ function FavoursShowCtrl($scope, $http, $state) {
   })
     .then(res => {
       $scope.favour = res.data;
-      $scope.setPageState();
+      if($scope.favour.owner._id === $scope.currentUser._id) $scope.isOwner = true;
+      if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser._id) $scope.canVolunteer = false;
+      if(!$scope.isAuthenticated() || $scope.favour.owner._id === $scope.currentUser._id || $scope.favour.status !== 'tender') $scope.canVolunteer = false;
+      if($scope.favour.chosen_volunteers.length > 0 && $scope.favour.chosen_volunteers[0]._id === $scope.currentUser._id) $scope.isChosenVolunteer = true;
+      $scope.favour.volunteers.forEach(volunteer => {
+        if(volunteer._id === $scope.currentUser._id) return $scope.canVolunteer = false;
+      });
     });
 
   $scope.deleteFavour = function(){
