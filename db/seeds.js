@@ -85,6 +85,14 @@ mongoose.connect(dbURI, (err, db) => {
     image: 'https://pbs.twimg.com/profile_images/562341218416226304/JpFdjFFD_400x400.jpeg',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 30
+  },{
+    username: 'Mike',
+    email: 'mi@mi.mi',
+    password: 'mi',
+    passwordConfirmation: 'mi',
+    image: 'https://media.licdn.com/dms/image/C5103AQGXY1I1jKf38g/profile-displayphoto-shrink_800_800/0?e=1535587200&v=beta&t=jYVu7x8GtQubtJWBjlNzC_3dfHqlGLrB9nHzonY9qDQ',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
+    points: 30
   }])
     .then(users => {
       console.log(`${users.length} users created.`);

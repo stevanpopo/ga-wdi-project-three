@@ -23,8 +23,12 @@
       <div class="column is-full">
         <div class="columns is-multiline">
           <div class="column is-12">
-            <h2 class="title is-2">Favours in transit</h2>
+            <h2 class="title is-2">Favours In Progress</h2>
+            <div class="similar-favours-show" ng-if="user.inProgress.length===0">
+              <p>{{user.username}} doesn't currently have any favours in porgress. When {{user.username}} has favours to complete, they will appear here.</p>
+            </div>
           </div>
+
           <div class="column is-3" ng-repeat="inProgress in user.inProgress">
             <a ui-sref="favourShow({ id: inProgress._id })">
               <info-card name="inProgress.title" points="inProgress.points"></info-card>
