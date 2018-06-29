@@ -10,6 +10,7 @@
       <h2 class="title is-2">{{ favour.title }},</h2>
         <h3 class="subtitle is-4">asked by {{ favour.owner.username }}</h3>
       <p>{{favour.description}}</p>
+      <h4 class="subtitle is-4">Category: {{favour.category}}</h4>
       <h4 class="subtitle is-4">Status: {{favour.status}}</h4>
       <div ng-if="isOwner">
         <div class="field is-grouped">
@@ -114,6 +115,7 @@
 <section class="similar-favours">
   <h2 class="title is-2">Similar Available Favours</h2>
   <ul>
+    <li ng-if="favour.similarFavours.length===0">This is where other favours from the {{favour.category}} category will appear if available to volunteer for. </li>
     <li ng-repeat="sfavour in favour.similarFavours">{{ sfavour.title }}</li>
   </ul>
 </section>
