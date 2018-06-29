@@ -132,7 +132,7 @@ mongoose.connect(dbURI, (err, db) => {
         description: 'I\'m hosting a bbq for my little nephew and his friends birthday. It would be great if someone could help to cook the bbq whilst I look after the children. Anyone free?',
         category: 'Events',
         owner: users[4],
-        status: 'tender',
+        status: 'inProgress',
         comments: [],
         chosen_volunteers: [users[0]],
         points: 20,
