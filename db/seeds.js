@@ -48,7 +48,7 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'r@r.r',
     password: 'r',
     passwordConfirmation: 'r',
-    image: 'http://www.fillmurray.com/200/205',
+    image: 'https://media.licdn.com/dms/image/C4E03AQGcViLKNakmhw/profile-displayphoto-shrink_800_800/0?e=1535587200&v=beta&t=3LKBu-tMf3OkUKOmQQtwvF1yjrzuG8iJeH9hV3Jd3Gc',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.',
     points: 375,
     telephone: '+447530 486 805'
