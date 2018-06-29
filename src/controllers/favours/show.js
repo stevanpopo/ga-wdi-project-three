@@ -5,20 +5,16 @@ function FavoursShowCtrl($scope, $http, $state) {
   $scope.isChosenVolunteer = false;
   $scope.canVolunteer = true;
 
-  $scope.status = {
-    tender: false,
-    inProgress: false,
-    completed: false,
-    verified: false
-  };
-
   $scope.addComment = function(){
     $http({
       method: 'POST',
       url: `api/favours/${$state.params.id}/comments`,
       data: $scope.data
     })
-      .then(res => $scope.favour = res.data);
+      .then(res => {
+        $scope.favour = res.data;
+        $scope.data.content = '';
+      });
   };
 
   $scope.removeComment = function(comment){
@@ -27,7 +23,9 @@ function FavoursShowCtrl($scope, $http, $state) {
       url: `api/favours/${$state.params.id}/comments/${comment._id}`,
       data: $scope.data
     })
-      .then(res => $scope.favour = res.data);
+      .then(res => {
+        $scope.favour = res.data;
+      });
   };
 
   $http({
