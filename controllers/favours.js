@@ -141,6 +141,7 @@ function commentDeleteRoute(req, res, next){
     .populate('comments.author')
     .populate('similarFavours')
     .then(favour => {
+      console.log('test');
       const comment = favour.comments.id(req.params.commentId);
       comment.remove();
       return favour.save();
