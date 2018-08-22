@@ -10,7 +10,7 @@ This was the third project assignment during our time on General Assembly's Web 
 
 ![image width="700"](./src/assets/images/karmacommunity_demonstration_final.gif)
 
-##### [Visit the website](https://shrouded-wildwood-49205.herokuapp.com/) to check it out.
+##### [Visit the website](https://karma-community-2.herokuapp.com/) to check it out.
 
 ## Brief
 Design and build a MEAN stack app (MongoDB, Express, Angular, Node.js) with:
